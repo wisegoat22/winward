@@ -1,0 +1,125 @@
+{
+  "version": "winward-growth-training-proof-1",
+  "scope": "Measured own-weight changes and optimizer memory, not evidence of improved decision quality or a final audit. No large-model result is inferred from this proof.",
+  "growth_training": {
+    "run": "scale-structured-19m-01",
+    "checkpoint": "checkpoints/step-00000100",
+    "checkpoint_sha256": "41da3ebdb90892923741249e12543346dae7fc6f3ba625dec6fbb3b00572887a",
+    "optimizer_updates": 100,
+    "initialization": {
+      "source": "goalpolicy-v4",
+      "source_checkpoint_sha256": "de989d050a45cc2399a31a32081b8f2961a67a2d70d545a8888f8de882ecbede",
+      "growth_source_sha256": "ee427842db5e46c0ecfb5d61b81bc341d4599bfe0cc977b70e7cb4a7ee538912",
+      "growth_source_matches_recorded_protocol": true,
+      "factor": 2,
+      "noise": 0.01,
+      "seed": 710000001,
+      "row_chunk_size": 128,
+      "matrix_dtype": "bfloat16",
+      "norm_dtype": "float32",
+      "comparison": "Recreated the exact recorded initialization and compared every stored parameter value to the trained checkpoint."
+    },
+    "total_parameters": 19162625,
+    "changed_parameters": 14001277,
+    "changed_parameter_fraction": 0.7306554816994019,
+    "parameter_tensors": 78,
+    "changed_parameter_tensors": 77,
+    "matrix_tensors": 38,
+    "changed_matrix_tensors": 38,
+    "matrix_parameters": 19133440,
+    "changed_matrix_parameters": 13982412,
+    "unchanged_parameter_tensors": [
+      "output.bias"
+    ],
+    "unchanged_note": "The inherited output bias is a common candidate-logit shift and has no effect on softmax choices. A zero update is expected, not newly added inactive capacity.",
+    "replica_training": {
+      "replicated_tensors": 77,
+      "replicated_tensors_with_different_training_updates": 77,
+      "input_projection_weight": {
+        "paired_values": 129280,
+        "initial_pair_differences": 0,
+        "trained_pair_differences": 20277,
+        "pairs_with_different_training_updates": 20277
+      },
+      "input_projection_bias": {
+        "paired_values": 256,
+        "initial_pair_differences": 0,
+        "trained_pair_differences": 18,
+        "pairs_with_different_training_updates": 18
+      },
+      "final_norm_weight": {
+        "paired_values": 256,
+        "initial_pair_differences": 0,
+        "trained_pair_differences": 251
+      },
+      "final_norm_bias": {
+        "paired_values": 256,
+        "initial_pair_differences": 0,
+        "trained_pair_differences": 221
+      }
+    },
+    "limitation": "Changed values establish actual stored training and replica divergence. They do not show that every scalar changed, that more parameters were necessary, or that decisions improved."
+  },
+  "optimizer_memory": {
+    "run": "scale-structured-171m-01",
+    "checkpoint": "checkpoints/step-00000400",
+    "checkpoint_sha256": "4be5df9ad1919d8a323408cbb57c583a6f22a9e5bf0cf851a7abb00f9745db9a",
+    "parameters": 170734081,
+    "device": "Apple M5 Max",
+    "memory_GiB": 48,
+    "mlx_version": "0.32.3",
+    "cache_limit_MiB": 128,
+    "batch_size": 4,
+    "candidate_slots": 12,
+    "input_features": 505,
+    "corpus_split": "development",
+    "corpus_seed": 710009997,
+    "learning_rate": 3e-05,
+    "beta_1": null,
+    "relative_step": false,
+    "scale_parameter": false,
+    "optimizer_state_initialization": "Fresh factored moments, one identical update from the same checkpoint.",
+    "precision": "BF16 stored matrix weights/gradients; FP32 norms, optimizer moments and update arithmetic.",
+    "measurement": "Reset MLX peak before gradient and optimizer phases; memory covers MLX allocations rather than total process or Mac memory.",
+    "hash_method": "SHA-256 over flattened tree order, UTF-8 leaf names followed by bytes of each leaf cast to float32 on this Mac. These are comparison hashes, not safetensors file hashes.",
+    "results": [
+      {
+        "optimizer": "FP32Adafactor ordinary lazy tree update",
+        "loaded_active_GiB": 0.3181879948824644,
+        "loss": 0.5053184032440186,
+        "gradient_active_GiB": 0.6362855937331915,
+        "gradient_peak_GiB": 0.6966409273445606,
+        "update_active_GiB": 0.6402910072356462,
+        "update_peak_GiB": 2.13532049767673,
+        "after_release_active_GiB": 0.3192827980965376,
+        "post_update_float32_view_parameter_tree_sha256": "e98585d791b3aa58f5857c7e777badc4aa9e97cc779ec849cd2d586736404296",
+        "post_update_float32_view_optimizer_tree_sha256": "7678b26cd42291a8c8e36c1895f813d112967a74c0e15fbfa222fa0db1a5de26"
+      },
+      {
+        "optimizer": "Eager apply_single only; whole model/gradient tree retained",
+        "loaded_active_GiB": 0.3181879948824644,
+        "loss": 0.5053184032440186,
+        "gradient_active_GiB": 0.6362841632217169,
+        "gradient_peak_GiB": 0.7028239611536264,
+        "update_active_GiB": 0.6373789627104998,
+        "update_peak_GiB": 1.1666287425905466,
+        "after_release_active_GiB": 0.3192827980965376,
+        "post_update_float32_view_parameter_tree_sha256": "e98585d791b3aa58f5857c7e777badc4aa9e97cc779ec849cd2d586736404296",
+        "post_update_float32_view_optimizer_tree_sha256": "7678b26cd42291a8c8e36c1895f813d112967a74c0e15fbfa222fa0db1a5de26"
+      },
+      {
+        "optimizer": "SequentialAdafactor; install each tensor and consume each gradient",
+        "loaded_active_GiB": 0.3181879948824644,
+        "loss": 0.5053184032440186,
+        "gradient_active_GiB": 0.6362841632217169,
+        "gradient_peak_GiB": 0.7028239611536264,
+        "update_active_GiB": 0.3192827980965376,
+        "update_peak_GiB": 0.8466708790510893,
+        "post_update_float32_view_parameter_tree_sha256": "e98585d791b3aa58f5857c7e777badc4aa9e97cc779ec849cd2d586736404296",
+        "post_update_float32_view_optimizer_tree_sha256": "7678b26cd42291a8c8e36c1895f813d112967a74c0e15fbfa222fa0db1a5de26"
+      }
+    ],
+    "exact_post_update_parameter_and_optimizer_state_match": true,
+    "limitation": "This measures a single 171M step. Large-model memory and quality must be measured directly; these values do not establish 4B feasibility."
+  }
+}

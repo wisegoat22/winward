@@ -1,0 +1,768 @@
+{
+  "scope": "Structured growth development measurements. Exact parameter sizes and trained updates are distinct from capability promotion.",
+  "stages": [
+    {
+      "id": "scale-structured-19m-01",
+      "config": {
+        "input_dim": 505,
+        "width": 512,
+        "layers": 6,
+        "heads": 16,
+        "expansion": 4,
+        "dtype": "bfloat16",
+        "norm_dtype": "float32",
+        "gradient_checkpointing": true,
+        "norm_eps": 1e-05
+      },
+      "parameters": 19162625,
+      "updates_in_this_run": 500,
+      "peak_mlx_gib": 0.3024228420108557,
+      "wall_seconds": 17.921874832973117,
+      "parent_sha256": "de989d050a45cc2399a31a32081b8f2961a67a2d70d545a8888f8de882ecbede",
+      "selected_step": 100,
+      "selected_model_sha256": "41da3ebdb90892923741249e12543346dae7fc6f3ba625dec6fbb3b00572887a",
+      "parent_validation": {
+        "examples": 256,
+        "next_action_correct": 240,
+        "next_action_accuracy": 0.9375,
+        "invalid_or_ineligible_count": 0,
+        "amortized_inference_ms_per_example": 0.17975192963604059,
+        "by_domain": {
+          "belief": {
+            "examples": 77,
+            "next_action_correct": 73,
+            "next_action_accuracy": 0.948051948051948,
+            "invalid_or_ineligible_count": 0
+          },
+          "graph": {
+            "examples": 179,
+            "next_action_correct": 167,
+            "next_action_accuracy": 0.9329608938547486,
+            "invalid_or_ineligible_count": 0
+          }
+        }
+      },
+      "expanded_initial_validation": {
+        "examples": 256,
+        "next_action_correct": 240,
+        "next_action_accuracy": 0.9375,
+        "invalid_or_ineligible_count": 0,
+        "amortized_inference_ms_per_example": 0.8398476526281229,
+        "by_domain": {
+          "belief": {
+            "examples": 77,
+            "next_action_correct": 73,
+            "next_action_accuracy": 0.948051948051948,
+            "invalid_or_ineligible_count": 0
+          },
+          "graph": {
+            "examples": 179,
+            "next_action_correct": 167,
+            "next_action_accuracy": 0.9329608938547486,
+            "invalid_or_ineligible_count": 0
+          }
+        }
+      },
+      "validation_history": [
+        {
+          "step": 100,
+          "metrics": {
+            "examples": 256,
+            "next_action_correct": 239,
+            "next_action_accuracy": 0.93359375,
+            "invalid_or_ineligible_count": 0,
+            "amortized_inference_ms_per_example": 0.16824136730519967,
+            "by_domain": {
+              "belief": {
+                "examples": 77,
+                "next_action_correct": 72,
+                "next_action_accuracy": 0.935064935064935,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 179,
+                "next_action_correct": 167,
+                "next_action_accuracy": 0.9329608938547486,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 200,
+          "metrics": {
+            "examples": 256,
+            "next_action_correct": 237,
+            "next_action_accuracy": 0.92578125,
+            "invalid_or_ineligible_count": 0,
+            "amortized_inference_ms_per_example": 0.190436027423857,
+            "by_domain": {
+              "belief": {
+                "examples": 77,
+                "next_action_correct": 74,
+                "next_action_accuracy": 0.961038961038961,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 179,
+                "next_action_correct": 163,
+                "next_action_accuracy": 0.9106145251396648,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 300,
+          "metrics": {
+            "examples": 256,
+            "next_action_correct": 239,
+            "next_action_accuracy": 0.93359375,
+            "invalid_or_ineligible_count": 0,
+            "amortized_inference_ms_per_example": 0.1983074527061035,
+            "by_domain": {
+              "belief": {
+                "examples": 77,
+                "next_action_correct": 75,
+                "next_action_accuracy": 0.974025974025974,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 179,
+                "next_action_correct": 164,
+                "next_action_accuracy": 0.9162011173184358,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 400,
+          "metrics": {
+            "examples": 256,
+            "next_action_correct": 237,
+            "next_action_accuracy": 0.92578125,
+            "invalid_or_ineligible_count": 0,
+            "amortized_inference_ms_per_example": 0.16645393748149218,
+            "by_domain": {
+              "belief": {
+                "examples": 77,
+                "next_action_correct": 73,
+                "next_action_accuracy": 0.948051948051948,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 179,
+                "next_action_correct": 164,
+                "next_action_accuracy": 0.9162011173184358,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 500,
+          "metrics": {
+            "examples": 256,
+            "next_action_correct": 236,
+            "next_action_accuracy": 0.921875,
+            "invalid_or_ineligible_count": 0,
+            "amortized_inference_ms_per_example": 0.1656393285429658,
+            "by_domain": {
+              "belief": {
+                "examples": 77,
+                "next_action_correct": 72,
+                "next_action_accuracy": 0.935064935064935,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 179,
+                "next_action_correct": 164,
+                "next_action_accuracy": 0.9162011173184358,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        }
+      ],
+      "source_sha256": {
+        "agent_lab/belief.py": "ea640b221a04b27e0e5c0fad14be9cbcf66e4430292662b6ca34d72a3a22072a",
+        "agent_training/__init__.py": "468615bff8daa4de507492cea4b01cbde0d0b78989243aaf2e43b12378b23fbe",
+        "agent_training/belief_data.py": "a42685a0380d744ab9e0af71d07593815a260bc991ee0bc8840be391177733d4",
+        "agent_training/belief_data_v4.py": "075695a505c3bc24696cb8d1c07fa25f60f53aed867b72ab3653f80222c46201",
+        "agent_training/curriculum.py": "512b5dd4bbd8bb9a5a9efb55576d95f1f64c657f903c53bb6fd3babfbcb44d83",
+        "agent_training/evaluate.py": "558a83942212d5360f261adc84d5064fd1572834719248230fc2f9a6d4b532ad",
+        "agent_training/evaluate_v2.py": "cc9b41f4ea9dd9e86ede06acd591a1a4aa8f73bbd1715c397354007b6b3530ba",
+        "agent_training/evaluate_v3.py": "44d413ec2d50e942e838c199880cb50abbc38363f19dbe4e23ed2632b26ec853",
+        "agent_training/evaluate_v4.py": "fa63986d87f7a43552daccb9ea29a42feb3d855ca4b14bcf09fe940df0d993e9",
+        "agent_training/features.py": "5d9240352a926660e5ef961ed91ffaaa4f5a84153f77cac492b55025e17e0fd2",
+        "agent_training/model.py": "48ed32b458af48413e65912c14b9bb58857ad36221a5ca1c00a383003bfc1357",
+        "agent_training/model_v3.py": "f7d8f310837980fead0008b4cf79b7e75b7b50016b5707d9175807d3fe3552c4",
+        "agent_training/model_v4.py": "609932c30cdde135f97b4c9f3f33253c2f84eb2b58de0ba84725d8fc6c253ac9",
+        "agent_training/runtime.py": "b87f21a0456e7ce01066e94622755413d024a6a59ca18519fa21c6c846f03aab",
+        "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6",
+        "agent_training/train.py": "9a388269a15ec0789b7e1d6208bd2609287ff0ed09d613636bbfffa08acbae9d",
+        "agent_training/train_tools.py": "faab5376eb9a8f681d3db196a20e1086b9a18b02775d2020c3c2f78b9c43b774",
+        "agent_training/train_v2.py": "81eed91b69132bbf62ead4699db73d1f4b826ab776a893af2af270ddd895d7aa",
+        "agent_training/train_v3.py": "869f4660e686e2b1a0229607f1832a199f4db295605c0e4510b99ea6ea3aeeb3",
+        "agent_training/train_v4.py": "478c5d233c582d68490794c120f6ef9fbe542ec491510b0153d365dcc70ae426",
+        "winward_scale/gpu_lock.py": "d909d68b071bfc362e96235604124e8c9756f31b17f6c8a3232272f9a738aed7",
+        "winward_scale/grow.py": "4e6ee86e5b6f896f1e98975a410225543d98e9f3f3652fa1e0f94df182156196",
+        "winward_scale/structured.py": "ee427842db5e46c0ecfb5d61b81bc341d4599bfe0cc977b70e7cb4a7ee538912",
+        "winward_scale/structured_data.py": "8a44739493e87c7a9a54442c833a1a5f99717f6a92392865db6507434ad1a89c",
+        "winward_scale/structured_train.py": "168c63c2be8612c718b33f08ae87b1739ac2a2203d248f8da843193fa59d8eeb",
+        "winward_scale/train.py": "fece3fe3659337bb289f5296b548b274f22b43748b5e0a3ec1db4f97cefc7f43"
+      },
+      "quality_promoted": false
+    },
+    {
+      "id": "scale-structured-171m-01",
+      "config": {
+        "input_dim": 505,
+        "width": 1536,
+        "layers": 6,
+        "heads": 48,
+        "expansion": 4,
+        "dtype": "bfloat16",
+        "norm_dtype": "float32",
+        "gradient_checkpointing": true,
+        "norm_eps": 1e-05
+      },
+      "parameters": 170734081,
+      "updates_in_this_run": 400,
+      "peak_mlx_gib": 2.136022862046957,
+      "wall_seconds": 47.4719336249982,
+      "parent_sha256": "41da3ebdb90892923741249e12543346dae7fc6f3ba625dec6fbb3b00572887a",
+      "selected_step": 100,
+      "selected_model_sha256": "a7825552552309efb1732e57296a9d35eb712d822d9453be3f895ad12267d202",
+      "parent_validation": {
+        "examples": 512,
+        "next_action_correct": 486,
+        "next_action_accuracy": 0.94921875,
+        "invalid_or_ineligible_count": 0,
+        "amortized_inference_ms_per_example": 0.19148551336911623,
+        "by_domain": {
+          "belief": {
+            "examples": 154,
+            "next_action_correct": 147,
+            "next_action_accuracy": 0.9545454545454546,
+            "invalid_or_ineligible_count": 0
+          },
+          "graph": {
+            "examples": 358,
+            "next_action_correct": 339,
+            "next_action_accuracy": 0.946927374301676,
+            "invalid_or_ineligible_count": 0
+          }
+        }
+      },
+      "expanded_initial_validation": {
+        "examples": 512,
+        "next_action_correct": 487,
+        "next_action_accuracy": 0.951171875,
+        "invalid_or_ineligible_count": 0,
+        "amortized_inference_ms_per_example": 0.43871157828334617,
+        "by_domain": {
+          "belief": {
+            "examples": 154,
+            "next_action_correct": 147,
+            "next_action_accuracy": 0.9545454545454546,
+            "invalid_or_ineligible_count": 0
+          },
+          "graph": {
+            "examples": 358,
+            "next_action_correct": 340,
+            "next_action_accuracy": 0.9497206703910615,
+            "invalid_or_ineligible_count": 0
+          }
+        }
+      },
+      "validation_history": [
+        {
+          "step": 100,
+          "metrics": {
+            "examples": 512,
+            "next_action_correct": 485,
+            "next_action_accuracy": 0.947265625,
+            "invalid_or_ineligible_count": 0,
+            "amortized_inference_ms_per_example": 0.32044840457956525,
+            "by_domain": {
+              "belief": {
+                "examples": 154,
+                "next_action_correct": 148,
+                "next_action_accuracy": 0.961038961038961,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 358,
+                "next_action_correct": 337,
+                "next_action_accuracy": 0.9413407821229051,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 200,
+          "metrics": {
+            "examples": 512,
+            "next_action_correct": 483,
+            "next_action_accuracy": 0.943359375,
+            "invalid_or_ineligible_count": 0,
+            "amortized_inference_ms_per_example": 0.3174142185002893,
+            "by_domain": {
+              "belief": {
+                "examples": 154,
+                "next_action_correct": 146,
+                "next_action_accuracy": 0.948051948051948,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 358,
+                "next_action_correct": 337,
+                "next_action_accuracy": 0.9413407821229051,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 300,
+          "metrics": {
+            "examples": 512,
+            "next_action_correct": 484,
+            "next_action_accuracy": 0.9453125,
+            "invalid_or_ineligible_count": 0,
+            "amortized_inference_ms_per_example": 0.32205964839704393,
+            "by_domain": {
+              "belief": {
+                "examples": 154,
+                "next_action_correct": 146,
+                "next_action_accuracy": 0.948051948051948,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 358,
+                "next_action_correct": 338,
+                "next_action_accuracy": 0.9441340782122905,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 400,
+          "metrics": {
+            "examples": 512,
+            "next_action_correct": 484,
+            "next_action_accuracy": 0.9453125,
+            "invalid_or_ineligible_count": 0,
+            "amortized_inference_ms_per_example": 0.31668976743048916,
+            "by_domain": {
+              "belief": {
+                "examples": 154,
+                "next_action_correct": 146,
+                "next_action_accuracy": 0.948051948051948,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 358,
+                "next_action_correct": 338,
+                "next_action_accuracy": 0.9441340782122905,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        }
+      ],
+      "source_sha256": {
+        "agent_lab/belief.py": "ea640b221a04b27e0e5c0fad14be9cbcf66e4430292662b6ca34d72a3a22072a",
+        "agent_training/__init__.py": "468615bff8daa4de507492cea4b01cbde0d0b78989243aaf2e43b12378b23fbe",
+        "agent_training/belief_data.py": "a42685a0380d744ab9e0af71d07593815a260bc991ee0bc8840be391177733d4",
+        "agent_training/belief_data_v4.py": "075695a505c3bc24696cb8d1c07fa25f60f53aed867b72ab3653f80222c46201",
+        "agent_training/curriculum.py": "512b5dd4bbd8bb9a5a9efb55576d95f1f64c657f903c53bb6fd3babfbcb44d83",
+        "agent_training/evaluate.py": "558a83942212d5360f261adc84d5064fd1572834719248230fc2f9a6d4b532ad",
+        "agent_training/evaluate_v2.py": "cc9b41f4ea9dd9e86ede06acd591a1a4aa8f73bbd1715c397354007b6b3530ba",
+        "agent_training/evaluate_v3.py": "44d413ec2d50e942e838c199880cb50abbc38363f19dbe4e23ed2632b26ec853",
+        "agent_training/evaluate_v4.py": "fa63986d87f7a43552daccb9ea29a42feb3d855ca4b14bcf09fe940df0d993e9",
+        "agent_training/features.py": "5d9240352a926660e5ef961ed91ffaaa4f5a84153f77cac492b55025e17e0fd2",
+        "agent_training/model.py": "48ed32b458af48413e65912c14b9bb58857ad36221a5ca1c00a383003bfc1357",
+        "agent_training/model_v3.py": "f7d8f310837980fead0008b4cf79b7e75b7b50016b5707d9175807d3fe3552c4",
+        "agent_training/model_v4.py": "609932c30cdde135f97b4c9f3f33253c2f84eb2b58de0ba84725d8fc6c253ac9",
+        "agent_training/runtime.py": "b87f21a0456e7ce01066e94622755413d024a6a59ca18519fa21c6c846f03aab",
+        "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6",
+        "agent_training/train.py": "9a388269a15ec0789b7e1d6208bd2609287ff0ed09d613636bbfffa08acbae9d",
+        "agent_training/train_tools.py": "faab5376eb9a8f681d3db196a20e1086b9a18b02775d2020c3c2f78b9c43b774",
+        "agent_training/train_v2.py": "81eed91b69132bbf62ead4699db73d1f4b826ab776a893af2af270ddd895d7aa",
+        "agent_training/train_v3.py": "869f4660e686e2b1a0229607f1832a199f4db295605c0e4510b99ea6ea3aeeb3",
+        "agent_training/train_v4.py": "478c5d233c582d68490794c120f6ef9fbe542ec491510b0153d365dcc70ae426",
+        "winward_scale/gpu_lock.py": "d909d68b071bfc362e96235604124e8c9756f31b17f6c8a3232272f9a738aed7",
+        "winward_scale/grow.py": "4e6ee86e5b6f896f1e98975a410225543d98e9f3f3652fa1e0f94df182156196",
+        "winward_scale/structured.py": "ee427842db5e46c0ecfb5d61b81bc341d4599bfe0cc977b70e7cb4a7ee538912",
+        "winward_scale/structured_data.py": "8a44739493e87c7a9a54442c833a1a5f99717f6a92392865db6507434ad1a89c",
+        "winward_scale/structured_train.py": "0807a158dd7306c0d12a584c949b6c8707d83ff3ca874c03c0830174c2cf96ba",
+        "winward_scale/train.py": "fece3fe3659337bb289f5296b548b274f22b43748b5e0a3ec1db4f97cefc7f43"
+      },
+      "quality_promoted": false
+    },
+    {
+      "id": "scale-structured-4b-probe01",
+      "purpose": "capacity_probe",
+      "config": {
+        "input_dim": 505,
+        "width": 7680,
+        "layers": 6,
+        "heads": 240,
+        "expansion": 4,
+        "dtype": "bfloat16",
+        "norm_dtype": "float32",
+        "gradient_checkpointing": true,
+        "norm_eps": 1e-05
+      },
+      "parameters": 4251056641,
+      "updates_in_this_run": 8,
+      "training_examples_seen": 32,
+      "peak_mlx_gib": 21.11256779357791,
+      "wall_seconds": 47.868391333991894,
+      "parent_sha256": "a7825552552309efb1732e57296a9d35eb712d822d9453be3f895ad12267d202",
+      "selected_step": 8,
+      "selected_model_sha256": "2f44788f5c3507510c74abc3f262a6cff712095daa03db2eaf87e63a0b854e38",
+      "parent_validation": {
+        "examples": 256,
+        "next_action_correct": 243,
+        "next_action_accuracy": 0.94921875,
+        "invalid_or_ineligible_count": 0,
+        "wall_seconds": 0.17953824999858625,
+        "inference_ms": 176.34049608022906,
+        "batch_size": 4,
+        "amortized_inference_ms_per_example": 0.6888300628133948,
+        "scope": "Development next-action agreement with exact optimal ties; no rollout or promotion claim",
+        "by_domain": {
+          "belief": {
+            "examples": 77,
+            "next_action_correct": 74,
+            "next_action_accuracy": 0.961038961038961,
+            "invalid_or_ineligible_count": 0
+          },
+          "graph": {
+            "examples": 179,
+            "next_action_correct": 169,
+            "next_action_accuracy": 0.9441340782122905,
+            "invalid_or_ineligible_count": 0
+          }
+        }
+      },
+      "expanded_initial_validation": {
+        "examples": 256,
+        "next_action_correct": 243,
+        "next_action_accuracy": 0.94921875,
+        "invalid_or_ineligible_count": 0,
+        "wall_seconds": 1.9725139160000253,
+        "inference_ms": 1967.7029139129445,
+        "batch_size": 4,
+        "amortized_inference_ms_per_example": 7.686339507472439,
+        "scope": "Development next-action agreement with exact optimal ties; no rollout or promotion claim",
+        "by_domain": {
+          "belief": {
+            "examples": 77,
+            "next_action_correct": 74,
+            "next_action_accuracy": 0.961038961038961,
+            "invalid_or_ineligible_count": 0
+          },
+          "graph": {
+            "examples": 179,
+            "next_action_correct": 169,
+            "next_action_accuracy": 0.9441340782122905,
+            "invalid_or_ineligible_count": 0
+          }
+        }
+      },
+      "validation_history": [
+        {
+          "step": 8,
+          "metrics": {
+            "examples": 256,
+            "next_action_correct": 244,
+            "next_action_accuracy": 0.953125,
+            "invalid_or_ineligible_count": 0,
+            "wall_seconds": 1.932894583005691,
+            "inference_ms": 1926.9113760092296,
+            "batch_size": 4,
+            "amortized_inference_ms_per_example": 7.526997562536053,
+            "scope": "Development next-action agreement with exact optimal ties; no rollout or promotion claim",
+            "by_domain": {
+              "belief": {
+                "examples": 77,
+                "next_action_correct": 75,
+                "next_action_accuracy": 0.974025974025974,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 179,
+                "next_action_correct": 169,
+                "next_action_accuracy": 0.9441340782122905,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        }
+      ],
+      "source_sha256": {
+        "agent_lab/belief.py": "ea640b221a04b27e0e5c0fad14be9cbcf66e4430292662b6ca34d72a3a22072a",
+        "agent_training/__init__.py": "468615bff8daa4de507492cea4b01cbde0d0b78989243aaf2e43b12378b23fbe",
+        "agent_training/belief_data.py": "a42685a0380d744ab9e0af71d07593815a260bc991ee0bc8840be391177733d4",
+        "agent_training/belief_data_v4.py": "075695a505c3bc24696cb8d1c07fa25f60f53aed867b72ab3653f80222c46201",
+        "agent_training/curriculum.py": "512b5dd4bbd8bb9a5a9efb55576d95f1f64c657f903c53bb6fd3babfbcb44d83",
+        "agent_training/evaluate.py": "558a83942212d5360f261adc84d5064fd1572834719248230fc2f9a6d4b532ad",
+        "agent_training/evaluate_v2.py": "cc9b41f4ea9dd9e86ede06acd591a1a4aa8f73bbd1715c397354007b6b3530ba",
+        "agent_training/evaluate_v3.py": "44d413ec2d50e942e838c199880cb50abbc38363f19dbe4e23ed2632b26ec853",
+        "agent_training/evaluate_v4.py": "fa63986d87f7a43552daccb9ea29a42feb3d855ca4b14bcf09fe940df0d993e9",
+        "agent_training/features.py": "5d9240352a926660e5ef961ed91ffaaa4f5a84153f77cac492b55025e17e0fd2",
+        "agent_training/model.py": "48ed32b458af48413e65912c14b9bb58857ad36221a5ca1c00a383003bfc1357",
+        "agent_training/model_v3.py": "f7d8f310837980fead0008b4cf79b7e75b7b50016b5707d9175807d3fe3552c4",
+        "agent_training/model_v4.py": "609932c30cdde135f97b4c9f3f33253c2f84eb2b58de0ba84725d8fc6c253ac9",
+        "agent_training/runtime.py": "b87f21a0456e7ce01066e94622755413d024a6a59ca18519fa21c6c846f03aab",
+        "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6",
+        "agent_training/train.py": "9a388269a15ec0789b7e1d6208bd2609287ff0ed09d613636bbfffa08acbae9d",
+        "agent_training/train_tools.py": "faab5376eb9a8f681d3db196a20e1086b9a18b02775d2020c3c2f78b9c43b774",
+        "agent_training/train_v2.py": "81eed91b69132bbf62ead4699db73d1f4b826ab776a893af2af270ddd895d7aa",
+        "agent_training/train_v3.py": "869f4660e686e2b1a0229607f1832a199f4db295605c0e4510b99ea6ea3aeeb3",
+        "agent_training/train_v4.py": "478c5d233c582d68490794c120f6ef9fbe542ec491510b0153d365dcc70ae426",
+        "winward_scale/gpu_lock.py": "d909d68b071bfc362e96235604124e8c9756f31b17f6c8a3232272f9a738aed7",
+        "winward_scale/grow.py": "4e6ee86e5b6f896f1e98975a410225543d98e9f3f3652fa1e0f94df182156196",
+        "winward_scale/optimizer.py": "94d7ce1eacaba4aa5f2cf23a65b88e8672b5fac28805ef78972b2f3c5fa3bf52",
+        "winward_scale/structured.py": "ee427842db5e46c0ecfb5d61b81bc341d4599bfe0cc977b70e7cb4a7ee538912",
+        "winward_scale/structured_data.py": "8a44739493e87c7a9a54442c833a1a5f99717f6a92392865db6507434ad1a89c",
+        "winward_scale/structured_train.py": "8097fd32dc7d507599d13ee3c83bcd5b10ad351aedc133aee59af89af60bdc56",
+        "winward_scale/train.py": "fece3fe3659337bb289f5296b548b274f22b43748b5e0a3ec1db4f97cefc7f43"
+      },
+      "quality_promoted": false
+    },
+    {
+      "id": "scale-structured-4b-train01",
+      "purpose": "training",
+      "config": {
+        "input_dim": 505,
+        "width": 7680,
+        "layers": 6,
+        "heads": 240,
+        "expansion": 4,
+        "dtype": "bfloat16",
+        "norm_dtype": "float32",
+        "gradient_checkpointing": true,
+        "norm_eps": 1e-05
+      },
+      "parameters": 4251056641,
+      "updates_in_this_run": 128,
+      "training_examples_seen": 4096,
+      "peak_mlx_gib": 21.113210540264845,
+      "wall_seconds": 538.4009767500102,
+      "parent_sha256": "2f44788f5c3507510c74abc3f262a6cff712095daa03db2eaf87e63a0b854e38",
+      "selected_step": 96,
+      "selected_model_sha256": "509f15c2169590d1925b485c843a969aa4394ac75060e8d0c75473d03a4dda20",
+      "parent_validation": {
+        "examples": 512,
+        "next_action_correct": 487,
+        "next_action_accuracy": 0.951171875,
+        "invalid_or_ineligible_count": 0,
+        "wall_seconds": 2.1103050409874413,
+        "inference_ms": 2103.9851699606515,
+        "batch_size": 8,
+        "amortized_inference_ms_per_example": 4.1093460350793976,
+        "scope": "Development next-action agreement with exact optimal ties; no rollout or promotion claim",
+        "by_domain": {
+          "belief": {
+            "examples": 154,
+            "next_action_correct": 148,
+            "next_action_accuracy": 0.961038961038961,
+            "invalid_or_ineligible_count": 0
+          },
+          "graph": {
+            "examples": 358,
+            "next_action_correct": 339,
+            "next_action_accuracy": 0.946927374301676,
+            "invalid_or_ineligible_count": 0
+          }
+        }
+      },
+      "expanded_initial_validation": {
+        "examples": 512,
+        "next_action_correct": 487,
+        "next_action_accuracy": 0.951171875,
+        "invalid_or_ineligible_count": 0,
+        "wall_seconds": 2.0742154579784255,
+        "inference_ms": 2068.0164581281133,
+        "batch_size": 8,
+        "amortized_inference_ms_per_example": 4.039094644781471,
+        "scope": "Development next-action agreement with exact optimal ties; no rollout or promotion claim",
+        "by_domain": {
+          "belief": {
+            "examples": 154,
+            "next_action_correct": 148,
+            "next_action_accuracy": 0.961038961038961,
+            "invalid_or_ineligible_count": 0
+          },
+          "graph": {
+            "examples": 358,
+            "next_action_correct": 339,
+            "next_action_accuracy": 0.946927374301676,
+            "invalid_or_ineligible_count": 0
+          }
+        }
+      },
+      "validation_history": [
+        {
+          "step": 32,
+          "metrics": {
+            "examples": 512,
+            "next_action_correct": 483,
+            "next_action_accuracy": 0.943359375,
+            "invalid_or_ineligible_count": 0,
+            "wall_seconds": 3.409877375001088,
+            "inference_ms": 3400.0855800986756,
+            "batch_size": 8,
+            "amortized_inference_ms_per_example": 6.640792148630226,
+            "scope": "Development next-action agreement with exact optimal ties; no rollout or promotion claim",
+            "by_domain": {
+              "belief": {
+                "examples": 154,
+                "next_action_correct": 144,
+                "next_action_accuracy": 0.935064935064935,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 358,
+                "next_action_correct": 339,
+                "next_action_accuracy": 0.946927374301676,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 64,
+          "metrics": {
+            "examples": 512,
+            "next_action_correct": 484,
+            "next_action_accuracy": 0.9453125,
+            "invalid_or_ineligible_count": 0,
+            "wall_seconds": 3.2997174999909475,
+            "inference_ms": 3292.231668048771,
+            "batch_size": 8,
+            "amortized_inference_ms_per_example": 6.430139976657756,
+            "scope": "Development next-action agreement with exact optimal ties; no rollout or promotion claim",
+            "by_domain": {
+              "belief": {
+                "examples": 154,
+                "next_action_correct": 145,
+                "next_action_accuracy": 0.9415584415584416,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 358,
+                "next_action_correct": 339,
+                "next_action_accuracy": 0.946927374301676,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 96,
+          "metrics": {
+            "examples": 512,
+            "next_action_correct": 485,
+            "next_action_accuracy": 0.947265625,
+            "invalid_or_ineligible_count": 0,
+            "wall_seconds": 3.488506708003115,
+            "inference_ms": 3478.7327491212636,
+            "batch_size": 8,
+            "amortized_inference_ms_per_example": 6.794399900627468,
+            "scope": "Development next-action agreement with exact optimal ties; no rollout or promotion claim",
+            "by_domain": {
+              "belief": {
+                "examples": 154,
+                "next_action_correct": 146,
+                "next_action_accuracy": 0.948051948051948,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 358,
+                "next_action_correct": 339,
+                "next_action_accuracy": 0.946927374301676,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        },
+        {
+          "step": 128,
+          "metrics": {
+            "examples": 512,
+            "next_action_correct": 485,
+            "next_action_accuracy": 0.947265625,
+            "invalid_or_ineligible_count": 0,
+            "wall_seconds": 3.293588208995061,
+            "inference_ms": 3286.0489179729484,
+            "batch_size": 8,
+            "amortized_inference_ms_per_example": 6.418064292915915,
+            "scope": "Development next-action agreement with exact optimal ties; no rollout or promotion claim",
+            "by_domain": {
+              "belief": {
+                "examples": 154,
+                "next_action_correct": 146,
+                "next_action_accuracy": 0.948051948051948,
+                "invalid_or_ineligible_count": 0
+              },
+              "graph": {
+                "examples": 358,
+                "next_action_correct": 339,
+                "next_action_accuracy": 0.946927374301676,
+                "invalid_or_ineligible_count": 0
+              }
+            }
+          }
+        }
+      ],
+      "source_sha256": {
+        "agent_lab/belief.py": "ea640b221a04b27e0e5c0fad14be9cbcf66e4430292662b6ca34d72a3a22072a",
+        "agent_training/__init__.py": "468615bff8daa4de507492cea4b01cbde0d0b78989243aaf2e43b12378b23fbe",
+        "agent_training/belief_data.py": "a42685a0380d744ab9e0af71d07593815a260bc991ee0bc8840be391177733d4",
+        "agent_training/belief_data_v4.py": "075695a505c3bc24696cb8d1c07fa25f60f53aed867b72ab3653f80222c46201",
+        "agent_training/curriculum.py": "512b5dd4bbd8bb9a5a9efb55576d95f1f64c657f903c53bb6fd3babfbcb44d83",
+        "agent_training/evaluate.py": "558a83942212d5360f261adc84d5064fd1572834719248230fc2f9a6d4b532ad",
+        "agent_training/evaluate_v2.py": "cc9b41f4ea9dd9e86ede06acd591a1a4aa8f73bbd1715c397354007b6b3530ba",
+        "agent_training/evaluate_v3.py": "44d413ec2d50e942e838c199880cb50abbc38363f19dbe4e23ed2632b26ec853",
+        "agent_training/evaluate_v4.py": "fa63986d87f7a43552daccb9ea29a42feb3d855ca4b14bcf09fe940df0d993e9",
+        "agent_training/features.py": "5d9240352a926660e5ef961ed91ffaaa4f5a84153f77cac492b55025e17e0fd2",
+        "agent_training/model.py": "48ed32b458af48413e65912c14b9bb58857ad36221a5ca1c00a383003bfc1357",
+        "agent_training/model_v3.py": "f7d8f310837980fead0008b4cf79b7e75b7b50016b5707d9175807d3fe3552c4",
+        "agent_training/model_v4.py": "609932c30cdde135f97b4c9f3f33253c2f84eb2b58de0ba84725d8fc6c253ac9",
+        "agent_training/runtime.py": "b87f21a0456e7ce01066e94622755413d024a6a59ca18519fa21c6c846f03aab",
+        "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6",
+        "agent_training/train.py": "9a388269a15ec0789b7e1d6208bd2609287ff0ed09d613636bbfffa08acbae9d",
+        "agent_training/train_tools.py": "faab5376eb9a8f681d3db196a20e1086b9a18b02775d2020c3c2f78b9c43b774",
+        "agent_training/train_v2.py": "81eed91b69132bbf62ead4699db73d1f4b826ab776a893af2af270ddd895d7aa",
+        "agent_training/train_v3.py": "869f4660e686e2b1a0229607f1832a199f4db295605c0e4510b99ea6ea3aeeb3",
+        "agent_training/train_v4.py": "478c5d233c582d68490794c120f6ef9fbe542ec491510b0153d365dcc70ae426",
+        "winward_scale/gpu_lock.py": "d909d68b071bfc362e96235604124e8c9756f31b17f6c8a3232272f9a738aed7",
+        "winward_scale/grow.py": "4e6ee86e5b6f896f1e98975a410225543d98e9f3f3652fa1e0f94df182156196",
+        "winward_scale/optimizer.py": "94d7ce1eacaba4aa5f2cf23a65b88e8672b5fac28805ef78972b2f3c5fa3bf52",
+        "winward_scale/structured.py": "ee427842db5e46c0ecfb5d61b81bc341d4599bfe0cc977b70e7cb4a7ee538912",
+        "winward_scale/structured_data.py": "8a44739493e87c7a9a54442c833a1a5f99717f6a92392865db6507434ad1a89c",
+        "winward_scale/structured_train.py": "8097fd32dc7d507599d13ee3c83bcd5b10ad351aedc133aee59af89af60bdc56",
+        "winward_scale/train.py": "fece3fe3659337bb289f5296b548b274f22b43748b5e0a3ec1db4f97cefc7f43"
+      },
+      "quality_promoted": false
+    }
+  ],
+  "selection": {
+    "rule": "Choose the best main-training development next-action accuracy; exact ties choose the earlier checkpoint. Do not select on final audit results.",
+    "selected_run": "scale-structured-4b-train01",
+    "selected_step": 96,
+    "selected_accuracy": 0.947265625,
+    "four_b_updates_in_selected_lineage": 104,
+    "four_b_updates_executed_across_probe_and_main": 136,
+    "scope": "Width expansion initialized from our own previously trained small policy. Size alone adds no skill."
+  }
+}

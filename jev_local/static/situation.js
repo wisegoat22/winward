@@ -19,6 +19,7 @@
   let busy = false;
   let revision = 0;
   let current = null;
+  let modelWasChosen = false;
   const node = (tag, value, className) => {
     const element = document.createElement(tag);
     if (value !== undefined && value !== null) element.textContent = String(value);
@@ -38,6 +39,7 @@
     $("fact-fields").disabled = value;
     $("restriction-fields").disabled = value;
     $("task-kind").disabled = value || !current;
+    $("decision-model").disabled = value || !current;
     document.querySelectorAll("[data-sample]").forEach(button => { button.disabled = value; });
     $("interpret-button").textContent = value && step === "read" ? "Reading your situation…" : "Read my situation →";
     $("decide-button").textContent = value && step === "decide" ? "Choosing your next step…" : "Get my next step →";
@@ -221,13 +223,30 @@
     const body = { ...current.input, draft, confirmed_facts: confirmed, max_depth: 5 };
     lock(true, "decide");
     try {
-      const data = await api("/api/situation/decide", body);
+      const endpoint = $("decision-model").value === "4b" ? "/api/situation/decide4b" : "/api/situation/decide";
+      const data = await api(endpoint, body);
       if (revision === startedRevision) showRecommendation(data);
     } catch (error) {
       if (revision === startedRevision) showError(error.message);
     } finally { lock(false); }
   });
   $("situation-input").addEventListener("input", invalidate);
+  $("decision-model").addEventListener("change", () => {
+    modelWasChosen = true;
+    revision += 1;
+    clearRecommendation();
+    showError();
+  });
+  fetch("/api/scale/model").then(response => response.ok ? response.json() : null).then(data => {
+    if (!data || !data.ready) return;
+    $("model-4b-option").disabled = false;
+    $("model-4b-option").textContent = data.label;
+    $("model-status").textContent = "Our trained 4.25B model is available for comparison. Its first request loads it locally. Larger does not necessarily mean better.";
+    if (!modelWasChosen && new URLSearchParams(location.search).get("model") === "4b") {
+      $("decision-model").value = "4b";
+      if (current) { revision += 1; clearRecommendation(); showError(); }
+    }
+  }).catch(() => {});
   $("goal-input").addEventListener("input", invalidate);
   $("draft-facts").addEventListener("change", () => {
     revision += 1;

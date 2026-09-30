@@ -1,0 +1,142 @@
+{
+  "status": "completed",
+  "parameters": 4251056641,
+  "model_sha256": "509f15c2169590d1925b485c843a969aa4394ac75060e8d0c75473d03a4dda20",
+  "protocol_sha256": "1f369287158faa97388338101750b0c32e3f5209ffed594c4f7274eb64b9845b",
+  "sealed_report_sha256": "64a065f86b89699027533efc5d6fedba97dfac898a5eab5d91723ee486d5d35d",
+  "corpus_sha256": "978500191b6e8dc36b3dd77aacb93f929529c9dd5199056278768a033840151a",
+  "cases": 512,
+  "rollout_cases": 40,
+  "next_action": {
+    "candidate_accuracy": 0.9296875,
+    "baseline_accuracy": 0.935546875,
+    "candidate_correct": 476,
+    "baseline_correct": 479
+  },
+  "retention": {
+    "all_measured_retention_checks_passed": false,
+    "passed_checks": 4,
+    "total_checks": 7,
+    "checks": {
+      "next_action_overall": {
+        "candidate": 0.9296875,
+        "v4_parent": 0.935546875,
+        "passed": false
+      },
+      "next_action_graph": {
+        "candidate": 0.9217877094972067,
+        "v4_parent": 0.9245810055865922,
+        "passed": false
+      },
+      "next_action_belief": {
+        "candidate": 0.948051948051948,
+        "v4_parent": 0.961038961038961,
+        "passed": false
+      },
+      "no_invalid_or_ineligible_choices": {
+        "candidate": 0,
+        "v4_parent": 0,
+        "passed": true
+      },
+      "rollout_success_overall": {
+        "candidate": 0.9674838709677419,
+        "v4_parent": 0.9674838709677419,
+        "passed": true
+      },
+      "rollout_success_graph": {
+        "candidate": 0.9545454545454546,
+        "v4_parent": 0.9545454545454546,
+        "passed": true
+      },
+      "rollout_success_belief": {
+        "candidate": 0.9991111111111112,
+        "v4_parent": 0.9991111111111112,
+        "passed": true
+      }
+    }
+  },
+  "rollouts": {
+    "candidate_success": 0.9674838709677419,
+    "baseline_success": 0.9674838709677419,
+    "reference_success": 1.0,
+    "denominator": 31,
+    "scope": "Mean expected verified completion on initially unfinished, reference-reachable simulations; probabilities integrate belief outcomes."
+  },
+  "timing": {
+    "candidate_ms": 5.592055507577243,
+    "baseline_ms": 0.12685335747164572,
+    "scope": "Warmed batch8, amortized milliseconds per decision; one descriptive Mac run, candidate evaluated first."
+  },
+  "promotion": false,
+  "scope": "Controlled synthetic structured decisions, not arbitrary situations or actual tools.",
+  "paired_decisions": {
+    "cases": 512,
+    "candidate_only_correct": 2,
+    "v4_only_correct": 5,
+    "both_correct": 474,
+    "both_incorrect": 31,
+    "scope": "Paired observed correctness; no confidence interval or significance claim."
+  },
+  "inventory": {
+    "parameters": 4251056641,
+    "by_dtype": {
+      "bfloat16": {
+        "parameters": 4250856961,
+        "bytes": 8501713922,
+        "tensors": 52
+      },
+      "float32": {
+        "parameters": 199680,
+        "bytes": 798720,
+        "tensors": 26
+      }
+    },
+    "stored_parameter_gib": 7.918581964448094
+  },
+  "error_breakdown": {
+    "candidate": {
+      "premature_stop": 0,
+      "deferred_reachable": 0,
+      "invalid_or_ineligible": 0,
+      "wrong_eligible_action": 36
+    },
+    "v4_parent": {
+      "premature_stop": 0,
+      "deferred_reachable": 0,
+      "invalid_or_ineligible": 0,
+      "wrong_eligible_action": 33
+    }
+  },
+  "wall_seconds": 13.932751499989536,
+  "source_sha256": {
+    "agent_lab/belief.py": "ea640b221a04b27e0e5c0fad14be9cbcf66e4430292662b6ca34d72a3a22072a",
+    "agent_training/__init__.py": "468615bff8daa4de507492cea4b01cbde0d0b78989243aaf2e43b12378b23fbe",
+    "agent_training/belief_data.py": "a42685a0380d744ab9e0af71d07593815a260bc991ee0bc8840be391177733d4",
+    "agent_training/belief_data_v4.py": "075695a505c3bc24696cb8d1c07fa25f60f53aed867b72ab3653f80222c46201",
+    "agent_training/curriculum.py": "512b5dd4bbd8bb9a5a9efb55576d95f1f64c657f903c53bb6fd3babfbcb44d83",
+    "agent_training/evaluate.py": "558a83942212d5360f261adc84d5064fd1572834719248230fc2f9a6d4b532ad",
+    "agent_training/evaluate_v2.py": "cc9b41f4ea9dd9e86ede06acd591a1a4aa8f73bbd1715c397354007b6b3530ba",
+    "agent_training/evaluate_v3.py": "44d413ec2d50e942e838c199880cb50abbc38363f19dbe4e23ed2632b26ec853",
+    "agent_training/evaluate_v4.py": "fa63986d87f7a43552daccb9ea29a42feb3d855ca4b14bcf09fe940df0d993e9",
+    "agent_training/features.py": "5d9240352a926660e5ef961ed91ffaaa4f5a84153f77cac492b55025e17e0fd2",
+    "agent_training/model.py": "48ed32b458af48413e65912c14b9bb58857ad36221a5ca1c00a383003bfc1357",
+    "agent_training/model_v3.py": "f7d8f310837980fead0008b4cf79b7e75b7b50016b5707d9175807d3fe3552c4",
+    "agent_training/model_v4.py": "609932c30cdde135f97b4c9f3f33253c2f84eb2b58de0ba84725d8fc6c253ac9",
+    "agent_training/runtime.py": "b87f21a0456e7ce01066e94622755413d024a6a59ca18519fa21c6c846f03aab",
+    "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6",
+    "agent_training/train.py": "9a388269a15ec0789b7e1d6208bd2609287ff0ed09d613636bbfffa08acbae9d",
+    "agent_training/train_tools.py": "faab5376eb9a8f681d3db196a20e1086b9a18b02775d2020c3c2f78b9c43b774",
+    "agent_training/train_v2.py": "81eed91b69132bbf62ead4699db73d1f4b826ab776a893af2af270ddd895d7aa",
+    "agent_training/train_v3.py": "869f4660e686e2b1a0229607f1832a199f4db295605c0e4510b99ea6ea3aeeb3",
+    "agent_training/train_v4.py": "478c5d233c582d68490794c120f6ef9fbe542ec491510b0153d365dcc70ae426",
+    "winward_scale/gpu_lock.py": "d909d68b071bfc362e96235604124e8c9756f31b17f6c8a3232272f9a738aed7",
+    "winward_scale/grow.py": "4e6ee86e5b6f896f1e98975a410225543d98e9f3f3652fa1e0f94df182156196",
+    "winward_scale/optimizer.py": "94d7ce1eacaba4aa5f2cf23a65b88e8672b5fac28805ef78972b2f3c5fa3bf52",
+    "winward_scale/structured.py": "ee427842db5e46c0ecfb5d61b81bc341d4599bfe0cc977b70e7cb4a7ee538912",
+    "winward_scale/structured_data.py": "8a44739493e87c7a9a54442c833a1a5f99717f6a92392865db6507434ad1a89c",
+    "winward_scale/structured_train.py": "8097fd32dc7d507599d13ee3c83bcd5b10ad351aedc133aee59af89af60bdc56",
+    "winward_scale/train.py": "fece3fe3659337bb289f5296b548b274f22b43748b5e0a3ec1db4f97cefc7f43",
+    "winward_scale/structured_audit.py": "108d00a64a1092269ed74dbfd8cb95b319457b9ce01030bb814e73446f9db003"
+  },
+  "weight_lineage": "Own random-initialized policy lineage to frozen v4, width growth and full-parameter training; no Qwen or third-party model weights."
+}

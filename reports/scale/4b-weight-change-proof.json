@@ -1,0 +1,864 @@
+{
+  "version": "winward-stored-weight-change-proof-1",
+  "before": {
+    "run": "scale-structured-4b-probe01",
+    "checkpoint": "step-00000008",
+    "model_sha256": "2f44788f5c3507510c74abc3f262a6cff712095daa03db2eaf87e63a0b854e38",
+    "parameters": 4251056641,
+    "step": 8,
+    "total_optimizer_updates": 208
+  },
+  "after": {
+    "run": "scale-structured-4b-train01",
+    "checkpoint": "step-00000096",
+    "model_sha256": "509f15c2169590d1925b485c843a969aa4394ac75060e8d0c75473d03a4dda20",
+    "parameters": 4251056641,
+    "step": 96,
+    "total_optimizer_updates": 304
+  },
+  "checksums_verified": true,
+  "comparison": "Every stored numeric value; signed zeros are equal; nonfinite values rejected.",
+  "chunk_elements": 1048576,
+  "device": "CPU, bounded file reads; no model or GPU allocation",
+  "parameters": 4251056641,
+  "changed_parameters": 2705102694,
+  "changed_fraction": 0.6363365446393261,
+  "parameter_tensors": 78,
+  "changed_parameter_tensors": 77,
+  "matrix_tensors": 38,
+  "changed_matrix_tensors": 38,
+  "matrix_parameters": 4250618880,
+  "changed_matrix_parameters": 2704899208,
+  "unchanged_tensors": [
+    "output.bias"
+  ],
+  "tensors": [
+    {
+      "name": "blocks.0.attention.key_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 33891808,
+      "matrix": true
+    },
+    {
+      "name": "blocks.0.attention.out_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 33618642,
+      "matrix": true
+    },
+    {
+      "name": "blocks.0.attention.query_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 34589934,
+      "matrix": true
+    },
+    {
+      "name": "blocks.0.attention.value_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 33455716,
+      "matrix": true
+    },
+    {
+      "name": "blocks.0.down.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 7680,
+      "changed_parameters": 352,
+      "matrix": false
+    },
+    {
+      "name": "blocks.0.down.weight",
+      "shape": [
+        7680,
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 190250981,
+      "matrix": true
+    },
+    {
+      "name": "blocks.0.norm1.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "blocks.0.norm1.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7667,
+      "matrix": false
+    },
+    {
+      "name": "blocks.0.norm2.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7679,
+      "matrix": false
+    },
+    {
+      "name": "blocks.0.norm2.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7622,
+      "matrix": false
+    },
+    {
+      "name": "blocks.0.up.bias",
+      "shape": [
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 30720,
+      "changed_parameters": 240,
+      "matrix": false
+    },
+    {
+      "name": "blocks.0.up.weight",
+      "shape": [
+        30720,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 138989838,
+      "matrix": true
+    },
+    {
+      "name": "blocks.1.attention.key_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 33838715,
+      "matrix": true
+    },
+    {
+      "name": "blocks.1.attention.out_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 34014453,
+      "matrix": true
+    },
+    {
+      "name": "blocks.1.attention.query_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 36518096,
+      "matrix": true
+    },
+    {
+      "name": "blocks.1.attention.value_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 32257695,
+      "matrix": true
+    },
+    {
+      "name": "blocks.1.down.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 7680,
+      "changed_parameters": 208,
+      "matrix": false
+    },
+    {
+      "name": "blocks.1.down.weight",
+      "shape": [
+        7680,
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 192911966,
+      "matrix": true
+    },
+    {
+      "name": "blocks.1.norm1.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "blocks.1.norm1.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7661,
+      "matrix": false
+    },
+    {
+      "name": "blocks.1.norm2.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "blocks.1.norm2.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7658,
+      "matrix": false
+    },
+    {
+      "name": "blocks.1.up.bias",
+      "shape": [
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 30720,
+      "changed_parameters": 521,
+      "matrix": false
+    },
+    {
+      "name": "blocks.1.up.weight",
+      "shape": [
+        30720,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 138540997,
+      "matrix": true
+    },
+    {
+      "name": "blocks.2.attention.key_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 34610769,
+      "matrix": true
+    },
+    {
+      "name": "blocks.2.attention.out_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 31117638,
+      "matrix": true
+    },
+    {
+      "name": "blocks.2.attention.query_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 35661034,
+      "matrix": true
+    },
+    {
+      "name": "blocks.2.attention.value_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 30228596,
+      "matrix": true
+    },
+    {
+      "name": "blocks.2.down.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 7680,
+      "changed_parameters": 175,
+      "matrix": false
+    },
+    {
+      "name": "blocks.2.down.weight",
+      "shape": [
+        7680,
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 190556000,
+      "matrix": true
+    },
+    {
+      "name": "blocks.2.norm1.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "blocks.2.norm1.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7641,
+      "matrix": false
+    },
+    {
+      "name": "blocks.2.norm2.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7679,
+      "matrix": false
+    },
+    {
+      "name": "blocks.2.norm2.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7665,
+      "matrix": false
+    },
+    {
+      "name": "blocks.2.up.bias",
+      "shape": [
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 30720,
+      "changed_parameters": 448,
+      "matrix": false
+    },
+    {
+      "name": "blocks.2.up.weight",
+      "shape": [
+        30720,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 132065044,
+      "matrix": true
+    },
+    {
+      "name": "blocks.3.attention.key_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 34108113,
+      "matrix": true
+    },
+    {
+      "name": "blocks.3.attention.out_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 29644681,
+      "matrix": true
+    },
+    {
+      "name": "blocks.3.attention.query_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 33765367,
+      "matrix": true
+    },
+    {
+      "name": "blocks.3.attention.value_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 29358689,
+      "matrix": true
+    },
+    {
+      "name": "blocks.3.down.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 7680,
+      "changed_parameters": 148,
+      "matrix": false
+    },
+    {
+      "name": "blocks.3.down.weight",
+      "shape": [
+        7680,
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 187384960,
+      "matrix": true
+    },
+    {
+      "name": "blocks.3.norm1.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "blocks.3.norm1.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7664,
+      "matrix": false
+    },
+    {
+      "name": "blocks.3.norm2.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "blocks.3.norm2.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7652,
+      "matrix": false
+    },
+    {
+      "name": "blocks.3.up.bias",
+      "shape": [
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 30720,
+      "changed_parameters": 483,
+      "matrix": false
+    },
+    {
+      "name": "blocks.3.up.weight",
+      "shape": [
+        30720,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 126527814,
+      "matrix": true
+    },
+    {
+      "name": "blocks.4.attention.key_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 32845400,
+      "matrix": true
+    },
+    {
+      "name": "blocks.4.attention.out_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 28938828,
+      "matrix": true
+    },
+    {
+      "name": "blocks.4.attention.query_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 33739872,
+      "matrix": true
+    },
+    {
+      "name": "blocks.4.attention.value_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 28407547,
+      "matrix": true
+    },
+    {
+      "name": "blocks.4.down.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 7680,
+      "changed_parameters": 196,
+      "matrix": false
+    },
+    {
+      "name": "blocks.4.down.weight",
+      "shape": [
+        7680,
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 187592337,
+      "matrix": true
+    },
+    {
+      "name": "blocks.4.norm1.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7679,
+      "matrix": false
+    },
+    {
+      "name": "blocks.4.norm1.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7640,
+      "matrix": false
+    },
+    {
+      "name": "blocks.4.norm2.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "blocks.4.norm2.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7642,
+      "matrix": false
+    },
+    {
+      "name": "blocks.4.up.bias",
+      "shape": [
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 30720,
+      "changed_parameters": 534,
+      "matrix": false
+    },
+    {
+      "name": "blocks.4.up.weight",
+      "shape": [
+        30720,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 128182776,
+      "matrix": true
+    },
+    {
+      "name": "blocks.5.attention.key_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 29165610,
+      "matrix": true
+    },
+    {
+      "name": "blocks.5.attention.out_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 28340085,
+      "matrix": true
+    },
+    {
+      "name": "blocks.5.attention.query_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 30348289,
+      "matrix": true
+    },
+    {
+      "name": "blocks.5.attention.value_proj.weight",
+      "shape": [
+        7680,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 58982400,
+      "changed_parameters": 27764103,
+      "matrix": true
+    },
+    {
+      "name": "blocks.5.down.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 7680,
+      "changed_parameters": 240,
+      "matrix": false
+    },
+    {
+      "name": "blocks.5.down.weight",
+      "shape": [
+        7680,
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 191013548,
+      "matrix": true
+    },
+    {
+      "name": "blocks.5.norm1.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "blocks.5.norm1.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7672,
+      "matrix": false
+    },
+    {
+      "name": "blocks.5.norm2.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "blocks.5.norm2.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7672,
+      "matrix": false
+    },
+    {
+      "name": "blocks.5.up.bias",
+      "shape": [
+        30720
+      ],
+      "dtype": "BF16",
+      "parameters": 30720,
+      "changed_parameters": 392,
+      "matrix": false
+    },
+    {
+      "name": "blocks.5.up.weight",
+      "shape": [
+        30720,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 235929600,
+      "changed_parameters": 129886804,
+      "matrix": true
+    },
+    {
+      "name": "input_projection.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 7680,
+      "changed_parameters": 193,
+      "matrix": false
+    },
+    {
+      "name": "input_projection.weight",
+      "shape": [
+        7680,
+        505
+      ],
+      "dtype": "BF16",
+      "parameters": 3878400,
+      "changed_parameters": 764653,
+      "matrix": true
+    },
+    {
+      "name": "norm.bias",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7680,
+      "matrix": false
+    },
+    {
+      "name": "norm.weight",
+      "shape": [
+        7680
+      ],
+      "dtype": "F32",
+      "parameters": 7680,
+      "changed_parameters": 7663,
+      "matrix": false
+    },
+    {
+      "name": "output.bias",
+      "shape": [
+        1
+      ],
+      "dtype": "BF16",
+      "parameters": 1,
+      "changed_parameters": 0,
+      "matrix": false
+    },
+    {
+      "name": "output.weight",
+      "shape": [
+        1,
+        7680
+      ],
+      "dtype": "BF16",
+      "parameters": 7680,
+      "changed_parameters": 1810,
+      "matrix": true
+    }
+  ],
+  "limitation": "Stored changes prove weights were updated; they do not show every scalar changed, useful new skills, or improved decision quality.",
+  "initialization_identity_verified": {
+    "after_run_parent_sha256": "2f44788f5c3507510c74abc3f262a6cff712095daa03db2eaf87e63a0b854e38",
+    "matches_before_checkpoint": true,
+    "growth_factor": 1,
+    "source_sha256": "ee427842db5e46c0ecfb5d61b81bc341d4599bfe0cc977b70e7cb4a7ee538912",
+    "source_matches_training_protocol": true,
+    "note": "The main run copied already-BF16 structured weights at factor1. No width growth or nullspace noise applies when the input copy count is1; the compared differences therefore arise after that identity initialization."
+  }
+}

@@ -30,6 +30,9 @@ from agent_lab.runtime_v3 import V3Runtime
 from agent_lab.runtime_v4 import V4Runtime
 from agent_lab.situation import interpretation_result, choose_next_step
 from .situation_schemas import SituationInput, SituationDecision
+from winward_scale.status import read_status as scaling_status
+from winward_scale.gpu_lock import ComputeBusy, run_local
+from winward_scale.runtime import ScaledRuntime
 
 STATIC = Path(__file__).parent / "static"
 
@@ -46,6 +49,7 @@ def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_fact
             app.state.lab = lab_factory()
             app.state.v3 = v3_factory()
             app.state.v4 = v4_factory()
+            app.state.scaled = ScaledRuntime()
             yield
         finally:
             app.state.executor.shutdown(wait=True, cancel_futures=True)
@@ -84,7 +88,7 @@ def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_fact
             raise HTTPException(429, "The model is busy. Wait for the current request to finish.")
         async with app.state.lock:
             loop = asyncio.get_running_loop()
-            work = loop.run_in_executor(app.state.executor, partial(method, *args))
+            work = loop.run_in_executor(app.state.executor, partial(run_local, method, *args))
             try:
                 return await asyncio.shield(work)
             except asyncio.CancelledError:
@@ -92,6 +96,8 @@ def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_fact
                 # request while the original inference still runs.
                 await work
                 raise
+            except ComputeBusy as error:
+                raise HTTPException(503, str(error)) from error
             except ValueError as error:
                 raise HTTPException(422, str(error)) from error
             except ModelNotReadyError as error:
@@ -111,6 +117,24 @@ def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_fact
     @app.get("/api/examples")
     def examples():
         return {"examples": EXAMPLES}
+
+    @app.get("/api/scale/status")
+    def scale_status():
+        return scaling_status()
+
+    @app.get("/api/scale/model")
+    def scale_model():
+        return app.state.scaled.status()
+
+    @app.post("/api/situation/decide4b")
+    async def decide_situation_4b(request: SituationDecision):
+        if not app.state.scaled.status()["ready"]:
+            raise HTTPException(503, "Our trained 4B checkpoint is not ready to try yet. Follow progress at /scale.")
+        return await infer(app.state.scaled.decide_situation, request)
+
+    @app.get("/scale")
+    def scale_page():
+        return FileResponse(STATIC / "scale.html")
 
     @app.get("/api/v2/status")
     def lab_status():

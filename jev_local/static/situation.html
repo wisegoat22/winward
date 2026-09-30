@@ -15,12 +15,12 @@
 <div class="site-shell situation-shell">
   <header class="site-header">
     <a class="brand" href="/try"><span class="brand-symbol" aria-hidden="true">w<span>·</span></span><span>Winward <span class="brand-light">/ try it</span></span></a>
-    <nav aria-label="Main navigation"><a href="/v4">V4 results ↗</a><a href="/policy">Earlier model</a></nav>
+    <nav aria-label="Main navigation"><a href="/scale">Our 4B progress</a><a href="/v4">V4 results ↗</a><a href="/policy">Earlier model</a></nav>
   </header>
   <main id="main">
     <section class="intro">
       <div><p class="eyebrow">THE GOAL FIRST. THE NEXT STEP SECOND.</p><h1>What should I<br>do next?</h1><p class="intro-description">Describe a software task and the win you need. Check what Winward understood, then get one suggested next action.</p></div>
-      <aside class="local-note"><div><strong>A local experiment you can try.</strong><p>Qwen reads your description. Our Winward v4 model chooses the next action. Everything runs on this Mac.</p><span class="model-name">Qwen: 4B parameters · Our model: 4.86M parameters</span></div></aside>
+      <aside class="local-note"><div><strong>A local experiment you can try.</strong><p>Qwen reads your description. The Winward model you choose below selects the next action. Everything runs on this Mac.</p><span class="model-name">Separate jobs: Qwen reads · Our model decides</span></div></aside>
     </section>
     <p class="scope-note">This version supports software-agent tasks, such as inspecting a bug, making a change, testing it, or finishing. It suggests a step; it does not execute it. V4 is experimental and has not passed every <a href="/v4">promotion check</a>.</p>
     <div class="situation-workspace">
@@ -45,6 +45,7 @@
           <div class="goal-summary"><span class="eyebrow">THE WIN</span><p id="draft-goal"></p></div>
           <div id="restrictions-section" class="restrictions-section" hidden><fieldset id="restriction-fields"><legend>Your constraints</legend><p class="field-help">Review what was understood. Leave a constraint checked only if you intend it to apply. Uncheck a mistaken interpretation, or edit your description and read it again.</p><div id="draft-restrictions" class="restriction-list"></div></fieldset></div>
           <form id="decision-form">
+            <div class="field"><label for="decision-model">Which of our models should decide?</label><select id="decision-model"><option value="v4">Winward v4 · 4.86M parameters</option id="model-4b-option" value="4b" disabled>Winward 4.25B · training in progress</option></select><p id="model-status" class="field-help">The smaller model remains available. <a href="/scale">See our 4B progress.</a></p></div>
             <div class="field task-kind-field"><label for="task-kind">What kind of task is this?</label><select id="task-kind" aria-describedby="task-kind-help"><option value="bugfix">Fix a bug</option><option value="feature">Build a feature</option><option value="refactor">Refactor existing code</option><option value="investigate">Investigate a problem</option><option value="review">Review code</option><option value="documentation">Write or update documentation</option><option value="tests">Run existing checks</option></select><p id="task-kind-help" class="field-help">Check that this matches your intent. The kind of task changes which next actions are available.</p></div>
             <fieldset id="fact-fields"><legend>Which facts are already true?</legend><p class="field-help">Correct the checkboxes below. Checked facts tell the model what has already happened. Leave uncertain facts unchecked.</p><div id="draft-facts" class="fact-list"></div></fieldset>
             <div id="unknowns-section" class="draft-section" hidden><h4>Still unknown</h4><ul id="draft-unknowns" class="plain-list"></ul></div>

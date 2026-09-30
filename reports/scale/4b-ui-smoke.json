@@ -1,0 +1,100 @@
+{
+  "scope": "Six synthetic reviewed workflows and one text-to-review-to-decision smoke check through the running local HTTP app. No browser automation or actual tool execution. Not an independent quality audit.",
+  "model_sha256": "509f15c2169590d1925b485c843a969aa4394ac75060e8d0c75473d03a4dda20",
+  "workflow_checks": [
+    {
+      "case": "Need context",
+      "choice": "gather",
+      "accepted": [
+        "gather"
+      ],
+      "correct": true,
+      "source": {
+        "reader": "Qwen3 4B (local text reader)",
+        "decision": "Our Winward 4.25B \u00b7 4,251,056,641 parameters"
+      },
+      "model_decision_ms": 330.8424999995623
+    },
+    {
+      "case": "Known cause",
+      "choice": "change",
+      "accepted": [
+        "change"
+      ],
+      "correct": true,
+      "source": {
+        "reader": "Qwen3 4B (local text reader)",
+        "decision": "Our Winward 4.25B \u00b7 4,251,056,641 parameters"
+      },
+      "model_decision_ms": 29.583708004793152
+    },
+    {
+      "case": "Verify change",
+      "choice": "verify",
+      "accepted": [
+        "verify"
+      ],
+      "correct": true,
+      "source": {
+        "reader": "Qwen3 4B (local text reader)",
+        "decision": "Our Winward 4.25B \u00b7 4,251,056,641 parameters"
+      },
+      "model_decision_ms": 19.74804201745428
+    },
+    {
+      "case": "Already complete",
+      "choice": "STOP",
+      "accepted": [
+        "STOP"
+      ],
+      "correct": true,
+      "source": {
+        "reader": "Qwen3 4B (local text reader)",
+        "decision": "Our Winward 4.25B \u00b7 4,251,056,641 parameters"
+      },
+      "model_decision_ms": 19.308833027025685
+    },
+    {
+      "case": "Review new goal",
+      "choice": "review",
+      "accepted": [
+        "review"
+      ],
+      "correct": true,
+      "source": {
+        "reader": "Qwen3 4B (local text reader)",
+        "decision": "Our Winward 4.25B \u00b7 4,251,056,641 parameters"
+      },
+      "model_decision_ms": 19.456250010989606
+    },
+    {
+      "case": "Check documentation",
+      "choice": "verify_docs",
+      "accepted": [
+        "verify_docs"
+      ],
+      "correct": true,
+      "source": {
+        "reader": "Qwen3 4B (local text reader)",
+        "decision": "Our Winward 4.25B \u00b7 4,251,056,641 parameters"
+      },
+      "model_decision_ms": 18.863750010496005
+    }
+  ],
+  "text_flow": {
+    "reader_status": "ready",
+    "raw_extracted_facts": [
+      "context_available",
+      "cause_known",
+      "change_applied"
+    ],
+    "before_review": "clarify",
+    "review_change": "Confirmed that success criteria are clear.",
+    "after_review": "verify",
+    "source": {
+      "reader": "Qwen3 4B (local text reader)",
+      "decision": "Our Winward 4.25B \u00b7 4,251,056,641 parameters"
+    }
+  },
+  "checksum_verified_by_runtime": true
+}

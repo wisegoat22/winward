@@ -1,0 +1,316 @@
+{
+  "scope": "Completed development experiments, not sealed audits or capability promotion. Models initialized locally or from our own checkpoints; no outside weights.",
+  "runs": [
+    {
+      "id": "scale-32m-pilot01",
+      "status": "completed",
+      "parameters": 31601152,
+      "purpose": "pilot",
+      "step": 400,
+      "total_optimizer_updates": 400,
+      "wall_seconds": 27.16787325000041,
+      "training_seconds": 24.784477045119274,
+      "peak_mlx_gib": 0.8863110225647688,
+      "validation": {
+        "examples": 128,
+        "next_action_correct": 36,
+        "next_action_accuracy": 0.28125,
+        "completion_loss": 0.9628754071891308,
+        "prediction_token_counts": {
+          "83": 128
+        },
+        "wall_seconds": 0.1154261660121847,
+        "scope": "Validation, used for development; exact canonical first-byte agreement, unconstrained output. Not a final audit or rollout score."
+      },
+      "first_update_sample_check": {
+        "tensors": 92,
+        "tensors_with_changed_sample": 71,
+        "unchanged_sample_tensors": [
+          "layers.0.attention_norm.weight",
+          "layers.0.ffn_norm.weight",
+          "layers.1.attention_norm.weight",
+          "layers.1.ffn_norm.weight",
+          "layers.2.attention_norm.weight",
+          "layers.2.ffn_norm.weight",
+          "layers.3.attention_norm.weight",
+          "layers.3.ffn_norm.weight",
+          "layers.4.attention_norm.weight",
+          "layers.4.ffn_norm.weight",
+          "layers.5.attention_norm.weight",
+          "layers.5.ffn_norm.weight",
+          "layers.6.attention_norm.weight",
+          "layers.6.ffn_norm.weight",
+          "layers.7.attention_norm.weight",
+          "layers.7.ffn_norm.weight",
+          "layers.8.attention_norm.weight",
+          "layers.8.ffn_norm.weight",
+          "layers.9.attention_norm.weight",
+          "layers.9.ffn_norm.weight",
+          "norm.weight"
+        ],
+        "scope": "Up to32 fixed positions per trainable tensor; not proof every weight changed."
+      },
+      "majority_label_baseline": {
+        "label": "S",
+        "validation_accuracy": 0.28125
+      },
+      "initialization": "random weights; no pretrained parameters",
+      "parent_sha256": null,
+      "model_sha256": "963f11a934394533a4cf2bae7d91efe25e258bc210ab35850eb7de5878709421",
+      "source_sha256": {
+        "winward_scale/data.py": "9f6ac125751dc3415879a67e2d2fcece4873ad25d377e194e57add903f9b58f6",
+        "winward_scale/model.py": "e67679aeb7e61ca45084f817c8a377629f54ce863e5ccc0f9096940e4ef3536c",
+        "winward_scale/train.py": "a1bca1c84698475240bec6cda65c8bd03b12470436ec7a5d6940b01bafacf967",
+        "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6"
+      },
+      "validation_history": [
+        {
+          "step": 100,
+          "next_action_accuracy": 0.28125
+        },
+        {
+          "step": 200,
+          "next_action_accuracy": 0.2734375
+        },
+        {
+          "step": 300,
+          "next_action_accuracy": 0.1171875
+        },
+        {
+          "step": 400,
+          "next_action_accuracy": 0.28125
+        }
+      ]
+    },
+    {
+      "id": "scale-32m-pilot02",
+      "status": "completed",
+      "parameters": 31601152,
+      "purpose": "pilot",
+      "step": 3000,
+      "total_optimizer_updates": 3000,
+      "wall_seconds": 410.996033790987,
+      "training_seconds": 399.5812033538823,
+      "peak_mlx_gib": 1.08402512781322,
+      "validation": {
+        "examples": 256,
+        "next_action_correct": 61,
+        "next_action_accuracy": 0.23828125,
+        "completion_loss": 0.9424877557903528,
+        "prediction_token_counts": {
+          "83": 231,
+          "65": 25
+        },
+        "wall_seconds": 0.33768991599208675,
+        "scope": "Validation, used for development; exact canonical first-byte agreement, unconstrained output. Not a final audit or rollout score."
+      },
+      "first_update_sample_check": {
+        "tensors": 92,
+        "tensors_with_changed_sample": 92,
+        "unchanged_sample_tensors": [],
+        "scope": "Up to32 fixed positions per trainable tensor; not proof every weight changed."
+      },
+      "majority_label_baseline": {
+        "label": "S",
+        "validation_accuracy": 0.24609375
+      },
+      "initialization": "random weights; no pretrained parameters",
+      "parent_sha256": null,
+      "model_sha256": "78c72fc88c64b5286e7718208e54a7b3bf7a0aa656a148da343328c5d8b1f750",
+      "source_sha256": {
+        "winward_scale/data.py": "9f6ac125751dc3415879a67e2d2fcece4873ad25d377e194e57add903f9b58f6",
+        "winward_scale/model.py": "cffaf0f63f1041f78c505439960381db5284c9a61386a99f7a6218860eaee835",
+        "winward_scale/train.py": "299659606a6a6904867d58a2ef8f9db2074600bf167056c289a5a1f8ee5f2e3e",
+        "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6"
+      },
+      "validation_history": [
+        {
+          "step": 500,
+          "next_action_accuracy": 0.15234375
+        },
+        {
+          "step": 1000,
+          "next_action_accuracy": 0.265625
+        },
+        {
+          "step": 1500,
+          "next_action_accuracy": 0.2578125
+        },
+        {
+          "step": 2000,
+          "next_action_accuracy": 0.265625
+        },
+        {
+          "step": 2500,
+          "next_action_accuracy": 0.2734375
+        },
+        {
+          "step": 3000,
+          "next_action_accuracy": 0.23828125
+        }
+      ]
+    },
+    {
+      "id": "scale-32m-fit01",
+      "status": "completed",
+      "parameters": 31601152,
+      "purpose": "pilot",
+      "step": 1000,
+      "total_optimizer_updates": 3500,
+      "wall_seconds": 69.98886495898478,
+      "training_seconds": 66.27353784115985,
+      "peak_mlx_gib": 1.0421403739601374,
+      "validation": {
+        "examples": 64,
+        "next_action_correct": 11,
+        "next_action_accuracy": 0.171875,
+        "completion_loss": 2.4655757024884224,
+        "prediction_token_counts": {
+          "83": 19,
+          "65": 17,
+          "69": 6,
+          "68": 4,
+          "66": 6,
+          "67": 11,
+          "258": 1
+        },
+        "wall_seconds": 0.06190975001663901,
+        "scope": "Validation, used for development; exact canonical first-byte agreement, unconstrained output. Not a final audit or rollout score."
+      },
+      "training_fit": {
+        "examples": 32,
+        "next_action_correct": 32,
+        "next_action_accuracy": 1.0,
+        "completion_loss": 0.00569460989208892,
+        "prediction_token_counts": {
+          "65": 8,
+          "67": 3,
+          "68": 3,
+          "69": 6,
+          "66": 3,
+          "83": 9
+        },
+        "wall_seconds": 0.026494915975490585,
+        "scope": "Fit on the first32 training examples, not held-out generalization or an audit."
+      },
+      "first_update_sample_check": {
+        "tensors": 92,
+        "tensors_with_changed_sample": 92,
+        "unchanged_sample_tensors": [],
+        "scope": "Up to32 fixed positions per trainable tensor; not proof every weight changed."
+      },
+      "majority_label_baseline": {
+        "label": "S",
+        "validation_accuracy": 0.28125
+      },
+      "initialization": "own local checkpoint",
+      "parent_sha256": "4877a4c1f494487d5e2388648c7e8e4f71fc901f62f1d41257bd922c11e36ea3",
+      "model_sha256": "53f2b7cd633ee5f8de49b74725dfdab9547d2f344bf431f11685b3376941f040",
+      "source_sha256": {
+        "winward_scale/data.py": "9f6ac125751dc3415879a67e2d2fcece4873ad25d377e194e57add903f9b58f6",
+        "winward_scale/model.py": "cffaf0f63f1041f78c505439960381db5284c9a61386a99f7a6218860eaee835",
+        "winward_scale/train.py": "8ad5a2e5c32ab3b62fcdba2b4b3e650cbf70a3578b54b2523d3a55e7ffbf1a37",
+        "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6"
+      },
+      "validation_history": [
+        {
+          "step": 250,
+          "next_action_accuracy": 0.171875
+        },
+        {
+          "step": 500,
+          "next_action_accuracy": 0.140625
+        },
+        {
+          "step": 750,
+          "next_action_accuracy": 0.1875
+        },
+        {
+          "step": 1000,
+          "next_action_accuracy": 0.171875
+        }
+      ]
+    },
+    {
+      "id": "scale-32m-primitives01",
+      "status": "completed",
+      "parameters": 31601152,
+      "purpose": "pilot",
+      "step": 1500,
+      "total_optimizer_updates": 1500,
+      "wall_seconds": 228.16570766700897,
+      "training_seconds": 221.91801291168667,
+      "peak_mlx_gib": 1.1510735619813204,
+      "validation": {
+        "examples": 256,
+        "next_action_correct": 174,
+        "next_action_accuracy": 0.6796875,
+        "completion_loss": 0.27694285358302295,
+        "prediction_token_counts": {
+          "83": 52,
+          "65": 130,
+          "63": 53,
+          "67": 9,
+          "66": 12
+        },
+        "wall_seconds": 0.23935104100382887,
+        "scope": "Validation, used for development; exact canonical first-byte agreement, unconstrained output. Not a final audit or rollout score."
+      },
+      "training_fit": {
+        "examples": 32,
+        "next_action_correct": 25,
+        "next_action_accuracy": 0.78125,
+        "completion_loss": 0.2802045028656721,
+        "prediction_token_counts": {
+          "83": 7,
+          "65": 17,
+          "63": 6,
+          "66": 2
+        },
+        "wall_seconds": 0.03049891602131538,
+        "scope": "Fit on the first32 training examples, not held-out generalization or an audit."
+      },
+      "first_update_sample_check": {
+        "tensors": 92,
+        "tensors_with_changed_sample": 92,
+        "unchanged_sample_tensors": [],
+        "scope": "Up to32 fixed positions per trainable tensor; not proof every weight changed."
+      },
+      "majority_label_baseline": {
+        "label": "A",
+        "validation_accuracy": 0.29296875
+      },
+      "initialization": "random weights; no pretrained parameters",
+      "parent_sha256": null,
+      "model_sha256": "967d996ee4131b817d744ad412b6c0706c527622af3a6a2b7eaf069490f2c484",
+      "source_sha256": {
+        "winward_scale/data.py": "f73882e18887c1f6826f49ae558352fbc60533bd945947872aa22e089771888f",
+        "winward_scale/model.py": "cffaf0f63f1041f78c505439960381db5284c9a61386a99f7a6218860eaee835",
+        "winward_scale/train.py": "fece3fe3659337bb289f5296b548b274f22b43748b5e0a3ec1db4f97cefc7f43",
+        "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6"
+      },
+      "validation_history": [
+        {
+          "step": 300,
+          "next_action_accuracy": 0.40234375
+        },
+        {
+          "step": 600,
+          "next_action_accuracy": 0.55078125
+        },
+        {
+          "step": 900,
+          "next_action_accuracy": 0.5859375
+        },
+        {
+          "step": 1200,
+          "next_action_accuracy": 0.703125
+        },
+        {
+          "step": 1500,
+          "next_action_accuracy": 0.6796875
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "checked_at_utc": "2026-09-30T18:47:23.396808+00:00",
+  "python_suite": {
+    "passed": 656,
+    "failed": 0,
+    "warning": "Existing FastAPI/Starlette httpx TestClient deprecation."
+  },
+  "javascript_syntax": [
+    "situation.js",
+    "scale.js"
+  ],
+  "dom_tests": "Model selector and audit panel exercised with mocked DOM; no browser automation.",
+  "live_http_smoke": "Six reviewed workflow decisions plus one text interpretation/review/decision cycle; see4b-ui-smoke.json.",
+  "frozen_sources_unchanged": 25,
+  "historical_checkpoint_report_config_hashes_unchanged": 12,
+  "quality_scope": "These implementation checks do not replace the sealed decision audit.",
+  "model_sha256": "509f15c2169590d1925b485c843a969aa4394ac75060e8d0c75473d03a4dda20"
+}
