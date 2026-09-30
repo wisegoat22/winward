@@ -2,6 +2,8 @@
 
 Open **http://127.0.0.1:8765/policy** after starting `Start JEV.command`.
 
+For the later uncertainty and real-tool experiments, see [the v2 guide](docs/V2.md). This document describes the preserved v1 model.
+
 The public source checkout excludes local `runs/` artifacts and checkpoint weights. Published v1 metrics are in [reports/v1](reports/v1/). Follow the root README to train the default serving checkpoint; paths under `runs/` below describe locally generated artifacts.
 
 GoalPolicy v1 has **4,759,809 trainable parameters (4.76 million)**. Every weight starts randomly and is trained on this Mac using MLX. There are no pretrained weights, Qwen adapters, Qwen-generated labels, or text embeddings. The separate Qwen demo is still available at the home page.

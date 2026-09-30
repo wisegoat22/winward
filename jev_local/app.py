@@ -18,16 +18,18 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 from .config import MAX_INPUT_TOKENS, MODEL_ID, MODEL_REVISION
-from .engine import Engine
+from .lazy_engine import LazyEngine, ModelNotReadyError
 from .examples import EXAMPLES
 from .schemas import DecisionRequest, GenerationRequest, ScoreRequest, TokenizeRequest
 from .policy_schemas import PolicyRequest
 from agent_training.runtime import PolicyRuntime
+from .lab_schemas import SandboxRequest, UncertaintyRequest
+from agent_lab.runtime import LabRuntime
 
 STATIC = Path(__file__).parent / "static"
 
 
-def create_app(engine_factory=Engine, policy_factory=PolicyRuntime):
+def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_factory=LabRuntime):
     @asynccontextmanager
     async def lifespan(app):
         app.state.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="jev-inference")
@@ -36,11 +38,12 @@ def create_app(engine_factory=Engine, policy_factory=PolicyRuntime):
             loop = asyncio.get_running_loop()
             app.state.engine = await loop.run_in_executor(app.state.executor, engine_factory)
             app.state.policy = policy_factory()
+            app.state.lab = lab_factory()
             yield
         finally:
             app.state.executor.shutdown(wait=True, cancel_futures=True)
 
-    app = FastAPI(title="JEV Local", version="0.1.0", lifespan=lifespan,
+    app = FastAPI(title="Winward", version="0.2.0", lifespan=lifespan,
                   docs_url=None, redoc_url=None)
     app.add_middleware(TrustedHostMiddleware, allowed_hosts=["127.0.0.1", "localhost", "::1", "testserver"])
 
@@ -84,6 +87,8 @@ def create_app(engine_factory=Engine, policy_factory=PolicyRuntime):
                 raise
             except ValueError as error:
                 raise HTTPException(422, str(error)) from error
+            except ModelNotReadyError as error:
+                raise HTTPException(503, str(error)) from error
 
     def check_model(model):
         if model is not None and model not in (MODEL_ID, "jev-local"):
@@ -93,11 +98,33 @@ def create_app(engine_factory=Engine, policy_factory=PolicyRuntime):
     def health():
         return {"status": "ready", "model": MODEL_ID, "revision": MODEL_REVISION,
                 "runtime": "MLX / Apple silicon", "offline": True,
+                "qwen_loaded": not isinstance(app.state.engine, LazyEngine) or app.state.engine.engine is not None,
                 "max_input_tokens": MAX_INPUT_TOKENS}
 
     @app.get("/api/examples")
     def examples():
         return {"examples": EXAMPLES}
+
+    @app.get("/api/v2/status")
+    def lab_status():
+        return app.state.lab.status()
+
+    @app.get("/api/v2/examples")
+    def lab_examples():
+        return app.state.lab.examples()
+
+    @app.post("/api/v2/uncertainty")
+    async def uncertainty(request: UncertaintyRequest):
+        return await infer(app.state.lab.uncertainty, request.example_id, request.max_depth)
+
+    @app.post("/api/v2/sandbox")
+    async def sandbox(request: SandboxRequest):
+        return await infer(app.state.lab.sandbox, request.seed, request.kind,
+                           request.changed_goal, request.uncertain, request.policy)
+
+    @app.get("/v2")
+    def lab_page():
+        return FileResponse(STATIC / "v2.html")
 
     @app.get("/api/policy/status")
     def policy_status():

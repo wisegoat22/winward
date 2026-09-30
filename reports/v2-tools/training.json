@@ -1,0 +1,453 @@
+{
+  "model_name": "Winward v2.1 tools candidate",
+  "training_origin": "Random initialization; no pretrained, v1, or v2 weights loaded",
+  "parameter_count": 4759809,
+  "config": {
+    "input_dim": 103,
+    "width": 256,
+    "layers": 6,
+    "heads": 8,
+    "expansion": 4
+  },
+  "seed": 210000000,
+  "training_cases": 64000,
+  "validation_cases": 5110,
+  "test_cases": 2400,
+  "test": {
+    "accuracy": 0.9208333333333333,
+    "nontrivial_accuracy": 0.914721723518851,
+    "cases": 2400,
+    "nontrivial_cases": 2228
+  },
+  "steps": 6000,
+  "batch_size": 128,
+  "training_fixture_kinds": [
+    "boundary",
+    "rounding"
+  ],
+  "training_fixture_episodes": 128,
+  "training_observed_tool_decisions": 1218,
+  "validation_fixture_seed": 220000000,
+  "validation_fixture_episodes": 32,
+  "validation_rollout_seed": 220100000,
+  "before_training": {
+    "goals": {
+      "accuracy": 0.52875,
+      "nontrivial_accuracy": 0.4921418949259093,
+      "cases": 2400,
+      "nontrivial_cases": 2227,
+      "loss": 1.229096600835522
+    },
+    "tools": {
+      "accuracy": 0.4878228782287823,
+      "nontrivial_accuracy": 0.4288065843621399,
+      "cases": 2710,
+      "nontrivial_cases": 2430,
+      "loss": 1.1155978337425148
+    }
+  },
+  "best_validation": {
+    "step": 1500,
+    "goal_decisions": {
+      "accuracy": 0.9275,
+      "nontrivial_accuracy": 0.9218679838347553,
+      "cases": 2400,
+      "nontrivial_cases": 2227,
+      "loss": 0.8603323604835896,
+      "paired_goal_active_cases": 1008,
+      "paired_goal_active_accuracy": 0.9910714285714286,
+      "causal_choice_pairs": 73,
+      "causal_choice_pair_both_correct": 0.9041095890410958
+    },
+    "observed_tool_decisions": {
+      "accuracy": 1.0,
+      "nontrivial_accuracy": 1.0,
+      "cases": 2710,
+      "nontrivial_cases": 2430,
+      "loss": 0.10471457340977948
+    },
+    "actual_validation_episodes": 16,
+    "actual_validation_success_rate": 1.0,
+    "actual_validation_mean_actions": 9.625,
+    "selection": [
+      1.0,
+      0.9910714285714286,
+      0.9275
+    ]
+  },
+  "validation_history": [
+    {
+      "step": 500,
+      "goal_decisions": {
+        "accuracy": 0.9241666666666667,
+        "nontrivial_accuracy": 0.9182757072294566,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 0.7837266350266873,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9781746031746031,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.821917808219178
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10516961727590331
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.375,
+      "selection": [
+        1.0,
+        0.9781746031746031,
+        0.9241666666666667
+      ]
+    },
+    {
+      "step": 1000,
+      "goal_decisions": {
+        "accuracy": 0.9329166666666666,
+        "nontrivial_accuracy": 0.9277054333183655,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 0.6693634578286826,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9831349206349206,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.8767123287671232
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.1035285486863768
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.375,
+      "selection": [
+        1.0,
+        0.9831349206349206,
+        0.9329166666666666
+      ]
+    },
+    {
+      "step": 1500,
+      "goal_decisions": {
+        "accuracy": 0.9275,
+        "nontrivial_accuracy": 0.9218679838347553,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 0.8603323604835896,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9910714285714286,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.9041095890410958
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10471457340977948
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.625,
+      "selection": [
+        1.0,
+        0.9910714285714286,
+        0.9275
+      ]
+    },
+    {
+      "step": 2000,
+      "goal_decisions": {
+        "accuracy": 0.9454166666666667,
+        "nontrivial_accuracy": 0.9411764705882353,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 0.9154826307877859,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9771825396825397,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.8767123287671232
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10419494563840824
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.375,
+      "selection": [
+        1.0,
+        0.9771825396825397,
+        0.9454166666666667
+      ]
+    },
+    {
+      "step": 2500,
+      "goal_decisions": {
+        "accuracy": 0.9329166666666666,
+        "nontrivial_accuracy": 0.9277054333183655,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 1.1663000849369443,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9742063492063492,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.863013698630137
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10328859081680841
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.625,
+      "selection": [
+        1.0,
+        0.9742063492063492,
+        0.9329166666666666
+      ]
+    },
+    {
+      "step": 3000,
+      "goal_decisions": {
+        "accuracy": 0.9370833333333334,
+        "nontrivial_accuracy": 0.9321957790749887,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 1.0085565509740264,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9880952380952381,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.958904109589041
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.1031474888321301
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.625,
+      "selection": [
+        1.0,
+        0.9880952380952381,
+        0.9370833333333334
+      ]
+    },
+    {
+      "step": 3500,
+      "goal_decisions": {
+        "accuracy": 0.9304166666666667,
+        "nontrivial_accuracy": 0.9250112258643916,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 1.413271216803696,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9841269841269841,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.9315068493150684
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10311436892480236
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.375,
+      "selection": [
+        1.0,
+        0.9841269841269841,
+        0.9304166666666667
+      ]
+    },
+    {
+      "step": 4000,
+      "goal_decisions": {
+        "accuracy": 0.9329166666666666,
+        "nontrivial_accuracy": 0.9277054333183655,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 1.6061964262494197,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9900793650793651,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.958904109589041
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10311247127798781
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.625,
+      "selection": [
+        1.0,
+        0.9900793650793651,
+        0.9329166666666666
+      ]
+    },
+    {
+      "step": 4500,
+      "goal_decisions": {
+        "accuracy": 0.9345833333333333,
+        "nontrivial_accuracy": 0.9295015716210148,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 1.6082406839471757,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9890873015873016,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.958904109589041
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10310628009484084
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.625,
+      "selection": [
+        1.0,
+        0.9890873015873016,
+        0.9345833333333333
+      ]
+    },
+    {
+      "step": 5000,
+      "goal_decisions": {
+        "accuracy": 0.93875,
+        "nontrivial_accuracy": 0.9339919173776381,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 1.677753309407029,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9831349206349206,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.9452054794520548
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10309919120918494
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.625,
+      "selection": [
+        1.0,
+        0.9831349206349206,
+        0.93875
+      ]
+    },
+    {
+      "step": 5500,
+      "goal_decisions": {
+        "accuracy": 0.9325,
+        "nontrivial_accuracy": 0.9272563987427032,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 2.174093174050407,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9880952380952381,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.958904109589041
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.1030969826135152
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.625,
+      "selection": [
+        1.0,
+        0.9880952380952381,
+        0.9325
+      ]
+    },
+    {
+      "step": 6000,
+      "goal_decisions": {
+        "accuracy": 0.9354166666666667,
+        "nontrivial_accuracy": 0.9303996407723395,
+        "cases": 2400,
+        "nontrivial_cases": 2227,
+        "loss": 2.3220652718294876,
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9861111111111112,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.958904109589041
+      },
+      "observed_tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10309302141366705
+      },
+      "actual_validation_episodes": 16,
+      "actual_validation_success_rate": 1.0,
+      "actual_validation_mean_actions": 9.625,
+      "selection": [
+        1.0,
+        0.9861111111111112,
+        0.9354166666666667
+      ]
+    }
+  ],
+  "checkpoint_selection": "Validation-only lexicographic: actual16-episode completion, minimum of paired-goal accuracy and nontrivial tool-decision accuracy, then overall goal accuracy.",
+  "checkpoint_sha256": "5778327d4f3312f6efcf989b0782ad84b49f54a37deb1cc262a78bb6542a29cc",
+  "checkpoint_frozen_before_test_generation": true,
+  "test_seed_reserved": 240000000,
+  "real_task_test_seed_reserved": 230000000,
+  "elapsed_seconds": 107.23,
+  "teacher": "Tool samples: observed-state evidence-first rule, with tied unverified patches equally acceptable; actual tool outcomes recorded after selection. Synthetic samples: bounded-search goal curriculum.",
+  "curriculum_mix": {
+    "goal_curriculum_cases": 32000,
+    "augmented_tool_cases": 32000
+  },
+  "data_sha256": {
+    "tool-train-observations.jsonl": "379966c31e48724199c62687c3868c7cb2a56b0fdcb394f2dbeb79bb520a9a7d",
+    "tool-validation-observations.jsonl": "dcf14b1ee61c475e4781f2369cd561c9533852841f89b1473efa743c74a06507",
+    "train.jsonl": "ccf6ba254d3f06a4223f2b693b126df9919dfde18ee680e60fef4c6fd87ed2e8",
+    "valid-goals.jsonl": "0f2d4b68798d7fd9649036d2cd08a1c3c3daf1aa427aff8f5b45cf59acaa7f2b",
+    "valid-tools.jsonl": "44cf5049d1d93f17e9ac739cebbe27e5646af8c54ce6c5e159f7c16f039aa5c0"
+  },
+  "limitations": "Only boundary/rounding training fixtures; validation shares these families with independent seeds. Test is not generated here. Model schedules supplied patches from numeric state, without reading code. Success/permissions are enforced by supplied environment rules. Learned confidence is not calibrated. No claim that the neural policy beats evidence-first rules.",
+  "blind_audit": {
+    "seed": 240000000,
+    "evaluation_file": "evaluation.json",
+    "closed_loop_success_rate": 0.8266666666666667,
+    "fresh_goal_change_accuracy": 0.9625
+  }
+}

@@ -77,7 +77,7 @@ def main():
                 stdin=subprocess.DEVNULL, start_new_session=True,
             )
         PIDFILE.write_text(str(process.pid))
-        print("Loading the local model…", flush=True)
+        print("Starting the local Winward lab…", flush=True)
         for _ in range(120):
             if process.poll() is not None:
                 PIDFILE.unlink(missing_ok=True)

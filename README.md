@@ -13,6 +13,10 @@ The name combines **win** and **onward**: keep moving toward the desired outcome
 - 48,000 training examples. Fresh simulated audit: **291/300 goals reached within five actions (97%)**. Changed-goal probes: **52.5%** next-action agreement, a known weakness.
 - A separate original Qwen text-scoring demo, described in [its guide](docs/QWEN_DEMO.md).
 
+**V2 lab:** a separate uncertainty planner and a coding-task harness now run on this Mac. After the first v2 model failed most real-tool tasks, a scratch-trained **v2.1 tools candidate** learned from observed edits and check outcomes. It verified **40/40 reserved interval fixtures**; simple evidence-first rules also verified 40/40 and were faster. Fresh paired-goal decisions improved to **96.25% versus v1's 88% on matched cases**, but general graph-task completion regressed. V1 remains available unchanged; v2.1 is an experiment, not a general replacement.
+
+[V2 methods, failures, results, and reproduction](docs/V2.md) · [V2.1 audit](reports/v2-tools/evaluation.json) · [Actual coding-task audit](reports/v2-tools/sandbox.json)
+
 **This is not a 4B model, a general language model, or a production agent.** The learned policy consumes structured numeric facts and action definitions. Search labels use declared simulator effects. Permissions and finish checks are enforced rules. Exact search is currently faster than the neural policy on these tiny tasks.
 
 [Training details and limitations](TRAINING.md) · [Saved training report](reports/v1/training.json) · [Fresh-instance audit](reports/v1/evaluation.json)
@@ -35,12 +39,11 @@ uv sync --frozen
 .venv/bin/python -m agent_training.evaluate \
   --run runs/goalpolicy-v1 --fresh-seed 90000000 --fresh-cases 2400
 
-# The original combined server also loads the separate Qwen demo.
-.venv/bin/python scripts/download_model.py
+# Qwen is optional and is not loaded by the Winward lab.
 .venv/bin/python scripts/server.py start
 ```
 
-Open **http://127.0.0.1:8765/policy**. Stop with `.venv/bin/python scripts/server.py stop`. Model downloads require internet once; training and runtime run locally. Training refuses to overwrite existing checkpoints. No API key, paid service, or cloud GPU is required.
+Open **http://127.0.0.1:8765/policy** for v1. Follow [the v2 guide](docs/V2.md#reproduce-on-mac) to train the tools candidate and open **http://127.0.0.1:8765/v2**. Stop with `.venv/bin/python scripts/server.py stop`. Dependencies require internet to install; training and runtime run locally. Training refuses to overwrite existing checkpoints. No API key, paid service, or cloud GPU is required. The optional Qwen demo can be installed separately with `.venv/bin/python scripts/download_model.py` and loads only when requested.
 
 ## Development
 
@@ -49,6 +52,6 @@ uv run --frozen pytest -q
 node --check jev_local/static/policy.js
 ```
 
-Version 1 passed 102 automated tests and live API checks. Rendered browser layout has not been visually verified. The next work targets goal changes, uncertain observations, and real sandboxed coding tasks, measuring total decision and action costs before increasing model size.
+Tests cover planner correctness, unknown-world observations, goal revisions, failed and timed-out checks, checkpoint data boundaries, and local API restrictions. Live API and lightweight DOM checks also verify the interface logic. Rendered browser layout has not been visually verified. Current evidence supports continued work on task completion and efficiency before increasing model size.
 
 The inference experiment was inspired by a [local fixed-choice scoring tutorial](https://blog.dailydoseofds.com/p/build-your-own-jev-100-local). Winward's scratch-trained policy and simulator are a separate experiment; this repository does not contain TypeSafe's proprietary Jev model.

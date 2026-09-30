@@ -13,9 +13,9 @@ GoalPolicy's fresh-instance audit completed **291 of 300 solvable simulated task
 2. Wait for “JEV Local is ready”.
 3. Open **http://127.0.0.1:8765**.
 
-The server runs in the background; you can close the launcher window. Double-click **Stop JEV.command** to stop it. If the app is already running, just use the link. Startup loads approximately 2.3 GB of model weights and warms the GPU. Nothing is added to your login items; start it again after restarting the Mac.
+The server runs in the background; you can close the launcher window. Double-click **Stop JEV.command** to stop it. If the app is already running, just use the link. The first Qwen demo request loads approximately 2.3 GB of model weights and warms the GPU; Winward startup does not load Qwen. Nothing is added to your login items; start it again after restarting the Mac.
 
-For a fresh installation, run **setup.command** first. It uses `uv` to install Python 3.12 and the exact versions in `uv.lock`, then downloads a pinned model snapshot from Hugging Face. Internet is required for setup only. No API key, paid service, Docker, or Ollama is required.
+For a fresh installation of this optional demo, run **setup.command --with-qwen** first. It uses `uv` to install Python 3.12 and the exact versions in `uv.lock`, then downloads a pinned model snapshot from Hugging Face. Internet is required for setup only. No API key, paid service, Docker, or Ollama is required.
 
 ## What's included
 

@@ -6,5 +6,8 @@ if ! command -v uv >/dev/null 2>&1; then
   exit 1
 fi
 uv sync --frozen
-.venv/bin/python scripts/download_model.py
-echo "Setup complete. Open Start JEV.command to launch."
+if [[ "${1:-}" == "--with-qwen" ]]; then
+  .venv/bin/python scripts/download_model.py
+fi
+echo "Setup complete. Train a Winward checkpoint using README.md, then open Start JEV.command."
+echo "The optional Qwen demo can be installed with: .venv/bin/python scripts/download_model.py"

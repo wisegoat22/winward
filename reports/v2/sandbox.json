@@ -1,0 +1,2510 @@
+{
+  "checkpoint_sha256": "1a50579b2fe76364d5caaa38c9d6dad5ed6d4b01fba8418438ba0aa59ceae35e",
+  "cases_per_method": 40,
+  "seed": 170000000,
+  "specification": [
+    {
+      "seed": 170000000,
+      "kind": "boundary",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170000001,
+      "kind": "boundary",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170000100,
+      "kind": "boundary",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170000101,
+      "kind": "boundary",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170000200,
+      "kind": "boundary",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170000201,
+      "kind": "boundary",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170000300,
+      "kind": "boundary",
+      "changed_goal": true,
+      "uncertain": true
+    },
+    {
+      "seed": 170000301,
+      "kind": "boundary",
+      "changed_goal": true,
+      "uncertain": true
+    },
+    {
+      "seed": 170000400,
+      "kind": "rounding",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170000401,
+      "kind": "rounding",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170000500,
+      "kind": "rounding",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170000501,
+      "kind": "rounding",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170000600,
+      "kind": "rounding",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170000601,
+      "kind": "rounding",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170000700,
+      "kind": "rounding",
+      "changed_goal": true,
+      "uncertain": true
+    },
+    {
+      "seed": 170000701,
+      "kind": "rounding",
+      "changed_goal": true,
+      "uncertain": true
+    },
+    {
+      "seed": 170000800,
+      "kind": "collection",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170000801,
+      "kind": "collection",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170000900,
+      "kind": "collection",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170000901,
+      "kind": "collection",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170001000,
+      "kind": "collection",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170001001,
+      "kind": "collection",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170001100,
+      "kind": "collection",
+      "changed_goal": true,
+      "uncertain": true
+    },
+    {
+      "seed": 170001101,
+      "kind": "collection",
+      "changed_goal": true,
+      "uncertain": true
+    },
+    {
+      "seed": 170001200,
+      "kind": "already_correct",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170001201,
+      "kind": "already_correct",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170001300,
+      "kind": "already_correct",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170001301,
+      "kind": "already_correct",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170001400,
+      "kind": "already_correct",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170001401,
+      "kind": "already_correct",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170001500,
+      "kind": "already_correct",
+      "changed_goal": true,
+      "uncertain": true
+    },
+    {
+      "seed": 170001501,
+      "kind": "already_correct",
+      "changed_goal": true,
+      "uncertain": true
+    },
+    {
+      "seed": 170001600,
+      "kind": "timeout",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170001601,
+      "kind": "timeout",
+      "changed_goal": false,
+      "uncertain": false
+    },
+    {
+      "seed": 170001700,
+      "kind": "timeout",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170001701,
+      "kind": "timeout",
+      "changed_goal": false,
+      "uncertain": true
+    },
+    {
+      "seed": 170001800,
+      "kind": "timeout",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170001801,
+      "kind": "timeout",
+      "changed_goal": true,
+      "uncertain": false
+    },
+    {
+      "seed": 170001900,
+      "kind": "timeout",
+      "changed_goal": true,
+      "uncertain": true
+    },
+    {
+      "seed": 170001901,
+      "kind": "timeout",
+      "changed_goal": true,
+      "uncertain": true
+    }
+  ],
+  "methods": {
+    "neural": {
+      "cases": 40,
+      "successes": 4,
+      "success_rate": 0.1,
+      "mean_actions": 2.7,
+      "mean_wall_ms": 144.52821462473366,
+      "mean_decision_ms": 26.588699075364275,
+      "mean_tool_ms": 116.56057499640156,
+      "mean_estimated_tool_tokens": 57.0,
+      "mean_edits": 0,
+      "mean_failed_checks": 0.9,
+      "unrelated_actions": 0,
+      "rejected_actions": 0,
+      "deferred": 36,
+      "horizon_exhausted": 0
+    },
+    "evidence_first": {
+      "cases": 40,
+      "successes": 40,
+      "success_rate": 1.0,
+      "mean_actions": 8.65,
+      "mean_wall_ms": 158.13629692711402,
+      "mean_decision_ms": 0.04346399291534908,
+      "mean_tool_ms": 156.66666560209705,
+      "mean_estimated_tool_tokens": 394.0,
+      "mean_edits": 1.925,
+      "mean_failed_checks": 1.925,
+      "unrelated_actions": 0,
+      "rejected_actions": 0,
+      "deferred": 0,
+      "horizon_exhausted": 0
+    },
+    "random": {
+      "cases": 40,
+      "successes": 1,
+      "success_rate": 0.025,
+      "mean_actions": 3.3,
+      "mean_wall_ms": 49.545153223880334,
+      "mean_decision_ms": 0.01450737690902315,
+      "mean_tool_ms": 48.683682345290435,
+      "mean_estimated_tool_tokens": 132.0,
+      "mean_edits": 0.4,
+      "mean_failed_checks": 0.45,
+      "unrelated_actions": 18,
+      "rejected_actions": 0,
+      "deferred": 39,
+      "horizon_exhausted": 0
+    }
+  },
+  "slices": {
+    "neural": {
+      "boundary": {
+        "cases": 8,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 2.5,
+        "mean_wall_ms": 120.42981250124285,
+        "mean_decision_ms": 101.73443749954458,
+        "mean_tool_ms": 17.88642712199362,
+        "mean_estimated_tool_tokens": 50.0,
+        "mean_edits": 0,
+        "mean_failed_checks": 1,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 8,
+        "horizon_exhausted": 0
+      },
+      "rounding": {
+        "cases": 8,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 2.5,
+        "mean_wall_ms": 25.506416623102268,
+        "mean_decision_ms": 6.943297004909255,
+        "mean_tool_ms": 17.774630370695377,
+        "mean_estimated_tool_tokens": 50.0,
+        "mean_edits": 0,
+        "mean_failed_checks": 1,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 8,
+        "horizon_exhausted": 0
+      },
+      "collection": {
+        "cases": 8,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 2.5,
+        "mean_wall_ms": 28.123838626925135,
+        "mean_decision_ms": 7.115479245840106,
+        "mean_tool_ms": 17.385223880410194,
+        "mean_estimated_tool_tokens": 50.0,
+        "mean_edits": 0,
+        "mean_failed_checks": 1,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 8,
+        "horizon_exhausted": 0
+      },
+      "already_correct": {
+        "cases": 8,
+        "successes": 4,
+        "success_rate": 0.5,
+        "mean_actions": 3.5,
+        "mean_wall_ms": 36.72652074237703,
+        "mean_decision_ms": 9.671083626017207,
+        "mean_tool_ms": 26.203406108834315,
+        "mean_estimated_tool_tokens": 85.0,
+        "mean_edits": 0,
+        "mean_failed_checks": 0.5,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 4,
+        "horizon_exhausted": 0
+      },
+      "timeout": {
+        "cases": 8,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 2.5,
+        "mean_wall_ms": 511.85448463002103,
+        "mean_decision_ms": 7.479198000510223,
+        "mean_tool_ms": 503.5531875000743,
+        "mean_estimated_tool_tokens": 50.0,
+        "mean_edits": 0,
+        "mean_failed_checks": 1,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 8,
+        "horizon_exhausted": 0
+      },
+      "changed_goal": {
+        "cases": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 2.9,
+        "mean_wall_ms": 128.2703313001548,
+        "mean_decision_ms": 8.259833548800088,
+        "mean_tool_ms": 118.03798109758645,
+        "mean_estimated_tool_tokens": 64.0,
+        "mean_edits": 0,
+        "mean_failed_checks": 1,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 20,
+        "horizon_exhausted": 0
+      },
+      "uncertain": {
+        "cases": 20,
+        "successes": 2,
+        "success_rate": 0.1,
+        "mean_actions": 3.2,
+        "mean_wall_ms": 127.22097510268213,
+        "mean_decision_ms": 8.703789698483888,
+        "mean_tool_ms": 116.55797269486357,
+        "mean_estimated_tool_tokens": 77.0,
+        "mean_edits": 0,
+        "mean_failed_checks": 0.9,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 18,
+        "horizon_exhausted": 0
+      }
+    },
+    "evidence_first": {
+      "boundary": {
+        "cases": 8,
+        "successes": 8,
+        "success_rate": 1.0,
+        "mean_actions": 9.5,
+        "mean_wall_ms": 69.0927136274695,
+        "mean_decision_ms": 0.050989965529879555,
+        "mean_tool_ms": 67.40654186796746,
+        "mean_estimated_tool_tokens": 445.0,
+        "mean_edits": 2.25,
+        "mean_failed_checks": 2.25,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 0,
+        "horizon_exhausted": 0
+      },
+      "rounding": {
+        "cases": 8,
+        "successes": 8,
+        "success_rate": 1.0,
+        "mean_actions": 9,
+        "mean_wall_ms": 65.19863562789396,
+        "mean_decision_ms": 0.04798000736627728,
+        "mean_tool_ms": 63.7294688676775,
+        "mean_estimated_tool_tokens": 415.0,
+        "mean_edits": 2,
+        "mean_failed_checks": 2,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 0,
+        "horizon_exhausted": 0
+      },
+      "collection": {
+        "cases": 8,
+        "successes": 8,
+        "success_rate": 1.0,
+        "mean_actions": 9.75,
+        "mean_wall_ms": 67.02667687932262,
+        "mean_decision_ms": 0.048266239900840446,
+        "mean_tool_ms": 65.26464152193512,
+        "mean_estimated_tool_tokens": 460.0,
+        "mean_edits": 2.375,
+        "mean_failed_checks": 2.375,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 0,
+        "horizon_exhausted": 0
+      },
+      "already_correct": {
+        "cases": 8,
+        "successes": 8,
+        "success_rate": 1.0,
+        "mean_actions": 5.5,
+        "mean_wall_ms": 37.99635400355328,
+        "mean_decision_ms": 0.022833246475784108,
+        "mean_tool_ms": 36.99869762931485,
+        "mean_estimated_tool_tokens": 205.0,
+        "mean_edits": 0.75,
+        "mean_failed_checks": 0.75,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 0,
+        "horizon_exhausted": 0
+      },
+      "timeout": {
+        "cases": 8,
+        "successes": 8,
+        "success_rate": 1.0,
+        "mean_actions": 9.5,
+        "mean_wall_ms": 551.3671044973307,
+        "mean_decision_ms": 0.04725050530396402,
+        "mean_tool_ms": 549.9339781235904,
+        "mean_estimated_tool_tokens": 445.0,
+        "mean_edits": 2.25,
+        "mean_failed_checks": 2.25,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 0,
+        "horizon_exhausted": 0
+      },
+      "changed_goal": {
+        "cases": 20,
+        "successes": 20,
+        "success_rate": 1.0,
+        "mean_actions": 11.7,
+        "mean_wall_ms": 179.73326465289574,
+        "mean_decision_ms": 0.05890058819204569,
+        "mean_tool_ms": 177.88462270982563,
+        "mean_estimated_tool_tokens": 552.0,
+        "mean_edits": 2.7,
+        "mean_failed_checks": 2.7,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 0,
+        "horizon_exhausted": 0
+      },
+      "uncertain": {
+        "cases": 20,
+        "successes": 20,
+        "success_rate": 1.0,
+        "mean_actions": 9.3,
+        "mean_wall_ms": 159.61302310606698,
+        "mean_decision_ms": 0.045581946324091405,
+        "mean_tool_ms": 158.03871471434832,
+        "mean_estimated_tool_tokens": 423.0,
+        "mean_edits": 2,
+        "mean_failed_checks": 2,
+        "unrelated_actions": 0,
+        "rejected_actions": 0,
+        "deferred": 0,
+        "horizon_exhausted": 0
+      }
+    },
+    "random": {
+      "boundary": {
+        "cases": 8,
+        "successes": 1,
+        "success_rate": 0.125,
+        "mean_actions": 3,
+        "mean_wall_ms": 15.29243737240904,
+        "mean_decision_ms": 0.01565087222843431,
+        "mean_tool_ms": 14.08652637474006,
+        "mean_estimated_tool_tokens": 117.5,
+        "mean_edits": 0.375,
+        "mean_failed_checks": 0.5,
+        "unrelated_actions": 4,
+        "rejected_actions": 0,
+        "deferred": 7,
+        "horizon_exhausted": 0
+      },
+      "rounding": {
+        "cases": 8,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 3,
+        "mean_wall_ms": 11.763151123886928,
+        "mean_decision_ms": 0.013062497600913048,
+        "mean_tool_ms": 10.962885506160092,
+        "mean_estimated_tool_tokens": 115.0,
+        "mean_edits": 0.375,
+        "mean_failed_checks": 0.5,
+        "unrelated_actions": 3,
+        "rejected_actions": 0,
+        "deferred": 8,
+        "horizon_exhausted": 0
+      },
+      "collection": {
+        "cases": 8,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 4.375,
+        "mean_wall_ms": 17.26179174875142,
+        "mean_decision_ms": 0.0199275127670262,
+        "mean_tool_ms": 16.3882189845026,
+        "mean_estimated_tool_tokens": 201.25,
+        "mean_edits": 0.75,
+        "mean_failed_checks": 0.75,
+        "unrelated_actions": 5,
+        "rejected_actions": 0,
+        "deferred": 8,
+        "horizon_exhausted": 0
+      },
+      "already_correct": {
+        "cases": 8,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 3.25,
+        "mean_wall_ms": 8.971963750809664,
+        "mean_decision_ms": 0.011078369425376877,
+        "mean_tool_ms": 8.284103994810721,
+        "mean_estimated_tool_tokens": 130.0,
+        "mean_edits": 0.25,
+        "mean_failed_checks": 0.125,
+        "unrelated_actions": 5,
+        "rejected_actions": 0,
+        "deferred": 8,
+        "horizon_exhausted": 0
+      },
+      "timeout": {
+        "cases": 8,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 2.875,
+        "mean_wall_ms": 194.43642212354462,
+        "mean_decision_ms": 0.012817632523365319,
+        "mean_tool_ms": 193.6966768662387,
+        "mean_estimated_tool_tokens": 96.25,
+        "mean_edits": 0.25,
+        "mean_failed_checks": 0.375,
+        "unrelated_actions": 1,
+        "rejected_actions": 0,
+        "deferred": 8,
+        "horizon_exhausted": 0
+      },
+      "changed_goal": {
+        "cases": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 3.55,
+        "mean_wall_ms": 64.425506349653,
+        "mean_decision_ms": 0.015854256344027817,
+        "mean_tool_ms": 63.60297504143091,
+        "mean_estimated_tool_tokens": 140.5,
+        "mean_edits": 0.4,
+        "mean_failed_checks": 0.5,
+        "unrelated_actions": 10,
+        "rejected_actions": 0,
+        "deferred": 20,
+        "horizon_exhausted": 0
+      },
+      "uncertain": {
+        "cases": 20,
+        "successes": 0,
+        "success_rate": 0.0,
+        "mean_actions": 2.8,
+        "mean_wall_ms": 7.299070949375164,
+        "mean_decision_ms": 0.010852099512703717,
+        "mean_tool_ms": 6.454589699569624,
+        "mean_estimated_tool_tokens": 101.5,
+        "mean_edits": 0.25,
+        "mean_failed_checks": 0.2,
+        "unrelated_actions": 8,
+        "rejected_actions": 0,
+        "deferred": 20,
+        "horizon_exhausted": 0
+      }
+    }
+  },
+  "initialization_ms": 39.680249989032745,
+  "elapsed_seconds": 14.139926709001884,
+  "task_provenance": "Trusted generated Python fixtures, supplied patches, observed outcomes and real subprocess checks. These fixture families were inspected during harness development; not an unseen-repository benchmark. No sandbox outcomes were used to train or select this checkpoint.",
+  "methodology": "Same seeds and conditions for all methods, fresh temporary directory per episode, rotated method order, at most16 actions and5-step neural horizon. Neural actions are never corrected by search. Evidence-first rules use eligible action IDs only, never hidden source correctness. Random includes defer. Timings include fixture creation/cleanup, decisions and tools; one-time checkpoint initialization is reported separately.",
+  "cost_note": "Tool token costs are declared estimates, not measured LLM tokens. The policy generates zero language tokens. Actual wall time, decision time, subprocess time and byte counts are measured; inspect full traces for tool outcomes.",
+  "limitations": "Small fixed code families and two supplied patches per task. Numeric observation adapter and rule-based permissions/finish verification are part of the system. This does not demonstrate code generation or arbitrary repository competence.",
+  "traces_sha256": "917daadab74a4d37451422ff4ce7bce0e2bcf24354b419446aee0cf980fe3a25",
+  "example_traces": {
+    "neural": {
+      "seed": 170000000,
+      "kind": "boundary",
+      "changed_goal": false,
+      "uncertain": false,
+      "goal_revision": 0,
+      "success": false,
+      "done": true,
+      "deferred": true,
+      "steps": 2,
+      "tool_elapsed_ms": 19.432333996519446,
+      "estimated_tokens": 30.0,
+      "checks": 1,
+      "edits": 0,
+      "failed_checks": 1,
+      "rejected_actions": 0,
+      "read_bytes": 0,
+      "written_bytes": 0,
+      "output_bytes": 335,
+      "isolation": "Temporary directory and fixed trusted fixture code; not an OS security sandbox.",
+      "cost_note": "Token counts are fixed estimates for tool scheduling; wall time is measured locally.",
+      "policy": "neural",
+      "trace": [
+        {
+          "turn": 1,
+          "action_id": "run_tests",
+          "tool": "run_tests",
+          "action_name": "Run current-goal acceptance checks",
+          "summary": "Checks failed; the goal is unverified.",
+          "accepted": true,
+          "result": {
+            "passed": false,
+            "returncode": 1,
+            "timed_out": false,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+            "command": [
+              "python",
+              "-I",
+              "-B",
+              "acceptance_check.py"
+            ],
+            "output_bytes": 335,
+            "goal_revision_checked": 0
+          },
+          "elapsed_ms": 19.431708991760388,
+          "estimated_tokens": 30,
+          "goal_changed": false,
+          "state_before": 145,
+          "state_after": 193,
+          "forecast_state": 161,
+          "forecast_matched": false,
+          "success": false,
+          "done": false,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 193,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 0,
+              "last_tool_result": {
+                "action_id": "run_tests",
+                "passed": false,
+                "returncode": 1,
+                "timed_out": false,
+                "stdout": "",
+                "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+                "command": [
+                  "python",
+                  "-I",
+                  "-B",
+                  "acceptance_check.py"
+                ],
+                "output_bytes": 335,
+                "goal_revision_checked": 0
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code."
+            }
+          },
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+          "command": [
+            "python",
+            "-I",
+            "-B",
+            "acceptance_check.py"
+          ],
+          "output_bytes": 335,
+          "decision_ms": 760.4215829924215,
+          "neural_preference": 0.9999991655349731,
+          "planning_horizon": 5
+        },
+        {
+          "turn": 2,
+          "action_id": "NEEDS_CLARIFICATION",
+          "tool": "NEEDS_CLARIFICATION",
+          "action_name": "NEEDS_CLARIFICATION",
+          "summary": "Policy requested more information instead of choosing an available tool.",
+          "accepted": true,
+          "result": {
+            "deferred": true,
+            "reason": "Policy requested more information instead of choosing an available tool."
+          },
+          "elapsed_ms": 0.0006250047590583563,
+          "estimated_tokens": 0.0,
+          "goal_changed": false,
+          "state_before": 193,
+          "state_after": 193,
+          "forecast_state": null,
+          "forecast_matched": null,
+          "success": false,
+          "done": true,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 193,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 0,
+              "last_tool_result": {
+                "action_id": "NEEDS_CLARIFICATION",
+                "deferred": true,
+                "reason": "Policy requested more information instead of choosing an available tool."
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code."
+            }
+          },
+          "decision_ms": 2.6521660038270056,
+          "neural_preference": 1.0,
+          "planning_horizon": 5
+        }
+      ],
+      "decision_ms": 763.0737489962485,
+      "generated_model_tokens": 0,
+      "max_actions": 16,
+      "replanning_horizon": 5,
+      "horizon_exhausted": false,
+      "outcome": "deferred",
+      "policy_scope": "The model chooses tools and supplied candidate patches using numeric state. It does not read or generate Python code. No planner corrects its choices.",
+      "wall_ms": 783.5628750035539
+    },
+    "evidence_first": {
+      "seed": 170000000,
+      "kind": "boundary",
+      "changed_goal": false,
+      "uncertain": false,
+      "goal_revision": 0,
+      "success": true,
+      "done": true,
+      "deferred": false,
+      "steps": 7,
+      "tool_elapsed_ms": 57.60816702968441,
+      "estimated_tokens": 330.0,
+      "checks": 3,
+      "edits": 2,
+      "failed_checks": 2,
+      "rejected_actions": 0,
+      "read_bytes": 44,
+      "written_bytes": 87,
+      "output_bytes": 721,
+      "isolation": "Temporary directory and fixed trusted fixture code; not an OS security sandbox.",
+      "cost_note": "Token counts are fixed estimates for tool scheduling; wall time is measured locally.",
+      "policy": "evidence_first",
+      "trace": [
+        {
+          "turn": 1,
+          "action_id": "run_tests",
+          "tool": "run_tests",
+          "action_name": "Run current-goal acceptance checks",
+          "summary": "Checks failed; the goal is unverified.",
+          "accepted": true,
+          "result": {
+            "passed": false,
+            "returncode": 1,
+            "timed_out": false,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+            "command": [
+              "python",
+              "-I",
+              "-B",
+              "acceptance_check.py"
+            ],
+            "output_bytes": 335,
+            "goal_revision_checked": 0
+          },
+          "elapsed_ms": 19.081750011537224,
+          "estimated_tokens": 30,
+          "goal_changed": false,
+          "state_before": 145,
+          "state_after": 193,
+          "forecast_state": 161,
+          "forecast_matched": false,
+          "success": false,
+          "done": false,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 193,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 0,
+              "last_tool_result": {
+                "action_id": "run_tests",
+                "passed": false,
+                "returncode": 1,
+                "timed_out": false,
+                "stdout": "",
+                "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+                "command": [
+                  "python",
+                  "-I",
+                  "-B",
+                  "acceptance_check.py"
+                ],
+                "output_bytes": 335,
+                "goal_revision_checked": 0
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code."
+            }
+          },
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+          "command": [
+            "python",
+            "-I",
+            "-B",
+            "acceptance_check.py"
+          ],
+          "output_bytes": 335,
+          "decision_ms": 0.005624984623864293,
+          "neural_preference": null,
+          "planning_horizon": 5
+        },
+        {
+          "turn": 2,
+          "action_id": "inspect",
+          "tool": "inspect",
+          "action_name": "Inspect source and supplied candidate patches",
+          "summary": "Read source and made two unverified supplied patches available.",
+          "accepted": true,
+          "result": {
+            "source": "def eligible(value):\n    return value >= 13\n",
+            "file": "solution.py",
+            "read_bytes": 44,
+            "candidate_count": 2,
+            "note": "Candidate correctness is unverified."
+          },
+          "elapsed_ms": 0.1042500080075115,
+          "estimated_tokens": 60,
+          "goal_changed": false,
+          "state_before": 193,
+          "state_after": 199,
+          "forecast_state": 199,
+          "forecast_matched": true,
+          "success": false,
+          "done": false,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 199,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 0,
+              "last_tool_result": {
+                "action_id": "inspect",
+                "source": "def eligible(value):\n    return value >= 13\n",
+                "file": "solution.py",
+                "read_bytes": 44,
+                "candidate_count": 2,
+                "note": "Candidate correctness is unverified."
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code.",
+              "observed_source": "def eligible(value):\n    return value >= 13\n",
+              "supplied_candidates": {
+                "apply_candidate_a": "def eligible(value):\n    return value > 12\n",
+                "apply_candidate_b": "def eligible(value):\n    return value >= 12\n"
+              }
+            }
+          },
+          "file": "solution.py",
+          "read_bytes": 44,
+          "decision_ms": 0.007208989700302482,
+          "neural_preference": null,
+          "planning_horizon": 5
+        },
+        {
+          "turn": 3,
+          "action_id": "apply_candidate_a",
+          "tool": "apply_candidate_a",
+          "action_name": "Apply supplied candidate A",
+          "summary": "Applied supplied patch A; acceptance checks are required.",
+          "accepted": true,
+          "result": {
+            "candidate_applied": "apply_candidate_a",
+            "verified": false,
+            "file": "solution.py",
+            "written_bytes": 43,
+            "diff": "--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def eligible(value):\n-    return value >= 13\n+    return value > 12\n",
+            "source_revision": 1
+          },
+          "elapsed_ms": 0.18999999156221747,
+          "estimated_tokens": 90,
+          "goal_changed": false,
+          "state_before": 199,
+          "state_after": 671,
+          "forecast_state": 671,
+          "forecast_matched": true,
+          "success": false,
+          "done": false,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 671,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 1,
+              "last_tool_result": {
+                "action_id": "apply_candidate_a",
+                "candidate_applied": "apply_candidate_a",
+                "verified": false,
+                "file": "solution.py",
+                "written_bytes": 43,
+                "diff": "--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def eligible(value):\n-    return value >= 13\n+    return value > 12\n",
+                "source_revision": 1
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code.",
+              "observed_source": "def eligible(value):\n    return value > 12\n",
+              "supplied_candidates": {
+                "apply_candidate_a": "def eligible(value):\n    return value > 12\n",
+                "apply_candidate_b": "def eligible(value):\n    return value >= 12\n"
+              }
+            }
+          },
+          "file": "solution.py",
+          "diff": "--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def eligible(value):\n-    return value >= 13\n+    return value > 12\n",
+          "written_bytes": 43,
+          "decision_ms": 0.009415991371497512,
+          "neural_preference": null,
+          "planning_horizon": 5
+        },
+        {
+          "turn": 4,
+          "action_id": "run_tests",
+          "tool": "run_tests",
+          "action_name": "Run current-goal acceptance checks",
+          "summary": "Checks failed; the goal is unverified.",
+          "accepted": true,
+          "result": {
+            "passed": false,
+            "returncode": 1,
+            "timed_out": false,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+            "command": [
+              "python",
+              "-I",
+              "-B",
+              "acceptance_check.py"
+            ],
+            "output_bytes": 335,
+            "goal_revision_checked": 0
+          },
+          "elapsed_ms": 19.455374975223094,
+          "estimated_tokens": 30,
+          "goal_changed": false,
+          "state_before": 671,
+          "state_after": 719,
+          "forecast_state": 687,
+          "forecast_matched": false,
+          "success": false,
+          "done": false,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 719,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 1,
+              "last_tool_result": {
+                "action_id": "run_tests",
+                "passed": false,
+                "returncode": 1,
+                "timed_out": false,
+                "stdout": "",
+                "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+                "command": [
+                  "python",
+                  "-I",
+                  "-B",
+                  "acceptance_check.py"
+                ],
+                "output_bytes": 335,
+                "goal_revision_checked": 0
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code.",
+              "observed_source": "def eligible(value):\n    return value > 12\n",
+              "supplied_candidates": {
+                "apply_candidate_a": "def eligible(value):\n    return value > 12\n",
+                "apply_candidate_b": "def eligible(value):\n    return value >= 12\n"
+              }
+            }
+          },
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+          "command": [
+            "python",
+            "-I",
+            "-B",
+            "acceptance_check.py"
+          ],
+          "output_bytes": 335,
+          "decision_ms": 0.0016669800970703363,
+          "neural_preference": null,
+          "planning_horizon": 5
+        },
+        {
+          "turn": 5,
+          "action_id": "apply_candidate_b",
+          "tool": "apply_candidate_b",
+          "action_name": "Apply supplied candidate B",
+          "summary": "Applied supplied patch B; acceptance checks are required.",
+          "accepted": true,
+          "result": {
+            "candidate_applied": "apply_candidate_b",
+            "verified": false,
+            "file": "solution.py",
+            "written_bytes": 44,
+            "diff": "--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def eligible(value):\n-    return value > 12\n+    return value >= 12\n",
+            "source_revision": 2
+          },
+          "elapsed_ms": 0.25725000887177885,
+          "estimated_tokens": 90,
+          "goal_changed": false,
+          "state_before": 719,
+          "state_after": 1695,
+          "forecast_state": 1695,
+          "forecast_matched": true,
+          "success": false,
+          "done": false,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 1695,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 2,
+              "last_tool_result": {
+                "action_id": "apply_candidate_b",
+                "candidate_applied": "apply_candidate_b",
+                "verified": false,
+                "file": "solution.py",
+                "written_bytes": 44,
+                "diff": "--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def eligible(value):\n-    return value > 12\n+    return value >= 12\n",
+                "source_revision": 2
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code.",
+              "observed_source": "def eligible(value):\n    return value >= 12\n",
+              "supplied_candidates": {
+                "apply_candidate_a": "def eligible(value):\n    return value > 12\n",
+                "apply_candidate_b": "def eligible(value):\n    return value >= 12\n"
+              }
+            }
+          },
+          "file": "solution.py",
+          "diff": "--- a/solution.py\n+++ b/solution.py\n@@ -1,2 +1,2 @@\n def eligible(value):\n-    return value > 12\n+    return value >= 12\n",
+          "written_bytes": 44,
+          "decision_ms": 0.011124997399747372,
+          "neural_preference": null,
+          "planning_horizon": 5
+        },
+        {
+          "turn": 6,
+          "action_id": "run_tests",
+          "tool": "run_tests",
+          "action_name": "Run current-goal acceptance checks",
+          "summary": "Current-goal checks passed.",
+          "accepted": true,
+          "result": {
+            "passed": true,
+            "returncode": 0,
+            "timed_out": false,
+            "stdout": "All acceptance checks passed for the current goal.\n",
+            "stderr": "",
+            "command": [
+              "python",
+              "-I",
+              "-B",
+              "acceptance_check.py"
+            ],
+            "output_bytes": 51,
+            "goal_revision_checked": 0
+          },
+          "elapsed_ms": 18.51783401798457,
+          "estimated_tokens": 30,
+          "goal_changed": false,
+          "state_before": 1695,
+          "state_after": 1711,
+          "forecast_state": 1711,
+          "forecast_matched": true,
+          "success": true,
+          "done": false,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 1711,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 2,
+              "last_tool_result": {
+                "action_id": "run_tests",
+                "passed": true,
+                "returncode": 0,
+                "timed_out": false,
+                "stdout": "All acceptance checks passed for the current goal.\n",
+                "stderr": "",
+                "command": [
+                  "python",
+                  "-I",
+                  "-B",
+                  "acceptance_check.py"
+                ],
+                "output_bytes": 51,
+                "goal_revision_checked": 0
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code.",
+              "observed_source": "def eligible(value):\n    return value >= 12\n",
+              "supplied_candidates": {
+                "apply_candidate_a": "def eligible(value):\n    return value > 12\n",
+                "apply_candidate_b": "def eligible(value):\n    return value >= 12\n"
+              }
+            }
+          },
+          "stdout": "All acceptance checks passed for the current goal.\n",
+          "stderr": "",
+          "command": [
+            "python",
+            "-I",
+            "-B",
+            "acceptance_check.py"
+          ],
+          "output_bytes": 51,
+          "decision_ms": 0.001374981366097927,
+          "neural_preference": null,
+          "planning_horizon": 5
+        },
+        {
+          "turn": 7,
+          "action_id": "STOP",
+          "tool": "STOP",
+          "action_name": "STOP",
+          "summary": "Actual acceptance checks passed for the current source and goal.",
+          "accepted": true,
+          "result": {
+            "stopped": true,
+            "reason": "Actual acceptance checks passed for the current source and goal."
+          },
+          "elapsed_ms": 0.0017080164980143309,
+          "estimated_tokens": 0.0,
+          "goal_changed": false,
+          "state_before": 1711,
+          "state_after": 1711,
+          "forecast_state": null,
+          "forecast_matched": null,
+          "success": true,
+          "done": true,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 1711,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 2,
+              "last_tool_result": {
+                "action_id": "STOP",
+                "stopped": true,
+                "reason": "Actual acceptance checks passed for the current source and goal."
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code.",
+              "observed_source": "def eligible(value):\n    return value >= 12\n",
+              "supplied_candidates": {
+                "apply_candidate_a": "def eligible(value):\n    return value > 12\n",
+                "apply_candidate_b": "def eligible(value):\n    return value >= 12\n"
+              }
+            }
+          },
+          "decision_ms": 0.004750007065013051,
+          "neural_preference": null,
+          "planning_horizon": 5
+        }
+      ],
+      "decision_ms": 0.04116693162359297,
+      "generated_model_tokens": 0,
+      "max_actions": 16,
+      "replanning_horizon": 5,
+      "horizon_exhausted": false,
+      "outcome": "verified",
+      "policy_scope": "The model chooses tools and supplied candidate patches using numeric state. It does not read or generate Python code. No planner corrects its choices.",
+      "wall_ms": 59.099582984345034
+    },
+    "random": {
+      "seed": 170000000,
+      "kind": "boundary",
+      "changed_goal": false,
+      "uncertain": false,
+      "goal_revision": 0,
+      "success": false,
+      "done": true,
+      "deferred": true,
+      "steps": 3,
+      "tool_elapsed_ms": 18.11770800850354,
+      "estimated_tokens": 110.0,
+      "checks": 1,
+      "edits": 0,
+      "failed_checks": 1,
+      "rejected_actions": 0,
+      "read_bytes": 0,
+      "written_bytes": 0,
+      "output_bytes": 335,
+      "isolation": "Temporary directory and fixed trusted fixture code; not an OS security sandbox.",
+      "cost_note": "Token counts are fixed estimates for tool scheduling; wall time is measured locally.",
+      "policy": "random",
+      "trace": [
+        {
+          "turn": 1,
+          "action_id": "read_notes",
+          "tool": "read_notes",
+          "action_name": "Read unrelated formatting notes",
+          "summary": "Read unrelated notes without advancing the acceptance goal.",
+          "accepted": true,
+          "result": {
+            "notes": "Formatting preferences do not change the acceptance goal."
+          },
+          "elapsed_ms": 0.001333013642579317,
+          "estimated_tokens": 80,
+          "goal_changed": false,
+          "state_before": 145,
+          "state_after": 401,
+          "forecast_state": 401,
+          "forecast_matched": true,
+          "success": false,
+          "done": false,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 401,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 0,
+              "last_tool_result": {
+                "action_id": "read_notes",
+                "notes": "Formatting preferences do not change the acceptance goal."
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code."
+            }
+          },
+          "decision_ms": 0.004915986210107803,
+          "neural_preference": null,
+          "planning_horizon": 5
+        },
+        {
+          "turn": 2,
+          "action_id": "run_tests",
+          "tool": "run_tests",
+          "action_name": "Run current-goal acceptance checks",
+          "summary": "Checks failed; the goal is unverified.",
+          "accepted": true,
+          "result": {
+            "passed": false,
+            "returncode": 1,
+            "timed_out": false,
+            "stdout": "",
+            "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+            "command": [
+              "python",
+              "-I",
+              "-B",
+              "acceptance_check.py"
+            ],
+            "output_bytes": 335,
+            "goal_revision_checked": 0
+          },
+          "elapsed_ms": 18.115624989150092,
+          "estimated_tokens": 30,
+          "goal_changed": false,
+          "state_before": 401,
+          "state_after": 449,
+          "forecast_state": 417,
+          "forecast_matched": false,
+          "success": false,
+          "done": false,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 449,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 0,
+              "last_tool_result": {
+                "action_id": "run_tests",
+                "passed": false,
+                "returncode": 1,
+                "timed_out": false,
+                "stdout": "",
+                "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+                "command": [
+                  "python",
+                  "-I",
+                  "-B",
+                  "acceptance_check.py"
+                ],
+                "output_bytes": 335,
+                "goal_revision_checked": 0
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code."
+            }
+          },
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"/private<fixture>/acceptance_check.py\", line 6, in <module>\n    assert actual is expected, f'value={value}: expected {expected!r}, got {actual!r}'\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: value=12: expected True, got False\n",
+          "command": [
+            "python",
+            "-I",
+            "-B",
+            "acceptance_check.py"
+          ],
+          "output_bytes": 335,
+          "decision_ms": 0.00200001522898674,
+          "neural_preference": null,
+          "planning_horizon": 5
+        },
+        {
+          "turn": 3,
+          "action_id": "NEEDS_CLARIFICATION",
+          "tool": "NEEDS_CLARIFICATION",
+          "action_name": "NEEDS_CLARIFICATION",
+          "summary": "Policy requested more information instead of choosing an available tool.",
+          "accepted": true,
+          "result": {
+            "deferred": true,
+            "reason": "Policy requested more information instead of choosing an available tool."
+          },
+          "elapsed_ms": 0.0007500057108700275,
+          "estimated_tokens": 0.0,
+          "goal_changed": false,
+          "state_before": 449,
+          "state_after": 449,
+          "forecast_state": null,
+          "forecast_matched": null,
+          "success": false,
+          "done": true,
+          "observation": {
+            "id": "fixture-170000000-boundary",
+            "family": "real_python_fixture",
+            "split": "sandbox",
+            "facts": [
+              "requirements_known",
+              "file_inspected",
+              "candidates_available",
+              "change_applied",
+              "verification_due",
+              "checks_passed",
+              "checks_failed",
+              "goal_current",
+              "notes_read",
+              "candidate_a_tried",
+              "candidate_b_tried"
+            ],
+            "state": 449,
+            "goal": 160,
+            "actions": [
+              {
+                "id": "inspect",
+                "name": "Inspect source and supplied candidate patches",
+                "requires": 129,
+                "forbids": 2,
+                "sets": 6,
+                "clears": 0,
+                "tokens": 60,
+                "latency_ms": 2,
+                "allowed": true
+              },
+              {
+                "id": "clarify",
+                "name": "Ask for the missing or revised requirement",
+                "requires": 0,
+                "forbids": 1,
+                "sets": 129,
+                "clears": 0,
+                "tokens": 40,
+                "latency_ms": 15,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_a",
+                "name": "Apply supplied candidate A",
+                "requires": 133,
+                "forbids": 512,
+                "sets": 536,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "apply_candidate_b",
+                "name": "Apply supplied candidate B",
+                "requires": 133,
+                "forbids": 1024,
+                "sets": 1048,
+                "clears": 96,
+                "tokens": 90,
+                "latency_ms": 3,
+                "allowed": true
+              },
+              {
+                "id": "run_tests",
+                "name": "Run current-goal acceptance checks",
+                "requires": 145,
+                "forbids": 0,
+                "sets": 32,
+                "clears": 80,
+                "tokens": 30,
+                "latency_ms": 25,
+                "allowed": true
+              },
+              {
+                "id": "read_notes",
+                "name": "Read unrelated formatting notes",
+                "requires": 0,
+                "forbids": 256,
+                "sets": 256,
+                "clears": 0,
+                "tokens": 80,
+                "latency_ms": 2,
+                "allowed": true
+              }
+            ],
+            "context": {
+              "requirement": "eligible(value) must be true exactly when value is at least 12.",
+              "goal_revision": 0,
+              "source_revision": 0,
+              "last_tool_result": {
+                "action_id": "NEEDS_CLARIFICATION",
+                "deferred": true,
+                "reason": "Policy requested more information instead of choosing an available tool."
+              },
+              "forecast_semantics": "Test success and candidate usefulness are provisional; actual tool results replace these forecasts.",
+              "provisional_action_ids": [
+                "run_tests",
+                "apply_candidate_a",
+                "apply_candidate_b"
+              ],
+              "policy_scope": "Select tools and trusted supplied patches; do not generate or execute arbitrary code."
+            }
+          },
+          "decision_ms": 0.009458017302677035,
+          "neural_preference": null,
+          "planning_horizon": 5
+        }
+      ],
+      "decision_ms": 0.01637401874177158,
+      "generated_model_tokens": 0,
+      "max_actions": 16,
+      "replanning_horizon": 5,
+      "horizon_exhausted": false,
+      "outcome": "deferred",
+      "policy_scope": "The model chooses tools and supplied candidate patches using numeric state. It does not read or generate Python code. No planner corrects its choices.",
+      "wall_ms": 18.961790978210047
+    }
+  }
+}
