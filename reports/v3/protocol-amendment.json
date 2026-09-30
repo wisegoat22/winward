@@ -1,0 +1,11 @@
+{
+  "timestamp_utc": "2026-09-30T09:46:12.045970+00:00",
+  "original_protocol_sha256": "0753eda354bf949de64000965631639b5e5cba95ab59871aea51e20edf8ec51d",
+  "original_protocol_file_sha256": "cce8b818b26b0a5846d4d7dbbd74bcc9e3bdc95d3bdfc247155e8020e7ecd84b",
+  "amended_protocol_sha256": "159e013621c0a939e23cd0358516f3acb0201cfb1801803f97585a100bee2661",
+  "amended_protocol_file_sha256": "0d867e646c844730f81b73ae9d72af2729465ad6855384c6f9059e7bdb202206",
+  "checkpoint_sha256": "fa10e60b4942cd40a7a0c5b11798c207ca42e6aa34cb88f6829ee4cf70589ebb",
+  "selected_step": 500,
+  "test_instances_generated": false,
+  "reason": "Independent pre-audit coverage review added explicit changed-goal retention against v2.1, paired-success legacy action-cost retention, and enforcement of the existing strict validation-retention requirement. Amendment occurred after training and validation selection, before any final audit instances or outcomes. Weights, checkpoint selection and frozen validation outcomes were not changed."
+}

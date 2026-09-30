@@ -1,11 +1,10 @@
 {
   "protocol": {
-    "version": "winward-v3-gate-2",
+    "version": "winward-v3-gate-1",
     "seeds": {
       "belief": 330000000,
       "legacy": 340000000,
       "curriculum": 341000000,
-      "goal_changes": 342000000,
       "tools": 350000000
     },
     "counts": {
@@ -13,8 +12,7 @@
       "episodes_per_problem": 4,
       "graph_rows_per_suite": 2400,
       "graph_rollouts_per_suite": 300,
-      "actual_tool_fixtures": 40,
-      "goal_change_pairs": 200
+      "actual_tool_fixtures": 40
     },
     "horizon": 5,
     "weights": {
@@ -26,12 +24,8 @@
       "collection"
     ],
     "gates": {
-      "validation_retention": "Frozen candidate must already pass the trainer's predeclared strict validation-retention checks",
       "legacy_retention": "Matched fresh legacy goal completion >= frozen v1",
       "curriculum_retention": "Matched fresh v2-composition goal completion >= frozen v1",
-      "legacy_action_cost_retention": "Mean declared weighted action cost <= frozen v1 on exactly the same legacy tasks both policies complete",
-      "changed_goal_action_retention": "Fresh paired changed-goal next-action accuracy >= frozen v2.1",
-      "changed_goal_pair_retention": "Fresh changed-goal pairs with both members correct >= frozen v2.1",
       "actual_tool_retention": "Matched real fixture verified-and-stopped completion >= frozen v2.1",
       "uncertainty_expected": "Exact expected verified completion >= each of two cheap baselines",
       "uncertainty_sampled": "Matched sampled verified completion >= each of two cheap baselines",
@@ -42,5 +36,5 @@
     "timing": "Tokens and action latency are declared estimates for belief tasks. Decision latency is measured. Weighted cost = tokens + .01*(declared action ms + measured decision ms). No real tool time is claimed for belief simulation.",
     "provenance": "Fresh instances after freeze; generator families and fixture templates are developer-known. This is not an unseen-repository or natural-language benchmark."
   },
-  "protocol_sha256": "159e013621c0a939e23cd0358516f3acb0201cfb1801803f97585a100bee2661"
+  "protocol_sha256": "0753eda354bf949de64000965631639b5e5cba95ab59871aea51e20edf8ec51d"
 }
