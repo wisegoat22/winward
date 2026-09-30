@@ -1,0 +1,360 @@
+{
+  "checkpoint_sha256": "a640e2519d0f33c53ca05bf67be4a9cd0763208126f26e7260744e6da8feae3a",
+  "input_dim": 103,
+  "evaluation_split": "test",
+  "dataset_provenance": {
+    "source": "freshly generated instances",
+    "fresh_seed": 90000000,
+    "cases": 2400,
+    "structure_family_status": "These structure families were already examined in the v0 audit; fresh instances do not constitute pristine unseen-family evaluation.",
+    "validation_reuse": false
+  },
+  "selection_policy": "Checkpoint selection: Validation goal completion, then validation next-action accuracy. This audit cannot change its weights or selection. Validation diagnostics may inform future work; test results must not select a checkpoint.",
+  "decision_metrics": {
+    "neural": {
+      "all": {
+        "cases": 2400,
+        "accuracy": 0.8783333333333333
+      },
+      "nontrivial": {
+        "cases": 1961,
+        "accuracy": 0.8510963793982662
+      },
+      "family:changed_goal": {
+        "cases": 784,
+        "accuracy": 0.8954081632653061
+      },
+      "family:nested_dependencies": {
+        "cases": 810,
+        "accuracy": 0.8074074074074075
+      },
+      "family:reversible_trap": {
+        "cases": 806,
+        "accuracy": 0.9330024813895782
+      },
+      "optimal_depth:0": {
+        "cases": 439,
+        "accuracy": 1.0
+      },
+      "optimal_depth:1": {
+        "cases": 162,
+        "accuracy": 1.0
+      },
+      "optimal_depth:2": {
+        "cases": 239,
+        "accuracy": 0.9916317991631799
+      },
+      "optimal_depth:3": {
+        "cases": 446,
+        "accuracy": 0.7511210762331838
+      },
+      "optimal_depth:4": {
+        "cases": 360,
+        "accuracy": 0.7944444444444444
+      },
+      "optimal_depth:5": {
+        "cases": 292,
+        "accuracy": 0.9794520547945206
+      },
+      "optimal_depth:3_to_5": {
+        "cases": 1098,
+        "accuracy": 0.8260473588342441
+      },
+      "no_plan_within_horizon": {
+        "cases": 462,
+        "accuracy": 0.7857142857142857
+      }
+    },
+    "random_eligible": {
+      "all": {
+        "cases": 2400,
+        "accuracy": 0.35125
+      },
+      "nontrivial": {
+        "cases": 1961,
+        "accuracy": 0.20601733809280978
+      },
+      "family:changed_goal": {
+        "cases": 784,
+        "accuracy": 0.3022959183673469
+      },
+      "family:nested_dependencies": {
+        "cases": 810,
+        "accuracy": 0.38395061728395063
+      },
+      "family:reversible_trap": {
+        "cases": 806,
+        "accuracy": 0.36600496277915634
+      },
+      "optimal_depth:0": {
+        "cases": 439,
+        "accuracy": 1.0
+      },
+      "optimal_depth:1": {
+        "cases": 162,
+        "accuracy": 0.12962962962962962
+      },
+      "optimal_depth:2": {
+        "cases": 239,
+        "accuracy": 0.17573221757322174
+      },
+      "optimal_depth:3": {
+        "cases": 446,
+        "accuracy": 0.16143497757847533
+      },
+      "optimal_depth:4": {
+        "cases": 360,
+        "accuracy": 0.24722222222222223
+      },
+      "optimal_depth:5": {
+        "cases": 292,
+        "accuracy": 0.25
+      },
+      "optimal_depth:3_to_5": {
+        "cases": 1098,
+        "accuracy": 0.21311475409836064
+      },
+      "no_plan_within_horizon": {
+        "cases": 462,
+        "accuracy": 0.23160173160173161
+      },
+      "expected_accuracy": 0.36091666666666666
+    },
+    "greedy_immediate": {
+      "all": {
+        "cases": 2400,
+        "accuracy": 0.38333333333333336
+      },
+      "nontrivial": {
+        "cases": 1961,
+        "accuracy": 0.24528301886792453
+      },
+      "family:changed_goal": {
+        "cases": 784,
+        "accuracy": 0.3877551020408163
+      },
+      "family:nested_dependencies": {
+        "cases": 810,
+        "accuracy": 0.4024691358024691
+      },
+      "family:reversible_trap": {
+        "cases": 806,
+        "accuracy": 0.3598014888337469
+      },
+      "optimal_depth:0": {
+        "cases": 439,
+        "accuracy": 1.0
+      },
+      "optimal_depth:1": {
+        "cases": 162,
+        "accuracy": 1.0
+      },
+      "optimal_depth:2": {
+        "cases": 239,
+        "accuracy": 0.5815899581589958
+      },
+      "optimal_depth:3": {
+        "cases": 446,
+        "accuracy": 0.2600896860986547
+      },
+      "optimal_depth:4": {
+        "cases": 360,
+        "accuracy": 0.041666666666666664
+      },
+      "optimal_depth:5": {
+        "cases": 292,
+        "accuracy": 0.1678082191780822
+      },
+      "optimal_depth:3_to_5": {
+        "cases": 1098,
+        "accuracy": 0.16393442622950818
+      },
+      "no_plan_within_horizon": {
+        "cases": 462,
+        "accuracy": 0.0
+      }
+    }
+  },
+  "closed_loop": {
+    "cases": 300,
+    "horizon": 5,
+    "selection": "First held-out tasks initially unfinished and oracle-reachable within five actions; excludes initially completed goals.",
+    "inference": "The neural model observes the updated state and remaining horizon after each action; no oracle corrects its choices.",
+    "methods": {
+      "neural": {
+        "cases": 300,
+        "successes": 291,
+        "success_rate": 0.97,
+        "mean_actions_when_successful": 3.381443298969072,
+        "mean_cost_regret_when_successful": 38.210230240549855,
+        "mean_cost_ratio_to_optimal_when_successful": 1.0215219160489728,
+        "deferred": 9,
+        "invalid_actions": 0,
+        "premature_stops": 0,
+        "horizon_exhausted": 0,
+        "defer_diagnostics": {
+          "while_goal_still_reachable": 8,
+          "no_plan_in_remaining_horizon": 1,
+          "remaining_horizon_counts": {
+            "5": 6,
+            "4": 1,
+            "2": 2
+          },
+          "examples": [
+            {
+              "scenario_id": "test-90000100",
+              "state": 0,
+              "remaining_horizon": 5,
+              "oracle_action": "a0",
+              "oracle_remaining_plan": [
+                "a0",
+                "a5",
+                "a2",
+                "a8"
+              ]
+            },
+            {
+              "scenario_id": "test-90000105",
+              "state": 32,
+              "remaining_horizon": 5,
+              "oracle_action": "a3",
+              "oracle_remaining_plan": [
+                "a3",
+                "a8",
+                "a3",
+                "a2"
+              ]
+            },
+            {
+              "scenario_id": "test-90000119",
+              "state": 1056,
+              "remaining_horizon": 5,
+              "oracle_action": "a2",
+              "oracle_remaining_plan": [
+                "a2",
+                "a4",
+                "a6"
+              ]
+            }
+          ]
+        }
+      },
+      "random_eligible": {
+        "cases": 300,
+        "successes": 23,
+        "success_rate": 0.07666666666666666,
+        "mean_actions_when_successful": 2.5217391304347827,
+        "mean_cost_regret_when_successful": 227.26686956521738,
+        "mean_cost_ratio_to_optimal_when_successful": 1.3659833410854698,
+        "deferred": 192,
+        "invalid_actions": 0,
+        "premature_stops": 0,
+        "horizon_exhausted": 85,
+        "defer_diagnostics": {
+          "while_goal_still_reachable": 132,
+          "no_plan_in_remaining_horizon": 60,
+          "remaining_horizon_counts": {
+            "5": 71,
+            "4": 44,
+            "3": 25,
+            "2": 32,
+            "1": 20
+          },
+          "examples": [
+            {
+              "scenario_id": "test-90000000",
+              "state": 708,
+              "remaining_horizon": 5,
+              "oracle_action": "a2",
+              "oracle_remaining_plan": [
+                "a2"
+              ]
+            },
+            {
+              "scenario_id": "test-90000023",
+              "state": 3072,
+              "remaining_horizon": 5,
+              "oracle_action": "a5",
+              "oracle_remaining_plan": [
+                "a5",
+                "a7",
+                "a4"
+              ]
+            },
+            {
+              "scenario_id": "test-90000032",
+              "state": 64,
+              "remaining_horizon": 5,
+              "oracle_action": "a0",
+              "oracle_remaining_plan": [
+                "a0",
+                "a2",
+                "a0",
+                "a6"
+              ]
+            }
+          ]
+        }
+      },
+      "greedy_immediate": {
+        "cases": 300,
+        "successes": 56,
+        "success_rate": 0.18666666666666668,
+        "mean_actions_when_successful": 1.5357142857142858,
+        "mean_cost_regret_when_successful": 0.0,
+        "mean_cost_ratio_to_optimal_when_successful": 1.0,
+        "deferred": 0,
+        "invalid_actions": 0,
+        "premature_stops": 0,
+        "horizon_exhausted": 244,
+        "defer_diagnostics": {
+          "while_goal_still_reachable": 0,
+          "no_plan_in_remaining_horizon": 0,
+          "remaining_horizon_counts": {},
+          "examples": []
+        }
+      }
+    }
+  },
+  "invariance": {
+    "cases": 20,
+    "action_order": {
+      "same_choice_cases": 20,
+      "max_logit_difference_after_id_alignment": 0.001850128173828125,
+      "equivariant_within_1e_minus_4": false
+    },
+    "metadata_and_prose_noise": {
+      "features_exactly_equal": true,
+      "same_choice_cases": 20,
+      "scores_exactly_equal": true
+    },
+    "interpretation": "Ignoring text metadata is by design. This does not demonstrate natural-language understanding or factual-noise reasoning."
+  },
+  "counterfactuals": {
+    "changed_goal": {
+      "pairs": 20,
+      "neural_accuracy": 0.525,
+      "neural_both_members_correct": 5,
+      "neural_choice_changed": 16,
+      "greedy_accuracy": 0.0
+    },
+    "changed_downstream_cost": {
+      "pairs": 20,
+      "neural_accuracy": 1.0,
+      "neural_both_members_correct": 20,
+      "neural_choice_changed": 20,
+      "greedy_accuracy": 0.0
+    }
+  },
+  "observation_design": {
+    "explicit_future_action_permission": true,
+    "v0_alias_diagnosis": "The 102-feature encoding made a currently ineligible future action look identical whether permission was granted or denied. A constructed two-action example has identical features but opposite optimal labels. This proves missing observation information; it does not establish the cause of every rollout deferral.",
+    "counterfactual_probe_status": "Predefined reusable diagnostic probes; these are not a new pristine benchmark."
+  },
+  "baselines": {
+    "random_eligible": "Uniform among applicable actions and defer; STOP forced when already complete.",
+    "greedy_immediate": "Largest immediate increase in satisfied goal bits, then least immediate weighted cost; no planner calls."
+  },
+  "limitations": "Synthetic deterministic tasks only. Permission, precondition and completed-goal masking are supplied rules, not learned competence. Cost regret excludes failed rollouts; compare it alongside success rate. Test results must not become a model-selection signal.",
+  "elapsed_seconds": 0.878
+}

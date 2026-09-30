@@ -1,0 +1,4 @@
+MODEL_ID = "mlx-community/Qwen3-4B-Instruct-2507-4bit"
+MODEL_REVISION = "50d427756c6b1b2fe0c0a10f67fbda1fc8e82c1b"
+MAX_INPUT_TOKENS = 4096
+MAX_CHOICES = 12

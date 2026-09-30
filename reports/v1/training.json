@@ -1,0 +1,229 @@
+{
+  "model_name": "GoalPolicy v1",
+  "training_origin": "Random initialization; no pretrained weights or Qwen outputs",
+  "parameter_count": 4759809,
+  "config": {
+    "input_dim": 103,
+    "width": 256,
+    "layers": 6,
+    "heads": 8,
+    "expansion": 4
+  },
+  "seed": 20261001,
+  "training_cases": 48000,
+  "validation_cases": 2400,
+  "test_cases": 2400,
+  "steps": 5000,
+  "batch_size": 128,
+  "before_training": {
+    "accuracy": 0.40458333333333335,
+    "nontrivial_accuracy": 0.2592016588906169,
+    "cases": 2400,
+    "nontrivial_cases": 1929,
+    "loss": 1.2935962955653668
+  },
+  "trajectory_augmentation": true,
+  "checkpoint_selection": "Validation goal completion, then validation next-action accuracy",
+  "validation_history": [
+    {
+      "step": 250,
+      "accuracy": 0.905,
+      "nontrivial_accuracy": 0.8818040435458787,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.541941022175597,
+      "validation_goal_success_rate": 0.92
+    },
+    {
+      "step": 500,
+      "accuracy": 0.9158333333333334,
+      "nontrivial_accuracy": 0.8952825298081908,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.6895494605897208,
+      "validation_goal_success_rate": 0.94
+    },
+    {
+      "step": 750,
+      "accuracy": 0.955,
+      "nontrivial_accuracy": 0.9440124416796267,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.43946846210553,
+      "validation_goal_success_rate": 0.9
+    },
+    {
+      "step": 1000,
+      "accuracy": 0.9358333333333333,
+      "nontrivial_accuracy": 0.92016588906169,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.6617790754209273,
+      "validation_goal_success_rate": 0.96
+    },
+    {
+      "step": 1250,
+      "accuracy": 0.9333333333333333,
+      "nontrivial_accuracy": 0.9170554691550026,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.8519986654053597,
+      "validation_goal_success_rate": 0.9533333333333334
+    },
+    {
+      "step": 1500,
+      "accuracy": 0.9525,
+      "nontrivial_accuracy": 0.9409020217729394,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.7049053174893682,
+      "validation_goal_success_rate": 0.9666666666666667
+    },
+    {
+      "step": 1750,
+      "accuracy": 0.9541666666666667,
+      "nontrivial_accuracy": 0.9429756350440642,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.7149010343259822,
+      "validation_goal_success_rate": 0.9333333333333333
+    },
+    {
+      "step": 2000,
+      "accuracy": 0.9558333333333333,
+      "nontrivial_accuracy": 0.9450492483151892,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.6783283583765539,
+      "validation_goal_success_rate": 0.9
+    },
+    {
+      "step": 2250,
+      "accuracy": 0.95,
+      "nontrivial_accuracy": 0.937791601866252,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.8445489813007104,
+      "validation_goal_success_rate": 0.9733333333333334
+    },
+    {
+      "step": 2500,
+      "accuracy": 0.9558333333333333,
+      "nontrivial_accuracy": 0.9450492483151892,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.9631320506656387,
+      "validation_goal_success_rate": 0.9
+    },
+    {
+      "step": 2750,
+      "accuracy": 0.95875,
+      "nontrivial_accuracy": 0.9486780715396579,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.8951961633213795,
+      "validation_goal_success_rate": 0.92
+    },
+    {
+      "step": 3000,
+      "accuracy": 0.955,
+      "nontrivial_accuracy": 0.9440124416796267,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 1.0615860248393922,
+      "validation_goal_success_rate": 0.96
+    },
+    {
+      "step": 3250,
+      "accuracy": 0.9533333333333334,
+      "nontrivial_accuracy": 0.9419388284085018,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.9587763959780083,
+      "validation_goal_success_rate": 0.9466666666666667
+    },
+    {
+      "step": 3500,
+      "accuracy": 0.9529166666666666,
+      "nontrivial_accuracy": 0.9414204250907205,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.8533415503279926,
+      "validation_goal_success_rate": 0.9533333333333334
+    },
+    {
+      "step": 3750,
+      "accuracy": 0.9575,
+      "nontrivial_accuracy": 0.9471228615863142,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 0.9622308984674358,
+      "validation_goal_success_rate": 0.9466666666666667
+    },
+    {
+      "step": 4000,
+      "accuracy": 0.9533333333333334,
+      "nontrivial_accuracy": 0.9419388284085018,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 1.1006210933548088,
+      "validation_goal_success_rate": 0.96
+    },
+    {
+      "step": 4250,
+      "accuracy": 0.95625,
+      "nontrivial_accuracy": 0.9455676516329704,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 1.1104951015670668,
+      "validation_goal_success_rate": 0.9466666666666667
+    },
+    {
+      "step": 4500,
+      "accuracy": 0.9504166666666667,
+      "nontrivial_accuracy": 0.9383100051840332,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 1.2304045145205842,
+      "validation_goal_success_rate": 0.9333333333333333
+    },
+    {
+      "step": 4750,
+      "accuracy": 0.9495833333333333,
+      "nontrivial_accuracy": 0.9372731985484707,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 1.2635961434512866,
+      "validation_goal_success_rate": 0.9466666666666667
+    },
+    {
+      "step": 5000,
+      "accuracy": 0.95375,
+      "nontrivial_accuracy": 0.942457231726283,
+      "cases": 2400,
+      "nontrivial_cases": 1929,
+      "loss": 1.3081791788469612,
+      "validation_goal_success_rate": 0.9533333333333334
+    }
+  ],
+  "best_validation": {
+    "step": 2250,
+    "accuracy": 0.95,
+    "nontrivial_accuracy": 0.937791601866252,
+    "cases": 2400,
+    "nontrivial_cases": 1929,
+    "loss": 0.8445489813007104,
+    "validation_goal_success_rate": 0.9733333333333334
+  },
+  "test": {
+    "accuracy": 0.8808333333333334,
+    "nontrivial_accuracy": 0.8534085084572014,
+    "cases": 2400,
+    "nontrivial_cases": 1951,
+    "loss": 0.5544210868158067
+  },
+  "elapsed_seconds": 52.12,
+  "checkpoint_sha256": "a640e2519d0f33c53ca05bf67be4a9cd0763208126f26e7260744e6da8feae3a",
+  "teacher": "Deterministic search through declared simulator transitions up to 5 actions; goal success first, then weighted token and latency cost, then steps.",
+  "limitations": "Structured simulated software tasks only. No natural-language understanding, real tool execution, or claim of general-world planning. Permission/precondition/stop masks are deterministic rules, not learned capabilities. Synthetic evaluation is not real-agent validation."
+}

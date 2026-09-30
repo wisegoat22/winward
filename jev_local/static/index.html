@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A local decision lab. Score explicit choices and compare them with text generation on the same model.">
+  <title>JEV Local — Decision lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to decision lab</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="JEV Local home"><span class="brand-symbol" aria-hidden="true">j<span>·</span></span><span>JEV <span class="brand-light">Local</span></span></a>
+      <a href="/policy" class="text-button">Our trained model →</a>
+      <div class="connection" id="connection" role="status"><span class="status-dot" aria-hidden="true"></span><span id="connection-label">Connecting to local model</span></div>
+    </header>
+
+    <main id="main">
+      <section class="intro" aria-labelledby="page-title">
+        <div><p class="eyebrow">YOUR MODEL. YOUR MACHINE.</p><h1 id="page-title">A decision, without<br>the monologue.</h1><p class="intro-description">Give your local model a situation and a set of choices. See how it scores them, then compare with a generated answer.</p></div>
+        <aside class="local-note"><span class="local-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="3" width="16" height="13" rx="2"/><path d="M2 20h20M9 16v4m6-4v4M9 9l2 2 4-4"/></svg></span><div><strong>Built to stay local</strong><p>Your prompts are processed on this machine. No cloud inference.</p><span class="model-name" id="model-name">Checking model…</span></div></aside>
+      </section>
+
+      <div id="global-error" class="notice error-notice" role="alert" hidden></div>
+
+      <div class="workspace-grid">
+        <section class="panel composer" aria-labelledby="decision-title">
+          <div class="panel-heading"><div><p class="eyebrow">01 / SET THE SCENE</p><h2 id="decision-title">Your decision</h2></div><span class="small-label">2–12 choices</span></div>
+          <form id="decision-form">
+            <fieldset id="decision-fields">
+              <div class="example-field"><label for="example-select">Start with an example</label><select id="example-select"><option value="">Write your own</option></select></div>
+              <div class="field"><label for="state">Situation <span class="label-hint">Context the model should consider</span></label><textarea id="state" name="state" rows="5" maxlength="16000" placeholder="Describe the facts, constraints, and what matters…" required></textarea></div>
+              <div class="field"><label for="question">Question</label><input id="question" name="question" type="text" maxlength="1000" placeholder="What should happen next?" required></div>
+              <div class="choices-heading"><label id="choices-label">Available choices</label><button id="add-choice" class="text-button" type="button"><span aria-hidden="true">+</span> Add choice</button></div>
+              <div id="choices" class="choices" aria-labelledby="choices-label"></div>
+              <p class="field-help">Use distinct names with letters, numbers, spaces, hyphens, or underscores. Optional descriptions clarify what each choice means.</p>
+              <details class="settings"><summary>Review settings <span class="summary-note">Flags for a closer look</span></summary><div class="settings-grid"><div class="field"><label for="threshold">Minimum top score <output id="threshold-value" for="threshold">80%</output></label><input type="range" id="threshold" min="0" max="1" step="0.05" value="0.8"></div><div class="field"><label for="margin">Minimum lead <output id="margin-value" for="margin">20%</output></label><input type="range" id="margin" min="0" max="1" step="0.05" value="0.2"></div></div><p class="field-help">A result is flagged for review if its top score or lead over the next choice is below these values. These are your review rules, not guarantees of correctness.</p></details>
+              <div class="form-actions"><button class="button button-primary" id="decide-button" type="submit"><span>Score decision</span><svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 10h12m-5-5 5 5-5 5"/></svg></button><button class="button button-secondary" id="compare-button" type="button">Compare both</button></div>
+            </fieldset>
+          </form>
+          <p class="privacy-note"><svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3.5" y="7" width="9" height="7" rx="1.5"/><path d="M5.5 7V4.5a2.5 2.5 0 0 1 5 0V7"/></svg>Your text stays in this page and is not saved by this interface.</p>
+        </section>
+
+        <section class="panel results-panel" aria-labelledby="results-title" aria-busy="false">
+          <div class="panel-heading"><div><p class="eyebrow">02 / READ THE SIGNAL</p><h2 id="results-title">Decision output</h2></div><span class="small-label" id="results-mode">READY WHEN YOU ARE</span></div>
+          <div id="run-status" class="run-status" role="status" aria-live="polite" hidden></div>
+          <div id="empty-state" class="empty-state"><div class="signal-illustration" aria-hidden="true"><div><i></i><b></b></div><div><i></i><b></b></div><div><i></i><b></b></div></div><h3>Make the options explicit.</h3><p>Pick an example or describe a decision.<br>JEV scores your choices without generating an answer.</p><div class="empty-chips"><span>Local inference</span><span>Measured timings</span></div></div>
+          <div id="results" hidden>
+            <article id="score-result" class="result-section" hidden></article>
+            <article id="generation-result" class="result-section generation-section" hidden></article>
+            <p id="comparison-note" class="comparison-note" hidden></p>
+            <p class="interpretation-note"><strong>Read the scores as relative preference.</strong> They compare the choices you supplied; they are not calibrated confidence or measured accuracy.</p>
+            <details class="raw-data"><summary>Inspect response JSON</summary><div class="raw-toolbar"><span>Actual responses from your local server</span><button type="button" id="copy-json" class="text-button">Copy JSON</button></div><pre id="json-output" tabindex="0"></pre></details>
+          </div>
+        </section>
+      </div>
+
+      <section class="panel benchmark-panel" aria-labelledby="benchmark-title">
+        <div class="benchmark-intro"><div><p class="eyebrow">03 / MEASURE IT YOURSELF</p><h2 id="benchmark-title">Same model. Two approaches.</h2><p>Run the included examples through scoring and generation. Compare measured latency and agreement with their expected answers.</p></div><div class="benchmark-actions"><button id="benchmark-button" class="button button-secondary" type="button">Run demo benchmark</button><button id="stop-benchmark" class="button button-secondary" type="button" hidden>Stop after request</button></div></div>
+        <p class="benchmark-method">Both approaches warm up once, then run sequentially on the same machine, alternating which runs first. Warm-up requests are excluded from results. This small demo set is illustrative, not a general accuracy evaluation. Generation is limited to 80 output tokens.</p>
+        <div id="benchmark-output" hidden><div class="benchmark-progress"><span id="benchmark-status" role="status" aria-live="polite"></span><progress id="benchmark-progress" value="0" max="1" aria-label="Benchmark progress"></progress></div><div id="benchmark-summary" class="benchmark-summary"></div><div class="table-scroll"><table><caption class="sr-only">Measured results for each demo example</caption><thead><tr><th scope="col">Example / expected</th><th scope="col">Scoring choice</th><th scope="col">Generation choice</th><th scope="col">Scoring time</th><th scope="col">Generation time</th></tr></thead><tbody id="benchmark-rows"></tbody></table></div></div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>JEV Local <span aria-hidden="true">/</span> A small lab for explicit decisions.</span><span id="runtime-name">Local inference</span></footer>
+  </div>
+</body>
+</html>

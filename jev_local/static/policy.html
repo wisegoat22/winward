@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A local training lab for a small neural policy trained from scratch on simulated software-agent decisions.">
+  <title>Winward · Training lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/policy.css">
+  <script src="/static/policy.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to training lab</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/policy" aria-label="Winward training lab"><span class="brand-symbol" aria-hidden="true">g<span>·</span></span><span>Winward <span class="brand-light">Lab</span></span></a>
+      <div class="policy-header-right"><a href="/" class="text-button">Qwen decision demo</a><div class="connection" id="policy-connection" role="status"><span class="status-dot" aria-hidden="true"></span><span id="policy-connection-label">Checking trained model</span></div></div>
+    </header>
+    <main id="main">
+      <section class="intro policy-intro" aria-labelledby="page-title">
+        <div><p class="eyebrow">OUR FIRST MODEL · TRAINED FROM SCRATCH</p><h1 id="page-title">The next useful action.</h1><p class="intro-description">Reach the goal. Spend fewer tokens. Avoid unnecessary work. Explore a small neural policy learning these priorities from software-agent simulations.</p></div>
+        <aside class="local-note"><div><strong>New weights. Local training.</strong><p>This is a small experimental decision model with no pretrained or Qwen weights. It is an early step toward your goal, not a 4B language model.</p><span class="model-name" id="policy-model-name">Model details pending</span></div></aside>
+      </section>
+      <div id="policy-error" class="notice error-notice" role="alert" hidden></div>
+      <section class="policy-model-panel panel" aria-labelledby="model-title">
+        <div class="panel-heading"><div><p class="eyebrow">01 / THE MODEL WE TRAINED</p><h2 id="model-title">Measured, not assumed.</h2></div><span id="training-status" class="review-badge review">Checking checkpoint</span></div>
+        <div id="model-metrics" class="policy-stats"><p class="field-help">Loading the local training report…</p></div>
+        <p id="policy-provenance" class="interpretation-note" hidden></p>
+        <p id="policy-audit-note" class="policy-audit-note" hidden></p>
+        <p id="policy-probe-note" class="policy-probe-note" hidden></p>
+        <p id="policy-limitation" class="interpretation-note">Results apply to synthetic simulations. Real repositories and arbitrary natural-language goals require further work and evaluation.</p>
+        <details class="raw-data"><summary>Inspect the training report</summary><pre id="training-json" tabindex="0">Waiting for the local server.</pre></details>
+      </section>
+      <div class="policy-workspace">
+        <section class="panel composer" aria-labelledby="scenario-title">
+          <div class="panel-heading"><div><p class="eyebrow">02 / DEFINE THE WIN</p><h2 id="scenario-title">A software-agent moment</h2></div><span class="small-label">SIMULATED WORLD</span></div>
+          <form id="policy-form">
+            <fieldset id="policy-fields" disabled>
+              <div class="example-field"><label for="policy-example">Scenario</label><select id="policy-example"><option value="">Loading examples…</option></select></div>
+              <p id="scenario-summary" class="scenario-summary"></p>
+              <div class="fact-heading"><h3>Facts and goal</h3><button type="button" id="reset-scenario" class="text-button">Reset scenario</button></div>
+              <p class="field-help fact-help">“True now” is the current situation. Every checked goal fact must become true. Change a fact to explore another decision.</p>
+              <div class="table-scroll"><table class="fact-table"><caption class="sr-only">Current facts and required goal facts</caption><thead><tr><th scope="col">Fact</th><th scope="col">True now</th><th scope="col">Needed for win</th></tr></thead><tbody id="scenario-facts"></tbody></table></div>
+              <div class="actions-heading"><h3>Possible next actions</h3><span id="eligible-count" class="small-label"></span></div>
+              <p class="field-help action-cost-help">Token and time costs are supplied simulation estimates.</p>
+              <div id="scenario-actions" class="policy-actions"></div>
+              <details class="settings"><summary>Efficiency preferences</summary><p class="field-help">Goal completion comes first. These weights express the cost of tokens and simulated elapsed time.</p><div class="settings-grid"><div class="field"><label for="token-weight">Cost per token</label><input type="number" id="token-weight" min="0" max="100" step="0.1" value="1" required></div><div class="field"><label for="latency-weight">Cost per millisecond</label><input type="number" id="latency-weight" min="0" max="10" step="0.001" value="0.01" required></div></div><p class="field-help">The reference searches up to five actions ahead. The neural policy learns to imitate those decisions; it does not perform that search internally.</p></details>
+              <button class="button button-primary policy-run" id="policy-run" type="submit">Choose the next action <span aria-hidden="true">→</span></button>
+            </fieldset>
+          </form>
+          <p class="privacy-note">Local simulation only. These actions do not edit files or run tools.</p>
+        </section>
+        <section class="panel results-panel policy-results-panel" id="policy-results-panel" aria-labelledby="policy-results-title" aria-busy="false">
+          <div class="panel-heading"><div><p class="eyebrow">03 / COMPARE THE DECISION</p><h2 id="policy-results-title">Policy meets consequences</h2></div></div>
+          <div id="policy-run-status" class="run-status" role="status" hidden>Evaluating the policy and searching possible consequences…</div>
+          <p id="stale-results" class="notice policy-stale" role="status" hidden>The scenario or preferences changed. Run again to update this result.</p>
+          <div id="policy-empty" class="empty-state"><div class="signal-illustration" aria-hidden="true"><div><i></i><b></b></div><div><i></i><b></b></div><div><i></i><b></b></div></div><h3>What moves the goal forward?</h3><p>Choose a scenario, inspect the costs,<br>then compare the learned decision with search.</p><div class="empty-chips"><span>New learned weights</span><span>Up to 5 steps ahead</span></div></div>
+          <div id="policy-results" hidden>
+            <div class="decision-comparison"><article class="decision-card"><p class="eyebrow">NEURAL POLICY</p><h3 id="model-choice">—</h3><p id="model-choice-detail" class="field-help"></p></article><article class="decision-card reference-card"><p class="eyebrow">SEARCH REFERENCE</p><h3 id="planner-choice">—</h3><p id="planner-choice-detail" class="field-help"></p></article></div>
+            <p id="policy-agreement" class="comparison-note" role="status"></p>
+            <div class="result-section"><div class="result-kicker"><span>Learned action scores</span><span class="method-label">RELATIVE PREFERENCE</span></div><div id="policy-probabilities" class="probabilities"></div><p class="interpretation-note">A high score is a model preference among the permitted actions. It is not a verified probability of winning.</p></div>
+            <div class="result-section"><div class="result-kicker"><span>Consequences found by search</span><span class="method-label">AT MOST 5 ACTIONS</span></div><p id="plan-summary" class="field-help"></p><ol id="policy-plan" class="policy-plan"></ol><p class="interpretation-note">The plan uses the simulator’s declared effects. Real tool outcomes may differ, so an agent would need to observe the result and decide again.</p></div>
+            <details id="search-scores-details" class="raw-data"><summary>Compare reference action scores</summary><div id="search-scores"></div></details>
+            <details class="raw-data"><summary>Inspect actual decision response</summary><pre id="decision-json" tabindex="0"></pre></details>
+          </div>
+        </section>
+      </div>
+      <section class="panel policy-principles" aria-labelledby="principles-title"><div><p class="eyebrow">HOW YOUR APPROACH BECOMES TRAINING</p><h2 id="principles-title">Goal first. Deliberate effort.</h2></div><ol><li><strong>Make the win explicit.</strong> Check the goal and the facts that affect it.</li><li><strong>Consider consequences.</strong> Search legal action sequences up to five steps, using their declared effects.</li><li><strong>Spend effort where it helps.</strong> Prefer efficient successful paths and stop when the goal is achieved.</li></ol><p class="field-help">The model receives structured facts and action effects, not emotions or persuasive wording. The five-step reference is a bounded search, not a claim to have analyzed every possible real-world consequence.</p></section>
+    </main>
+    <footer class="site-footer"><span>Winward <span aria-hidden="true">/</span> A first experiment in learning useful next actions.</span><span>Runs on your Mac · No cloud inference</span></footer>
+  </div>
+</body>
+</html>

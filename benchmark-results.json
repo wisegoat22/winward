@@ -1,0 +1,395 @@
+{
+  "timestamp": "2026-09-30T03:55:33.457617+00:00",
+  "method": "12 synthetic support tickets. Sequential pairs, alternating order, both paths warmed. Same model; task-specific prompts. No prompt caching. Generation capped at 80 tokens. Timings exclude HTTP overhead. This is a smoke benchmark, not a general accuracy evaluation.",
+  "summary": {
+    "decide": {
+      "correct": 12,
+      "cases": 12,
+      "mean_ms": 46.58,
+      "median_ms": 46.52,
+      "output_tokens": 0
+    },
+    "generate": {
+      "correct": 12,
+      "cases": 12,
+      "mean_ms": 263.34,
+      "median_ms": 252.56,
+      "output_tokens": 330
+    },
+    "mean_latency_ratio": 5.65
+  },
+  "results": [
+    {
+      "id": "support-1",
+      "expected": "billing",
+      "decide": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical_support": 2.5436697561644073e-13,
+          "account_access": 3.978968196594046e-12,
+          "other": 3.7010111230036113e-13
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999999960211,
+        "needs_review": false,
+        "latency_ms": 46.33,
+        "input_tokens": 169,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "generate": {
+        "choice": "billing",
+        "text": "billing: The issue involves a duplicate charge and refund, which falls under billing responsibilities.",
+        "latency_ms": 202.68,
+        "input_tokens": 191,
+        "output_tokens": 18,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-2",
+      "expected": "technical_support",
+      "generate": {
+        "choice": "technical_support",
+        "text": "technical_support: The issue involves a crash when exporting a PDF, which is a product error or bug related to the desktop app's functionality.",
+        "latency_ms": 376.69,
+        "input_tokens": 193,
+        "output_tokens": 29,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "decide": {
+        "choice": "technical_support",
+        "probabilities": {
+          "billing": 2.1724406995549117e-10,
+          "technical_support": 1.0,
+          "account_access": 1.605227839540646e-09,
+          "other": 9.736197403853453e-10
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999983947722,
+        "needs_review": false,
+        "latency_ms": 46.5,
+        "input_tokens": 171,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-3",
+      "expected": "account_access",
+      "decide": {
+        "choice": "account_access",
+        "probabilities": {
+          "billing": 1.3176516822088757e-10,
+          "technical_support": 2.7347000532140786e-12,
+          "account_access": 1.0,
+          "other": 3.581750174230791e-10
+        },
+        "confidence": 1.0,
+        "margin": 0.999999999641825,
+        "needs_review": false,
+        "latency_ms": 46.55,
+        "input_tokens": 168,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "generate": {
+        "choice": "account_access",
+        "text": "account_access: The issue involves password reset and sign-in, which relates to account authentication and access.",
+        "latency_ms": 218.02,
+        "input_tokens": 190,
+        "output_tokens": 21,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-4",
+      "expected": "other",
+      "generate": {
+        "choice": "other",
+        "text": "other: The query relates to sponsorships and partnerships, which falls outside the scope of billing, technical support, or account access.",
+        "latency_ms": 249.99,
+        "input_tokens": 188,
+        "output_tokens": 27,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "decide": {
+        "choice": "other",
+        "probabilities": {
+          "billing": 1.4637800520300726e-12,
+          "technical_support": 1.3615253672757954e-13,
+          "account_access": 8.423467652562966e-12,
+          "other": 1.0
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999999915765,
+        "needs_review": false,
+        "latency_ms": 46.7,
+        "input_tokens": 166,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-5",
+      "expected": "billing",
+      "decide": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical_support": 2.4133657312158663e-12,
+          "account_access": 7.99195987166712e-11,
+          "other": 3.098819161342914e-12
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999999200804,
+        "needs_review": false,
+        "latency_ms": 47.04,
+        "input_tokens": 171,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "generate": {
+        "choice": "billing",
+        "text": "billing: The issue involves an invoice showing an incorrect price for an enterprise subscription when the user has a basic subscription, which falls under billing concerns related to charges and invoice accuracy.",
+        "latency_ms": 300.26,
+        "input_tokens": 193,
+        "output_tokens": 36,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-6",
+      "expected": "technical_support",
+      "generate": {
+        "choice": "technical_support",
+        "text": "technical_support: The error 500 indicates a server-side issue, likely a bug or integration problem, which falls under technical support responsibilities.",
+        "latency_ms": 268.18,
+        "input_tokens": 192,
+        "output_tokens": 30,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "decide": {
+        "choice": "technical_support",
+        "probabilities": {
+          "billing": 4.847367646165779e-11,
+          "technical_support": 1.0,
+          "account_access": 4.847367646165779e-11,
+          "other": 6.224152443445874e-11
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999999377585,
+        "needs_review": false,
+        "latency_ms": 46.36,
+        "input_tokens": 170,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-7",
+      "expected": "account_access",
+      "decide": {
+        "choice": "account_access",
+        "probabilities": {
+          "billing": 1.4637800520300726e-12,
+          "technical_support": 5.384943792957619e-13,
+          "account_access": 1.0,
+          "other": 4.5990586339250683e-10
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999995400941,
+        "needs_review": false,
+        "latency_ms": 47.25,
+        "input_tokens": 174,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "generate": {
+        "choice": "account_access",
+        "text": "account_access: The issue involves two-factor verification and loss of the authenticator app, which relates to authentication and account access recovery.",
+        "latency_ms": 257.81,
+        "input_tokens": 196,
+        "output_tokens": 27,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-8",
+      "expected": "other",
+      "generate": {
+        "choice": "other",
+        "text": "other: The request involves a press inquiry, not covered by any listed support categories, indicating the need for manual triage.",
+        "latency_ms": 242.46,
+        "input_tokens": 192,
+        "output_tokens": 26,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "decide": {
+        "choice": "other",
+        "probabilities": {
+          "billing": 9.35763443186792e-14,
+          "technical_support": 1.8426275113473008e-14,
+          "account_access": 5.384943792957619e-13,
+          "other": 1.0
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999999994615,
+        "needs_review": false,
+        "latency_ms": 46.6,
+        "input_tokens": 170,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-9",
+      "expected": "billing",
+      "decide": {
+        "choice": "billing",
+        "probabilities": {
+          "billing": 1.0,
+          "technical_support": 1.8795284339317986e-12,
+          "account_access": 2.2897366294682975e-11,
+          "other": 1.1399914215740048e-12
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999999771026,
+        "needs_review": false,
+        "latency_ms": 47.32,
+        "input_tokens": 169,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "generate": {
+        "choice": "billing",
+        "text": "billing: The issue involves a charge being applied after cancellation and a request for a refund, which falls under billing responsibilities.",
+        "latency_ms": 239.03,
+        "input_tokens": 191,
+        "output_tokens": 25,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-10",
+      "expected": "technical_support",
+      "generate": {
+        "choice": "technical_support",
+        "text": "technical_support: The issue involves a dashboard freeze and date filter functionality, indicating a product bug or integration problem that falls under technical support.",
+        "latency_ms": 255.13,
+        "input_tokens": 190,
+        "output_tokens": 28,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "decide": {
+        "choice": "technical_support",
+        "probabilities": {
+          "billing": 1.4637800520300726e-12,
+          "technical_support": 1.0,
+          "account_access": 2.7347000532140786e-12,
+          "other": 1.3887952420021943e-11
+        },
+        "confidence": 1.0,
+        "margin": 0.999999999986112,
+        "needs_review": false,
+        "latency_ms": 46.17,
+        "input_tokens": 168,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-11",
+      "expected": "account_access",
+      "decide": {
+        "choice": "account_access",
+        "probabilities": {
+          "billing": 6.560210707995395e-12,
+          "technical_support": 7.835053135799019e-13,
+          "account_access": 1.0,
+          "other": 2.2897366294682975e-11
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999999771026,
+        "needs_review": false,
+        "latency_ms": 46.32,
+        "input_tokens": 168,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "generate": {
+        "choice": "account_access",
+        "text": "account_access: The issue involves a locked account due to multiple failed password attempts, which falls under account access concerns.",
+        "latency_ms": 233.98,
+        "input_tokens": 190,
+        "output_tokens": 24,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    },
+    {
+      "id": "support-12",
+      "expected": "other",
+      "generate": {
+        "choice": "other",
+        "text": "other: The query is about a meetup talk request, not related to billing, technical issues, account access, or support tickets. This falls outside the defined categories and requires manual triage.",
+        "latency_ms": 315.82,
+        "input_tokens": 191,
+        "output_tokens": 39,
+        "finish_reason": "stop",
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      },
+      "decide": {
+        "choice": "other",
+        "probabilities": {
+          "billing": 7.582567351782643e-10,
+          "technical_support": 2.7347000532140786e-12,
+          "account_access": 4.5990586339250683e-10,
+          "other": 1.0
+        },
+        "confidence": 1.0,
+        "margin": 0.9999999992417432,
+        "needs_review": false,
+        "latency_ms": 45.77,
+        "input_tokens": 169,
+        "output_tokens": 0,
+        "model": "mlx-community/Qwen3-4B-Instruct-2507-4bit",
+        "correct": true
+      }
+    }
+  ]
+}
