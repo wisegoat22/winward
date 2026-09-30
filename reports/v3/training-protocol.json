@@ -1,0 +1,26 @@
+{
+  "schema_version": "winward-v3-public-observation-1",
+  "input_dim": 505,
+  "training_seed": 300000000,
+  "sealed_audit_protocol_sha256": "cce8b818b26b0a5846d4d7dbbd74bcc9e3bdc95d3bdfc247155e8020e7ecd84b",
+  "belief_training_seed": 310000000,
+  "belief_validation_seed": 320000000,
+  "reserved_final_audit_seeds": {
+    "belief": 330000000,
+    "graph": 340000000,
+    "tools": 350000000
+  },
+  "maximum_training_steps": 6000,
+  "steps_requested": 6000,
+  "validation_selection_interval": 500,
+  "regression_tolerance": 0.0,
+  "training_mix_probabilities": {
+    "legacy": 0.375,
+    "goals": 0.1875,
+    "tools": 0.1875,
+    "belief": 0.25
+  },
+  "selection": "All strict retention gates first; otherwise minimize worst regression; then expected belief completion and belief teacher agreement.",
+  "no_test_read_or_generation": true,
+  "promotion": "Independent final audit required; trainer never promotes."
+}

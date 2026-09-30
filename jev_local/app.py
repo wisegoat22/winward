@@ -23,13 +23,14 @@ from .examples import EXAMPLES
 from .schemas import DecisionRequest, GenerationRequest, ScoreRequest, TokenizeRequest
 from .policy_schemas import PolicyRequest
 from agent_training.runtime import PolicyRuntime
-from .lab_schemas import SandboxRequest, UncertaintyRequest
+from .lab_schemas import SandboxRequest, UncertaintyRequest, V3EpisodeRequest
 from agent_lab.runtime import LabRuntime
+from agent_lab.runtime_v3 import V3Runtime
 
 STATIC = Path(__file__).parent / "static"
 
 
-def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_factory=LabRuntime):
+def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_factory=LabRuntime, v3_factory=V3Runtime):
     @asynccontextmanager
     async def lifespan(app):
         app.state.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="jev-inference")
@@ -39,6 +40,7 @@ def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_fact
             app.state.engine = await loop.run_in_executor(app.state.executor, engine_factory)
             app.state.policy = policy_factory()
             app.state.lab = lab_factory()
+            app.state.v3 = v3_factory()
             yield
         finally:
             app.state.executor.shutdown(wait=True, cancel_futures=True)
@@ -108,6 +110,26 @@ def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_fact
     @app.get("/api/v2/status")
     def lab_status():
         return app.state.lab.status()
+
+    @app.get("/api/v3/status")
+    def v3_status():
+        return app.state.v3.status()
+
+    @app.get("/api/v3/examples")
+    def v3_examples():
+        return app.state.v3.examples()
+
+    @app.post("/api/v3/decide")
+    async def v3_decide(request: UncertaintyRequest):
+        return await infer(app.state.v3.decide, request.example_id, request.max_depth)
+
+    @app.post("/api/v3/episode")
+    async def v3_episode(request: V3EpisodeRequest):
+        return await infer(app.state.v3.episode, request.example_id, request.seed, request.max_depth)
+
+    @app.get("/v3")
+    def v3_page():
+        return FileResponse(STATIC / "v3.html")
 
     @app.get("/api/v2/examples")
     def lab_examples():

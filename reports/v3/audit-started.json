@@ -1,0 +1,10 @@
+{
+  "checkpoint_sha256": "fa10e60b4942cd40a7a0c5b11798c207ca42e6aa34cb88f6829ee4cf70589ebb",
+  "protocol_sha256": "159e013621c0a939e23cd0358516f3acb0201cfb1801803f97585a100bee2661",
+  "sealed_audit_protocol_file_sha256": "0d867e646c844730f81b73ae9d72af2729465ad6855384c6f9059e7bdb202206",
+  "checkpoint_frozen_before_test_generation": true,
+  "baseline_sha256": {
+    "v1": "a640e2519d0f33c53ca05bf67be4a9cd0763208126f26e7260744e6da8feae3a",
+    "v2.1": "5778327d4f3312f6efcf989b0782ad84b49f54a37deb1cc262a78bb6542a29cc"
+  }
+}

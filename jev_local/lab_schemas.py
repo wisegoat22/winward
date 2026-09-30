@@ -15,3 +15,7 @@ class SandboxRequest(BaseModel):
     changed_goal: bool = Field(default=False, strict=True)
     uncertain: bool = Field(default=False, strict=True)
     policy: Literal["neural", "evidence_first", "random"] = "neural"
+
+
+class V3EpisodeRequest(UncertaintyRequest):
+    seed: int = Field(default=43001, ge=0, le=1000000000, strict=True)

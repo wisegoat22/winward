@@ -1,0 +1,886 @@
+{
+  "model_name": "Winward v3 candidate",
+  "schema_version": "winward-v3-public-observation-1",
+  "initialization": "Our immutable v1 checkpoint; legacy weights copied, additional input columns zero initialized",
+  "sealed_audit_protocol_sha256": "0d867e646c844730f81b73ae9d72af2729465ad6855384c6f9059e7bdb202206",
+  "training_origin": "Transfer and continued training from our own random-initialized v1; new belief/domain columns initialized to zero. No third-party pretrained weights or Qwen outputs.",
+  "architecture": "One shared set transformer and one output head; explicit observation-format channels, no ensemble, no exact-planner correction at inference.",
+  "parameter_count": 4862721,
+  "config": {
+    "input_dim": 505,
+    "width": 256,
+    "layers": 6,
+    "heads": 8,
+    "expansion": 4
+  },
+  "seed": 300000000,
+  "training_cases": 104000,
+  "validation_cases": 8710,
+  "test_cases": 0,
+  "test": null,
+  "training_mix_cases": {
+    "legacy": 48000,
+    "goals": 16000,
+    "tools": 16000,
+    "belief": 24000
+  },
+  "sampling_probabilities": {
+    "legacy": 0.375,
+    "goals": 0.1875,
+    "tools": 0.1875,
+    "belief": 0.25
+  },
+  "distillation": {
+    "rows": 48000,
+    "teacher_correct_rows": 47496,
+    "mixing_when_correct": 0.15,
+    "temperature": 1.0
+  },
+  "steps": 6000,
+  "selected_step": 500,
+  "batch_size": 128,
+  "learning_rate": 0.0001,
+  "validation_baselines": {
+    "legacy_completion": 0.97,
+    "goal_change_accuracy": 0.9910714285714286,
+    "actual_tool_completion": 1.0,
+    "v1_checkpoint_sha256": "a640e2519d0f33c53ca05bf67be4a9cd0763208126f26e7260744e6da8feae3a",
+    "v2_1_checkpoint_sha256": "5778327d4f3312f6efcf989b0782ad84b49f54a37deb1cc262a78bb6542a29cc",
+    "tool_validation_seed": 220100000,
+    "legacy_validation_cases": 200,
+    "goal_validation_cases": 2400,
+    "tool_validation_cases": 16
+  },
+  "best_validation": {
+    "step": 500,
+    "legacy_completion": 0.975,
+    "goal_change_accuracy": 0.9821428571428571,
+    "actual_tool_completion": 1.0,
+    "belief_expected_completion": 0.849078125,
+    "belief_accuracy": 0.9033333333333333,
+    "goal_decisions": {
+      "paired_goal_active_cases": 1008,
+      "paired_goal_active_accuracy": 0.9821428571428571,
+      "causal_choice_pairs": 73,
+      "causal_choice_pair_both_correct": 0.7808219178082192
+    },
+    "tool_decisions": {
+      "accuracy": 1.0,
+      "nontrivial_accuracy": 1.0,
+      "cases": 2710,
+      "nontrivial_cases": 2430,
+      "loss": 0.10562243399981794
+    },
+    "belief_decisions": {
+      "accuracy": 0.9033333333333333,
+      "nontrivial_accuracy": 0.887049659201558,
+      "cases": 1200,
+      "nontrivial_cases": 1027,
+      "loss": 0.5326566620667775
+    },
+    "belief_rollout": {
+      "cases": 48,
+      "expected_verified_completion": 0.849078125,
+      "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+    },
+    "selection": [
+      0,
+      -0.008928571428571508,
+      0.849078125,
+      0.9033333333333333,
+      1.957142857142857
+    ],
+    "retention_gates": {
+      "legacy_completion": {
+        "candidate": 0.975,
+        "baseline": 0.97,
+        "delta": 0.0050000000000000044,
+        "passed": true
+      },
+      "goal_change_accuracy": {
+        "candidate": 0.9821428571428571,
+        "baseline": 0.9910714285714286,
+        "delta": -0.008928571428571508,
+        "passed": false
+      },
+      "actual_tool_completion": {
+        "candidate": 1.0,
+        "baseline": 1.0,
+        "delta": 0.0,
+        "passed": true
+      }
+    },
+    "all_retention_gates_passed": false
+  },
+  "validation_history": [
+    {
+      "step": 500,
+      "legacy_completion": 0.975,
+      "goal_change_accuracy": 0.9821428571428571,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.849078125,
+      "belief_accuracy": 0.9033333333333333,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9821428571428571,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.7808219178082192
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10562243399981794
+      },
+      "belief_decisions": {
+        "accuracy": 0.9033333333333333,
+        "nontrivial_accuracy": 0.887049659201558,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.5326566620667775
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.849078125,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.008928571428571508,
+        0.849078125,
+        0.9033333333333333,
+        1.957142857142857
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.975,
+          "baseline": 0.97,
+          "delta": 0.0050000000000000044,
+          "passed": true
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9821428571428571,
+          "baseline": 0.9910714285714286,
+          "delta": -0.008928571428571508,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 1000,
+      "legacy_completion": 0.905,
+      "goal_change_accuracy": 0.9890873015873016,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.849078125,
+      "belief_accuracy": 0.9325,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9890873015873016,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.8767123287671232
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10364823999532886
+      },
+      "belief_decisions": {
+        "accuracy": 0.9325,
+        "nontrivial_accuracy": 0.9211295034079844,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.26897514780362447
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.849078125,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.06499999999999995,
+        0.849078125,
+        0.9325,
+        1.8940873015873017
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.905,
+          "baseline": 0.97,
+          "delta": -0.06499999999999995,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9890873015873016,
+          "baseline": 0.9910714285714286,
+          "delta": -0.001984126984126977,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 1500,
+      "legacy_completion": 0.94,
+      "goal_change_accuracy": 0.9880952380952381,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.8699114583333333,
+      "belief_accuracy": 0.925,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9880952380952381,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.8767123287671232
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10347272937387533
+      },
+      "belief_decisions": {
+        "accuracy": 0.925,
+        "nontrivial_accuracy": 0.9123661148977604,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.41954479058583577
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.8699114583333333,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.030000000000000027,
+        0.8699114583333333,
+        0.925,
+        1.928095238095238
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.94,
+          "baseline": 0.97,
+          "delta": -0.030000000000000027,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9880952380952381,
+          "baseline": 0.9910714285714286,
+          "delta": -0.0029761904761904656,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 2000,
+      "legacy_completion": 0.96,
+      "goal_change_accuracy": 0.9900793650793651,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.8553802083333334,
+      "belief_accuracy": 0.9308333333333333,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9900793650793651,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.8767123287671232
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10351685213867567
+      },
+      "belief_decisions": {
+        "accuracy": 0.9308333333333333,
+        "nontrivial_accuracy": 0.9191820837390458,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.2959333459536235
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.8553802083333334,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.010000000000000009,
+        0.8553802083333334,
+        0.9308333333333333,
+        1.950079365079365
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.96,
+          "baseline": 0.97,
+          "delta": -0.010000000000000009,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9900793650793651,
+          "baseline": 0.9910714285714286,
+          "delta": -0.0009920634920634885,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 2500,
+      "legacy_completion": 0.96,
+      "goal_change_accuracy": 0.9791666666666666,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.8762135416666667,
+      "belief_accuracy": 0.9483333333333334,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9791666666666666,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.8356164383561644
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10347659181858451
+      },
+      "belief_decisions": {
+        "accuracy": 0.9483333333333334,
+        "nontrivial_accuracy": 0.9396299902629016,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.3204761259754499
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.8762135416666667,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.011904761904761973,
+        0.8762135416666667,
+        0.9483333333333334,
+        1.9391666666666665
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.96,
+          "baseline": 0.97,
+          "delta": -0.010000000000000009,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9791666666666666,
+          "baseline": 0.9910714285714286,
+          "delta": -0.011904761904761973,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 3000,
+      "legacy_completion": 0.935,
+      "goal_change_accuracy": 0.9811507936507936,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.8699114583333333,
+      "belief_accuracy": 0.9408333333333333,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9811507936507936,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.8493150684931506
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10437038940758998
+      },
+      "belief_decisions": {
+        "accuracy": 0.9408333333333333,
+        "nontrivial_accuracy": 0.9308666017526777,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.36567195574442546
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.8699114583333333,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.03499999999999992,
+        0.8699114583333333,
+        0.9408333333333333,
+        1.9161507936507935
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.935,
+          "baseline": 0.97,
+          "delta": -0.03499999999999992,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9811507936507936,
+          "baseline": 0.9910714285714286,
+          "delta": -0.009920634920634996,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 3500,
+      "legacy_completion": 0.92,
+      "goal_change_accuracy": 0.9742063492063492,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.8699114583333333,
+      "belief_accuracy": 0.9525,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9742063492063492,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.8082191780821918
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.103217435501021
+      },
+      "belief_decisions": {
+        "accuracy": 0.9525,
+        "nontrivial_accuracy": 0.9444985394352483,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.26694423575575155
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.8699114583333333,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.04999999999999993,
+        0.8699114583333333,
+        0.9525,
+        1.8942063492063492
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.92,
+          "baseline": 0.97,
+          "delta": -0.04999999999999993,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9742063492063492,
+          "baseline": 0.9910714285714286,
+          "delta": -0.016865079365079416,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 4000,
+      "legacy_completion": 0.96,
+      "goal_change_accuracy": 0.9801587301587301,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.897046875,
+      "belief_accuracy": 0.9541666666666667,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9801587301587301,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.863013698630137
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10320649526908485
+      },
+      "belief_decisions": {
+        "accuracy": 0.9541666666666667,
+        "nontrivial_accuracy": 0.9464459591041869,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.41316825196146967
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.897046875,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.010912698412698485,
+        0.897046875,
+        0.9541666666666667,
+        1.9401587301587302
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.96,
+          "baseline": 0.97,
+          "delta": -0.010000000000000009,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9801587301587301,
+          "baseline": 0.9910714285714286,
+          "delta": -0.010912698412698485,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 4500,
+      "legacy_completion": 0.955,
+      "goal_change_accuracy": 0.9851190476190477,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.8762135416666667,
+      "belief_accuracy": 0.9425,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9851190476190477,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.863013698630137
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10322726076894966
+      },
+      "belief_decisions": {
+        "accuracy": 0.9425,
+        "nontrivial_accuracy": 0.9328140214216164,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.48173394610484443
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.8762135416666667,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.015000000000000013,
+        0.8762135416666667,
+        0.9425,
+        1.9401190476190475
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.955,
+          "baseline": 0.97,
+          "delta": -0.015000000000000013,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9851190476190477,
+          "baseline": 0.9910714285714286,
+          "delta": -0.005952380952380931,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 5000,
+      "legacy_completion": 0.955,
+      "goal_change_accuracy": 0.9841269841269841,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.8762135416666667,
+      "belief_accuracy": 0.9441666666666667,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9841269841269841,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.863013698630137
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10318091993694403
+      },
+      "belief_decisions": {
+        "accuracy": 0.9441666666666667,
+        "nontrivial_accuracy": 0.934761441090555,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.46349459191163384
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.8762135416666667,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.015000000000000013,
+        0.8762135416666667,
+        0.9441666666666667,
+        1.939126984126984
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.955,
+          "baseline": 0.97,
+          "delta": -0.015000000000000013,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9841269841269841,
+          "baseline": 0.9910714285714286,
+          "delta": -0.006944444444444531,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 5500,
+      "legacy_completion": 0.95,
+      "goal_change_accuracy": 0.9831349206349206,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.8699114583333333,
+      "belief_accuracy": 0.945,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9831349206349206,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.8904109589041096
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10314268309140158
+      },
+      "belief_decisions": {
+        "accuracy": 0.945,
+        "nontrivial_accuracy": 0.9357351509250244,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.6525486113596708
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.8699114583333333,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.020000000000000018,
+        0.8699114583333333,
+        0.945,
+        1.9331349206349207
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.95,
+          "baseline": 0.97,
+          "delta": -0.020000000000000018,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9831349206349206,
+          "baseline": 0.9910714285714286,
+          "delta": -0.00793650793650802,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    },
+    {
+      "step": 6000,
+      "legacy_completion": 0.955,
+      "goal_change_accuracy": 0.9841269841269841,
+      "actual_tool_completion": 1.0,
+      "belief_expected_completion": 0.8699114583333333,
+      "belief_accuracy": 0.9466666666666667,
+      "goal_decisions": {
+        "paired_goal_active_cases": 1008,
+        "paired_goal_active_accuracy": 0.9841269841269841,
+        "causal_choice_pairs": 73,
+        "causal_choice_pair_both_correct": 0.863013698630137
+      },
+      "tool_decisions": {
+        "accuracy": 1.0,
+        "nontrivial_accuracy": 1.0,
+        "cases": 2710,
+        "nontrivial_cases": 2430,
+        "loss": 0.10318067104029864
+      },
+      "belief_decisions": {
+        "accuracy": 0.9466666666666667,
+        "nontrivial_accuracy": 0.937682570593963,
+        "cases": 1200,
+        "nontrivial_cases": 1027,
+        "loss": 0.6916832280283173
+      },
+      "belief_rollout": {
+        "cases": 48,
+        "expected_verified_completion": 0.8699114583333333,
+        "scope": "Validation declared probability trees; neural choices only, including unfinished/unreachable cases."
+      },
+      "selection": [
+        0,
+        -0.015000000000000013,
+        0.8699114583333333,
+        0.9466666666666667,
+        1.939126984126984
+      ],
+      "retention_gates": {
+        "legacy_completion": {
+          "candidate": 0.955,
+          "baseline": 0.97,
+          "delta": -0.015000000000000013,
+          "passed": false
+        },
+        "goal_change_accuracy": {
+          "candidate": 0.9841269841269841,
+          "baseline": 0.9910714285714286,
+          "delta": -0.006944444444444531,
+          "passed": false
+        },
+        "actual_tool_completion": {
+          "candidate": 1.0,
+          "baseline": 1.0,
+          "delta": 0.0,
+          "passed": true
+        }
+      },
+      "all_retention_gates_passed": false
+    }
+  ],
+  "validation_retention_passed": false,
+  "checkpoint_selection": "All strict retention gates first; otherwise minimize worst regression; then expected belief completion and belief teacher agreement.",
+  "regression_tolerance": 0.0,
+  "checkpoint_sha256": "fa10e60b4942cd40a7a0c5b11798c207ca42e6aa34cb88f6829ee4cf70589ebb",
+  "checkpoint_frozen_before_test_generation": true,
+  "reserved_final_audit_seeds": {
+    "belief": 330000000,
+    "graph": 340000000,
+    "tools": 350000000
+  },
+  "elapsed_seconds": 108.78,
+  "source_file_sha256": {
+    "runs/goalpolicy-v1/train.jsonl": "92b87785343114541cfa6fc3c832ad3d12e3b1f230434b4753abfc467cdd9209",
+    "runs/goalpolicy-v1/valid.jsonl": "2e50875ff9d6c5db15d2d679d29e7bde8f1fd6a2bacf89c8365b870c3c641665",
+    "runs/goalpolicy-v2-tools/train.jsonl": "ccf6ba254d3f06a4223f2b693b126df9919dfde18ee680e60fef4c6fd87ed2e8",
+    "runs/goalpolicy-v2-tools/valid-goals.jsonl": "0f2d4b68798d7fd9649036d2cd08a1c3c3daf1aa427aff8f5b45cf59acaa7f2b",
+    "runs/goalpolicy-v2-tools/valid-tools.jsonl": "44cf5049d1d93f17e9ac739cebbe27e5646af8c54ce6c5e159f7c16f039aa5c0"
+  },
+  "data_sha256": {
+    "train-beliefs.jsonl": "0d90574d12b9c9a9b97bc135e8ffc27b45ba1311740212f89dcdc225d2cfc9c3",
+    "valid-beliefs.jsonl": "e365550b20ba804a1c2b4b1f8cc047c43a6673fc661d0910ec4f93e0c634c57c",
+    "train-goals.jsonl": "1a554f0f5d0d8a673bae358cf79b51d434da400fe8db6488c66d803ecc08e5c4",
+    "train-tools.jsonl": "4e7299a5aa11b1dd8dafad9edb83455a595adbdf513492a928b988b218ab8a68"
+  },
+  "limitations": "Structured public models only, supplied transition probabilities and candidate actions. No language understanding or autonomous patch generation. Permissions, applicability and verified-stop masks are hard rules. No claim of superiority or promotion until the frozen independent audit.",
+  "original_sealed_audit_protocol_sha256": "cce8b818b26b0a5846d4d7dbbd74bcc9e3bdc95d3bdfc247155e8020e7ecd84b",
+  "audit_protocol_amendment": {
+    "timestamp_utc": "2026-09-30T09:46:12.045970+00:00",
+    "original_protocol_sha256": "0753eda354bf949de64000965631639b5e5cba95ab59871aea51e20edf8ec51d",
+    "original_protocol_file_sha256": "cce8b818b26b0a5846d4d7dbbd74bcc9e3bdc95d3bdfc247155e8020e7ecd84b",
+    "amended_protocol_sha256": "159e013621c0a939e23cd0358516f3acb0201cfb1801803f97585a100bee2661",
+    "amended_protocol_file_sha256": "0d867e646c844730f81b73ae9d72af2729465ad6855384c6f9059e7bdb202206",
+    "checkpoint_sha256": "fa10e60b4942cd40a7a0c5b11798c207ca42e6aa34cb88f6829ee4cf70589ebb",
+    "selected_step": 500,
+    "test_instances_generated": false,
+    "reason": "Independent pre-audit coverage review added explicit changed-goal retention against v2.1, paired-success legacy action-cost retention, and enforcement of the existing strict validation-retention requirement. Amendment occurred after training and validation selection, before any final audit instances or outcomes. Weights, checkpoint selection and frozen validation outcomes were not changed."
+  }
+}

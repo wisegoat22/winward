@@ -39,7 +39,7 @@ class LabRuntime:
                 "evaluation": read_json(ROOT / "reports" / "v2" / "evaluation.json"),
                 "sandbox_audit": read_json(ROOT / "reports" / "v2" / "sandbox.json"),
             },
-            "repository": "https://github.com/dagar1994/winward",
+            "repository": "https://github.com/wisegoat22/winward",
             "limitations": "A structured policy with supplied patch candidates, not a model that reads arbitrary code or writes patches. Uncertainty planning is a separate algorithmic reference. Coding tasks use trusted generated files in temporary directories, not an operating-system security sandbox.",
         }
 
