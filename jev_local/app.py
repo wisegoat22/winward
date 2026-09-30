@@ -1,5 +1,6 @@
 import asyncio
 import os
+import time
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import asynccontextmanager
 from functools import partial
@@ -27,6 +28,8 @@ from .lab_schemas import SandboxRequest, UncertaintyRequest, V3EpisodeRequest
 from agent_lab.runtime import LabRuntime
 from agent_lab.runtime_v3 import V3Runtime
 from agent_lab.runtime_v4 import V4Runtime
+from agent_lab.situation import interpretation_result, choose_next_step
+from .situation_schemas import SituationInput, SituationDecision
 
 STATIC = Path(__file__).parent / "static"
 
@@ -120,6 +123,26 @@ def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_fact
     @app.get("/api/v4/status")
     def v4_status():
         return app.state.v4.status()
+
+    @app.post("/api/situation/interpret")
+    async def interpret_situation(request: SituationInput):
+        def interpret():
+            started = time.perf_counter()
+            result = app.state.engine.read_situation(request.situation, request.goal)
+            interpreted = interpretation_result(request, result)
+            interpreted["interpretation"] = {**interpreted["interpretation"],
+                "model_work_ms": result["interpretation"]["latency_ms"],
+                "latency_ms": round((time.perf_counter() - started) * 1000, 2)}
+            return interpreted
+        return await infer(interpret)
+
+    @app.post("/api/situation/decide")
+    async def decide_situation(request: SituationDecision):
+        return await infer(choose_next_step, app.state.v4, request)
+
+    @app.get("/try")
+    def situation_page():
+        return FileResponse(STATIC / "situation.html")
 
     @app.get("/api/v4/examples")
     def v4_examples():

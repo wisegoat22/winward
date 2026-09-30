@@ -29,6 +29,15 @@ class LazyEngine:
     def generate(self, request):
         return self._load().generate(request)
 
+    def read_situation(self, situation, goal):
+        try:
+            return self._load().read_situation(situation, goal)
+        except ModelNotReadyError as error:
+            raise ModelNotReadyError(
+                "The local text helper is not installed. You can still use the preset lab at /v4. "
+                "Install the optional Qwen model with scripts/download_model.py to read your own text."
+            ) from error
+
     def tokenize(self, text, add_special_tokens=False):
         return self._load().tokenize(text, add_special_tokens)
 

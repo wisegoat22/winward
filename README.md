@@ -6,10 +6,18 @@ Winward is a local research project for choosing an AI agent's next action. Its 
 
 The name combines **win** and **onward**: keep moving toward the desired outcome while adapting to new evidence.
 
+## Try your own situation
+
+Open **http://127.0.0.1:8765/try** with the local server running. Enter a software situation and the desired win, select **Read my situation**, review the task type, facts, and constraints, then select **Get my next step**. After taking the suggested step yourself, update the situation with what actually happened and try again. Three built-in examples cover an unknown bug, a change awaiting tests, and completed work.
+
+The optional local **Qwen 4B** model reads the description into a reviewable form. Our **Winward v4, with 4.86M parameters**, chooses from a fixed software workflow using the reviewed facts. The reader does not choose the action. This text interface requires both the downloaded Qwen model and a trained v4 checkpoint; the existing preset labs remain available separately.
+
+Review matters: a quoted sentence can still be interpreted incorrectly. You can change the task type, correct facts, or uncheck a misread constraint. The app suggests an action without inspecting files or executing it. Requests stay on the Mac and are not saved by this interface. [How to test and interpret the result](docs/TRY_IT.md).
+
 ## Current state
 
 - **V4 improves uncertainty decisions:** **856/960 episodes completed (89.17%)**, versus **406/960 (42.29%)** for frozen v3 and **779/960 (81.15%)** for information-first rules on the **same fresh v4 cases**. The v4 task distribution differs from the older v3 audit.
-- One **4,862,721-parameter** model continued from our own v1 weights on **160,000 synthetic and observed-state examples**, entirely on an Apple silicon Mac. Two fixed training settings were compared using validation only. No external pretrained weights or language-model labels are used.
+- One **4,862,721-parameter** model continued from our own v1 weights on **160,000 synthetic and observed-state examples**, entirely on an Apple silicon Mac. Two fixed training settings were compared using validation only. No external pretrained weights or language-model labels are used to train this policy. The separate text reader above uses pretrained Qwen.
 - **V4 is not promoted:** five of twelve checks failed, covering retention of legacy completion/cost and changed-goal decisions. It passed **40/40 controlled coding fixtures**, matching rules that remained faster. Earlier versions stay available.
 
 [V4 methods, complete results, and reproduction](docs/V4.md) · [Frozen v4 audit](reports/v4/evaluation.json) · [Training report](reports/v4/training.json)
@@ -44,7 +52,7 @@ uv sync --frozen
 .venv/bin/python -m agent_training.evaluate \
   --run runs/goalpolicy-v1 --fresh-seed 90000000 --fresh-cases 2400
 
-# Qwen is optional and is not loaded by the Winward lab.
+# Qwen is optional for preset labs; /try uses it to read descriptions.
 .venv/bin/python scripts/server.py start
 ```
 
@@ -57,6 +65,7 @@ uv run --frozen pytest -q
 node --check jev_local/static/policy.js
 node --check jev_local/static/v3.js
 node --check jev_local/static/v4.js
+node --check jev_local/static/situation.js
 ```
 
 Tests cover planner correctness, unknown-world observations, goal revisions, failed and timed-out checks, checkpoint data boundaries, and local API restrictions. Live API and lightweight DOM checks also verify the interface logic. Rendered browser layout has not been visually verified. Current evidence supports continued work on task completion and efficiency before increasing model size.

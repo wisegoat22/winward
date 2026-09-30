@@ -150,6 +150,11 @@ class Engine:
             "finish_reason": last.finish_reason if last else "stop", "model": MODEL_ID,
         }
 
+    def read_situation(self, situation, goal):
+        from .situation_reader import read_situation
+
+        return read_situation(self, situation, goal)
+
     def score(self, request: ScoreRequest):
         started = time.perf_counter()
         tokens = self.tokenize(request.query)

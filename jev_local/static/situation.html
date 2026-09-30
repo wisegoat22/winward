@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Try Winward · What should I do next?</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/v2.css">
+  <link rel="stylesheet" href="/static/situation.css">
+  <script src="/static/situation.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to your situation</a>
+<div class="site-shell situation-shell">
+  <header class="site-header">
+    <a class="brand" href="/try"><span class="brand-symbol" aria-hidden="true">w<span>·</span></span><span>Winward <span class="brand-light">/ try it</span></span></a>
+    <nav aria-label="Main navigation"><a href="/v4">V4 results ↗</a><a href="/policy">Earlier model</a></nav>
+  </header>
+  <main id="main">
+    <section class="intro">
+      <div><p class="eyebrow">THE GOAL FIRST. THE NEXT STEP SECOND.</p><h1>What should I<br>do next?</h1><p class="intro-description">Describe a software task and the win you need. Check what Winward understood, then get one suggested next action.</p></div>
+      <aside class="local-note"><div><strong>A local experiment you can try.</strong><p>Qwen reads your description. Our Winward v4 model chooses the next action. Everything runs on this Mac.</p><span class="model-name">Qwen: 4B parameters · Our model: 4.86M parameters</span></div></aside>
+    </section>
+    <p class="scope-note">This version supports software-agent tasks, such as inspecting a bug, making a change, testing it, or finishing. It suggests a step; it does not execute it. V4 is experimental and has not passed every <a href="/v4">promotion check</a>.</p>
+    <div class="situation-workspace">
+      <section class="panel composer situation-composer" aria-labelledby="situation-heading">
+        <div class="panel-heading"><div><p class="eyebrow">01 / START WITH THE SITUATION</p><h2 id="situation-heading">What’s happening?</h2></div></div>
+        <form id="situation-form">
+          <div class="field"><label for="situation-input">Situation <span class="label-hint">What you know, what happened, and what you have already tried</span></label><textarea id="situation-input" name="situation" rows="7" minlength="10" maxlength="5000" required placeholder="The save button stopped working. I haven’t looked at the error or the relevant code yet." aria-describedby="situation-help"></textarea><p id="situation-help" class="field-help">Include evidence you already have, such as an error message or the result of a test. 10–5,000 characters.</p></div>
+          <div class="field"><label for="goal-input">Desired win <span class="label-hint">What would count as done?</span></label><textarea id="goal-input" name="goal" rows="2" minlength="3" maxlength="500" required placeholder="Make saving work and verify that it works." aria-describedby="goal-help"></textarea><p id="goal-help" class="field-help">One clear, verifiable outcome. 3–500 characters.</p></div>
+          <button id="interpret-button" class="button button-primary" type="submit">Read my situation →</button>
+        </form>
+        <div class="sample-area"><p class="field-help">Or start with an example:</p><div class="sample-buttons" aria-label="Example situations"><button class="sample-button" type="button" data-sample="unknown">A bug with an unknown cause</button><button class="sample-button" type="button" data-sample="test">A change that needs testing</button><button class="sample-button" type="button" data-sample="done">The work is already done</button></div></div>
+        <p id="reading-status" class="run-status" role="status" hidden>Reading your situation locally. The first request may take longer while Qwen loads…</p>
+        <p id="situation-error" class="notice error-notice" role="alert" hidden></p>
+      </section>
+      <section class="panel results-panel situation-review" aria-labelledby="review-heading">
+        <div class="panel-heading"><div><p class="eyebrow">02 / CHECK, THEN CHOOSE</p><h2 id="review-heading">Your next step starts here.</h2></div></div>
+        <div id="situation-empty" class="empty-state"><div class="signal-illustration" aria-hidden="true"><div><i></i><b></b></div><div><i></i><b></b></div><div><i></i><b></b></div></div><h3>A clear goal. A useful next step.</h3><p>Your situation will appear here in plain language.<br>You can correct the facts before asking for a decision.</p></div>
+        <div id="situation-help-panel" hidden><h3 id="clarification-heading" tabindex="-1"></h3><p id="clarification-summary" class="body-copy"></p><ul id="clarification-questions" class="plain-list"></ul><p class="field-help">Update the situation or desired win on the left, then read it again.</p><p id="clarification-limitation" class="field-help"></p></div>
+        <div id="situation-draft" hidden>
+          <h3 id="draft-heading" tabindex="-1">Here’s what I understood.</h3>
+          <p id="draft-summary" class="body-copy"></p>
+          <div class="goal-summary"><span class="eyebrow">THE WIN</span><p id="draft-goal"></p></div>
+          <div id="restrictions-section" class="restrictions-section" hidden><fieldset id="restriction-fields"><legend>Your constraints</legend><p class="field-help">Review what was understood. Leave a constraint checked only if you intend it to apply. Uncheck a mistaken interpretation, or edit your description and read it again.</p><div id="draft-restrictions" class="restriction-list"></div></fieldset></div>
+          <form id="decision-form">
+            <div class="field task-kind-field"><label for="task-kind">What kind of task is this?</label><select id="task-kind" aria-describedby="task-kind-help"><option value="bugfix">Fix a bug</option><option value="feature">Build a feature</option><option value="refactor">Refactor existing code</option><option value="investigate">Investigate a problem</option><option value="review">Review code</option><option value="documentation">Write or update documentation</option><option value="tests">Run existing checks</option></select><p id="task-kind-help" class="field-help">Check that this matches your intent. The kind of task changes which next actions are available.</p></div>
+            <fieldset id="fact-fields"><legend>Which facts are already true?</legend><p class="field-help">Correct the checkboxes below. Checked facts tell the model what has already happened. Leave uncertain facts unchecked.</p><div id="draft-facts" class="fact-list"></div></fieldset>
+            <div id="unknowns-section" class="draft-section" hidden><h4>Still unknown</h4><ul id="draft-unknowns" class="plain-list"></ul></div>
+            <details id="action-preview" class="action-details"><summary>See the workflow actions</summary><ul id="draft-actions" class="action-list"></ul><p class="field-help">Only actions marked “Available now” can be chosen next. Earlier steps, completed work, and your constraints affect availability.</p></details>
+            <p id="actions-stale-note" class="field-help" hidden>The possible actions will refresh when you get your next step.</p>
+            <p id="interpretation-time" class="field-help"></p>
+            <button id="decide-button" class="button button-primary" type="submit">Get my next step →</button>
+          </form>
+          <p id="decision-status" class="run-status" role="status" hidden>Winward is choosing the next action…</p>
+          <p id="draft-limitation" class="field-help"></p>
+        </div>
+      </section>
+    </div>
+    <section id="recommendation-panel" class="panel recommendation-panel" aria-live="polite" hidden>
+      <div class="recommendation-header"><p class="eyebrow">YOUR SUGGESTED NEXT STEP</p><span class="review-badge review">Experimental suggestion</span></div>
+      <h2 id="recommendation-name" tabindex="-1"></h2>
+      <p id="recommendation-description" class="body-copy"></p>
+      <div class="recommendation-grid"><div><h3>How this was chosen</h3><p id="recommendation-reason" class="body-copy"></p></div><div><h3>What to check next</h3><p id="recommendation-check" class="body-copy"></p></div></div>
+      <div id="assumptions-section" class="draft-section" hidden><h3>Assumptions behind this suggestion</h3><ul id="recommendation-assumptions" class="plain-list"></ul></div>
+      <p id="recommendation-source" class="source-note"></p>
+      <p id="recommendation-limitation" class="field-help"></p>
+      <p class="next-round-note">After taking the step, add what happened to your situation and ask again. The next decision should use your latest evidence.</p>
+    </section>
+  </main>
+  <footer class="site-footer"><span>Winward / Win first. Weigh consequences.</span><span>Describe → Check the facts → Choose the next step</span></footer>
+</div>
+</body>
+</html>
