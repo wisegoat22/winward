@@ -26,11 +26,12 @@ from agent_training.runtime import PolicyRuntime
 from .lab_schemas import SandboxRequest, UncertaintyRequest, V3EpisodeRequest
 from agent_lab.runtime import LabRuntime
 from agent_lab.runtime_v3 import V3Runtime
+from agent_lab.runtime_v4 import V4Runtime
 
 STATIC = Path(__file__).parent / "static"
 
 
-def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_factory=LabRuntime, v3_factory=V3Runtime):
+def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_factory=LabRuntime, v3_factory=V3Runtime, v4_factory=V4Runtime):
     @asynccontextmanager
     async def lifespan(app):
         app.state.executor = ThreadPoolExecutor(max_workers=1, thread_name_prefix="jev-inference")
@@ -41,6 +42,7 @@ def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_fact
             app.state.policy = policy_factory()
             app.state.lab = lab_factory()
             app.state.v3 = v3_factory()
+            app.state.v4 = v4_factory()
             yield
         finally:
             app.state.executor.shutdown(wait=True, cancel_futures=True)
@@ -114,6 +116,26 @@ def create_app(engine_factory=LazyEngine, policy_factory=PolicyRuntime, lab_fact
     @app.get("/api/v3/status")
     def v3_status():
         return app.state.v3.status()
+
+    @app.get("/api/v4/status")
+    def v4_status():
+        return app.state.v4.status()
+
+    @app.get("/api/v4/examples")
+    def v4_examples():
+        return app.state.v4.examples()
+
+    @app.post("/api/v4/decide")
+    async def v4_decide(request: UncertaintyRequest):
+        return await infer(app.state.v4.decide, request.example_id, request.max_depth)
+
+    @app.post("/api/v4/episode")
+    async def v4_episode(request: V3EpisodeRequest):
+        return await infer(app.state.v4.episode, request.example_id, request.seed, request.max_depth)
+
+    @app.get("/v4")
+    def v4_page():
+        return FileResponse(STATIC / "v4.html")
 
     @app.get("/api/v3/examples")
     def v3_examples():

@@ -1,0 +1,7 @@
+{
+  "input_dim": 505,
+  "width": 256,
+  "layers": 6,
+  "heads": 8,
+  "expansion": 4
+}

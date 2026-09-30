@@ -8,11 +8,13 @@ The name combines **win** and **onward**: keep moving toward the desired outcome
 
 ## Current state
 
-- **V3 is trained and audited, but not promoted:** eight of twelve checks failed. It completed **293/480 uncertainty episodes (61.04%)**, compared with **444/480 (92.5%)** for simple information-first rules.
-- One **4,862,721-parameter** model continued from our own v1 weights on **104,000 synthetic and observed-state examples**, entirely on an Apple silicon Mac. No Qwen weights, adapters, or generated labels are used by this policy.
-- V3 receives declared possible worlds and learns to rank actions under uncertainty. It retained **40/40 controlled coding fixtures**, but regressed on legacy completion and changed-goal decisions. Earlier versions remain available unchanged.
+- **V4 improves uncertainty decisions:** **856/960 episodes completed (89.17%)**, versus **406/960 (42.29%)** for frozen v3 and **779/960 (81.15%)** for information-first rules on the **same fresh v4 cases**. The v4 task distribution differs from the older v3 audit.
+- One **4,862,721-parameter** model continued from our own v1 weights on **160,000 synthetic and observed-state examples**, entirely on an Apple silicon Mac. Two fixed training settings were compared using validation only. No external pretrained weights or language-model labels are used.
+- **V4 is not promoted:** five of twelve checks failed, covering retention of legacy completion/cost and changed-goal decisions. It passed **40/40 controlled coding fixtures**, matching rules that remained faster. Earlier versions stay available.
 
-[V3 methods, complete results, and reproduction](docs/V3.md) · [Frozen audit](reports/v3/evaluation.json) · [Training report](reports/v3/training.json)
+[V4 methods, complete results, and reproduction](docs/V4.md) · [Frozen v4 audit](reports/v4/evaluation.json) · [Training report](reports/v4/training.json)
+
+**V3:** the earlier uncertainty experiment failed eight of twelve checks on its original audit, including 61.04% completion versus 92.5% for information-first rules. Its known failures informed v4 development; the new comparison evaluates both frozen models on fresh, matched v4 instances. [V3 methods and original results](docs/V3.md) remain preserved.
 
 **V1:** the original 4.76-million-parameter policy was trained from random initialization on 48,000 examples. Its original fresh simulated audit reached **291/300 goals within five actions (97%)**; its original changed-goal probes reached **52.5%** next-action agreement. Later matched comparisons use different instances and should not be compared directly with those original percentages.
 
@@ -20,7 +22,7 @@ The name combines **win** and **onward**: keep moving toward the desired outcome
 
 [V2 methods, failures, results, and reproduction](docs/V2.md) · [V2.1 audit](reports/v2-tools/evaluation.json) · [Actual coding-task audit](reports/v2-tools/sandbox.json)
 
-**This is not a 4B model, a general language model, or a production agent.** The learned policy consumes structured numeric facts and action definitions. Search labels use declared simulator effects. Permissions and finish checks are enforced rules. V3 does not discover its own world model or explicitly search five levels at inference. Exact search remains competitive on these tiny tasks. The separate original Qwen text-scoring demo is described in [its guide](docs/QWEN_DEMO.md).
+**This is not a 4B model, a general language model, or a production agent.** The learned policy consumes structured numeric facts and action definitions. Search labels use declared simulator effects. Permissions and finish checks are enforced rules. V4 does not discover its own world model or explicitly search five levels at inference. Exact search remains competitive on these tiny tasks. The separate original Qwen text-scoring demo is described in [its guide](docs/QWEN_DEMO.md).
 
 [Training details and limitations](TRAINING.md) · [Saved training report](reports/v1/training.json) · [Fresh-instance audit](reports/v1/evaluation.json)
 
@@ -46,7 +48,7 @@ uv sync --frozen
 .venv/bin/python scripts/server.py start
 ```
 
-Open **http://127.0.0.1:8765/policy** for v1. Follow [the v2 guide](docs/V2.md#reproduce-on-mac) to train the tools candidate and open **http://127.0.0.1:8765/v2**. Follow [the v3 guide](docs/V3.md#reproduce-on-mac) to train and audit the uncertainty candidate and open **http://127.0.0.1:8765/v3**. Stop with `.venv/bin/python scripts/server.py stop`. Dependencies require internet to install; training and runtime run locally. Training refuses to overwrite existing checkpoints. No API key, paid service, or cloud GPU is required. The optional Qwen demo can be installed separately with `.venv/bin/python scripts/download_model.py` and loads only when requested.
+Open **http://127.0.0.1:8765/policy** for v1. Follow [the v2 guide](docs/V2.md#reproduce-on-mac) for the tools candidate and **http://127.0.0.1:8765/v2**. Follow [the v3 guide](docs/V3.md#reproduce-on-mac) for the earlier uncertainty candidate at **http://127.0.0.1:8765/v3**, then [the v4 guide](docs/V4.md#reproduce-on-mac) for the reliability experiment at **http://127.0.0.1:8765/v4**. Stop with `.venv/bin/python scripts/server.py stop`. Dependencies require internet to install; training and runtime run locally. Training refuses to overwrite existing checkpoints. No API key, paid service, or cloud GPU is required. The optional Qwen demo can be installed separately with `.venv/bin/python scripts/download_model.py` and loads only when requested.
 
 ## Development
 
@@ -54,6 +56,7 @@ Open **http://127.0.0.1:8765/policy** for v1. Follow [the v2 guide](docs/V2.md#r
 uv run --frozen pytest -q
 node --check jev_local/static/policy.js
 node --check jev_local/static/v3.js
+node --check jev_local/static/v4.js
 ```
 
 Tests cover planner correctness, unknown-world observations, goal revisions, failed and timed-out checks, checkpoint data boundaries, and local API restrictions. Live API and lightweight DOM checks also verify the interface logic. Rendered browser layout has not been visually verified. Current evidence supports continued work on task completion and efficiency before increasing model size.

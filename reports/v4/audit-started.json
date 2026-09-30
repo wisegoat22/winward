@@ -1,0 +1,66 @@
+{
+  "checkpoint_sha256": "de989d050a45cc2399a31a32081b8f2961a67a2d70d545a8888f8de882ecbede",
+  "protocol_sha256": "2f762b19c2c076fb0291a3c3f3058823403fde7b38b4e16f585b61850cb3287f",
+  "sealed_audit_protocol_file_sha256": "663f3f87fe0da50a6acd256ce191201e16dd0ce8d610ac5e638556e2e127536f",
+  "checkpoint_frozen_before_test_generation": true,
+  "source_and_artifact_manifest": {
+    "source_sha256": {
+      "agent_lab/__init__.py": "33e83a5a14576bdb47f9fd8172895394ca630ee320404cceed02501ee6800308",
+      "agent_lab/belief.py": "ea640b221a04b27e0e5c0fad14be9cbcf66e4430292662b6ca34d72a3a22072a",
+      "agent_lab/benchmark.py": "9a414bc941a98ff3aee2e542b4bdefb20253d719813f3309cf5eaca7791f66b1",
+      "agent_lab/predictor.py": "fe70f93b1adf049ace7549d8ef7f46414448e1be883a3f9fd974d1fd3d99c744",
+      "agent_lab/runner.py": "f5d97c7123d5850babd80e238bc499311075884e386ecb3d666de970256dad37",
+      "agent_lab/sandbox.py": "35738d660b86500785dc892918b1bfe4b9d3bcccb063cf5f3a3ff3afeba96a85",
+      "agent_training/__init__.py": "468615bff8daa4de507492cea4b01cbde0d0b78989243aaf2e43b12378b23fbe",
+      "agent_training/belief_data.py": "a42685a0380d744ab9e0af71d07593815a260bc991ee0bc8840be391177733d4",
+      "agent_training/belief_data_v4.py": "075695a505c3bc24696cb8d1c07fa25f60f53aed867b72ab3653f80222c46201",
+      "agent_training/curriculum.py": "512b5dd4bbd8bb9a5a9efb55576d95f1f64c657f903c53bb6fd3babfbcb44d83",
+      "agent_training/evaluate.py": "558a83942212d5360f261adc84d5064fd1572834719248230fc2f9a6d4b532ad",
+      "agent_training/evaluate_v2.py": "cc9b41f4ea9dd9e86ede06acd591a1a4aa8f73bbd1715c397354007b6b3530ba",
+      "agent_training/evaluate_v3.py": "44d413ec2d50e942e838c199880cb50abbc38363f19dbe4e23ed2632b26ec853",
+      "agent_training/evaluate_v4.py": "fa63986d87f7a43552daccb9ea29a42feb3d855ca4b14bcf09fe940df0d993e9",
+      "agent_training/features.py": "5d9240352a926660e5ef961ed91ffaaa4f5a84153f77cac492b55025e17e0fd2",
+      "agent_training/model.py": "48ed32b458af48413e65912c14b9bb58857ad36221a5ca1c00a383003bfc1357",
+      "agent_training/model_v3.py": "f7d8f310837980fead0008b4cf79b7e75b7b50016b5707d9175807d3fe3552c4",
+      "agent_training/model_v4.py": "609932c30cdde135f97b4c9f3f33253c2f84eb2b58de0ba84725d8fc6c253ac9",
+      "agent_training/runtime.py": "b87f21a0456e7ce01066e94622755413d024a6a59ca18519fa21c6c846f03aab",
+      "agent_training/simulator.py": "79d873560e19b0056045208d63dcfa16c201fe6ef8ed5debee6d955481a523d6",
+      "agent_training/train.py": "9a388269a15ec0789b7e1d6208bd2609287ff0ed09d613636bbfffa08acbae9d",
+      "agent_training/train_tools.py": "faab5376eb9a8f681d3db196a20e1086b9a18b02775d2020c3c2f78b9c43b774",
+      "agent_training/train_v2.py": "81eed91b69132bbf62ead4699db73d1f4b826ab776a893af2af270ddd895d7aa",
+      "agent_training/train_v3.py": "869f4660e686e2b1a0229607f1832a199f4db295605c0e4510b99ea6ea3aeeb3",
+      "agent_training/train_v4.py": "478c5d233c582d68490794c120f6ef9fbe542ec491510b0153d365dcc70ae426"
+    },
+    "artifacts": {
+      "v4": {
+        "model.safetensors": "de989d050a45cc2399a31a32081b8f2961a67a2d70d545a8888f8de882ecbede",
+        "report.json": "49f6f462609102e77f6eed7a5d9a17fd50a8f49bd4bb2b7f3efb976ac70854a9",
+        "config.json": "5c3e668b6565f0b0f8815ee023110382ea929c905558ecb3f675580605708e35"
+      },
+      "v1": {
+        "model.safetensors": "a640e2519d0f33c53ca05bf67be4a9cd0763208126f26e7260744e6da8feae3a",
+        "report.json": "ae9b826ecf3b04d5a704fb1783e54690b92811247a6e551558eed953836d688f",
+        "config.json": "ff0d6af7f34f97390305fb68e1ff580076a7e83cefb0706cfa9660dade5a0f6c"
+      },
+      "v2.1": {
+        "model.safetensors": "5778327d4f3312f6efcf989b0782ad84b49f54a37deb1cc262a78bb6542a29cc",
+        "report.json": "6b101acc358637fb2934c754dab74a8b99da43af05ef506f9313abde18228836",
+        "config.json": "ff0d6af7f34f97390305fb68e1ff580076a7e83cefb0706cfa9660dade5a0f6c"
+      },
+      "v3": {
+        "model.safetensors": "fa10e60b4942cd40a7a0c5b11798c207ca42e6aa34cb88f6829ee4cf70589ebb",
+        "report.json": "09084e5b686a46c98f1de9516b92df8c299e91e5700490d6fbaf6b595e1fa366",
+        "config.json": "5c3e668b6565f0b0f8815ee023110382ea929c905558ecb3f675580605708e35"
+      }
+    },
+    "protocol_sha256": "2f762b19c2c076fb0291a3c3f3058823403fde7b38b4e16f585b61850cb3287f",
+    "scope": "Source and frozen model/report/config artifacts recorded before any final generation."
+  },
+  "model_setup_ms": 78.22662498801947,
+  "initial_belief_warmup_ms": 18.825542007107288,
+  "baseline_sha256": {
+    "v1": "a640e2519d0f33c53ca05bf67be4a9cd0763208126f26e7260744e6da8feae3a",
+    "v2.1": "5778327d4f3312f6efcf989b0782ad84b49f54a37deb1cc262a78bb6542a29cc",
+    "v3": "fa10e60b4942cd40a7a0c5b11798c207ca42e6aa34cb88f6829ee4cf70589ebb"
+  }
+}
