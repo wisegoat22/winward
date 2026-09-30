@@ -1,0 +1,40 @@
+{
+  "protocol": {
+    "version": "winward-v3-gate-1",
+    "seeds": {
+      "belief": 330000000,
+      "legacy": 340000000,
+      "curriculum": 341000000,
+      "tools": 350000000
+    },
+    "counts": {
+      "belief_problems": 120,
+      "episodes_per_problem": 4,
+      "graph_rows_per_suite": 2400,
+      "graph_rollouts_per_suite": 300,
+      "actual_tool_fixtures": 40
+    },
+    "horizon": 5,
+    "weights": {
+      "tokens": 1.0,
+      "latency_ms": 0.01
+    },
+    "tool_kinds": [
+      "interval",
+      "collection"
+    ],
+    "gates": {
+      "legacy_retention": "Matched fresh legacy goal completion >= frozen v1",
+      "curriculum_retention": "Matched fresh v2-composition goal completion >= frozen v1",
+      "actual_tool_retention": "Matched real fixture verified-and-stopped completion >= frozen v2.1",
+      "uncertainty_expected": "Exact expected verified completion >= each of two cheap baselines",
+      "uncertainty_sampled": "Matched sampled verified completion >= each of two cheap baselines",
+      "useful_efficiency": "Strictly lower mean weighted declared action cost plus measured decision overhead on the same episodes both methods complete, against the strongest cheap baseline"
+    },
+    "strong_baseline_selection": "Highest exact expected verified completion, then sampled completion, then lowest sampled total cost; ties broken by name",
+    "promotion": "All gates must pass. No allowed regression tolerance. Failure retains existing defaults.",
+    "timing": "Tokens and action latency are declared estimates for belief tasks. Decision latency is measured. Weighted cost = tokens + .01*(declared action ms + measured decision ms). No real tool time is claimed for belief simulation.",
+    "provenance": "Fresh instances after freeze; generator families and fixture templates are developer-known. This is not an unseen-repository or natural-language benchmark."
+  },
+  "protocol_sha256": "0753eda354bf949de64000965631639b5e5cba95ab59871aea51e20edf8ec51d"
+}
