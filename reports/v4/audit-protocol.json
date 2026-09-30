@@ -1,0 +1,70 @@
+{
+  "protocol": {
+    "version": "winward-v4-gate-1",
+    "seeds": {
+      "belief": 430000000,
+      "legacy": 440000000,
+      "curriculum": 441000000,
+      "goal_changes": 442000000,
+      "tools": 450000000
+    },
+    "counts": {
+      "belief_problems": 240,
+      "episodes_per_problem": 4,
+      "graph_rows_per_suite": 2400,
+      "graph_rollouts_per_suite": 300,
+      "actual_tool_fixtures": 40,
+      "goal_change_pairs": 200
+    },
+    "horizon": 5,
+    "weights": {
+      "tokens": 1.0,
+      "latency_ms": 0.01
+    },
+    "tool_kinds": [
+      "interval",
+      "collection"
+    ],
+    "gates": {
+      "validation_retention": "Frozen candidate must already pass the trainer's predeclared strict validation-retention checks",
+      "legacy_retention": "Matched fresh legacy goal completion >= frozen v1",
+      "curriculum_retention": "Matched fresh v2-composition goal completion >= frozen v1",
+      "legacy_action_cost_retention": "Mean declared weighted action cost <= frozen v1 on exactly the same legacy tasks both policies complete",
+      "changed_goal_action_retention": "Fresh paired changed-goal next-action accuracy >= frozen v2.1",
+      "changed_goal_pair_retention": "Fresh changed-goal pairs with both members correct >= frozen v2.1",
+      "actual_tool_retention": "Matched real fixture verified-and-stopped completion >= frozen v2.1",
+      "uncertainty_expected": "Exact expected verified completion >= each of two cheap baselines",
+      "uncertainty_sampled": "Matched sampled verified completion >= each of two cheap baselines",
+      "useful_efficiency": "Strictly lower mean weighted declared action cost plus measured decision overhead on the same episodes both methods complete, against the strongest cheap baseline"
+    },
+    "strong_baseline_selection": "Highest exact expected verified completion, then sampled completion, then lowest sampled total cost; ties broken by name",
+    "promotion": "All gates must pass. No allowed regression tolerance. Failure retains existing defaults.",
+    "timing": "Tokens and action latency are declared estimates for belief tasks. Decision latency is measured. Weighted cost = tokens + .01*(declared action ms + measured decision ms). No real tool time is claimed for belief simulation. Model loading and initial warm-up are reported separately and excluded from steady-state decision costs. Method order rotates per problem; one shared-Mac session is not a precision performance benchmark.",
+    "provenance": "Fresh instances after freeze; generator families and fixture templates are developer-known. This is not an unseen-repository or natural-language benchmark.",
+    "candidate": "v4",
+    "diagnostic_comparison": "Frozen v3 is evaluated on the same fresh v4 cases. It is diagnostic only; beating v3 does not satisfy any gate.",
+    "development_evidence": "V3 audit cases and outcomes are known development evidence for v4. They must not be described as blind v4 evaluation.",
+    "belief_distribution": {
+      "generator": "agent_training.belief_data_v4.make_problem(seed, 'test')",
+      "anchors": [
+        "prepared_diagnosis",
+        "missing_requirements",
+        "noisy_diagnosis",
+        "stochastic_verification",
+        "reversible_repair",
+        "goal_revision",
+        "known_cause",
+        "completed",
+        "unreachable",
+        "composed",
+        "preparation_chain",
+        "efficient_choice"
+      ],
+      "holdout": "Fresh seeds and instances, with the same developer-known compositional anchors across splits. Not an unseen-family benchmark.",
+      "diagnostics": "Per-anchor expected and sampled results, initially verified counts, and exact-planner zero-success-within-five counts reveal mixture easiness. All problems remain in all gates."
+    },
+    "sample_dependence": "Four matched stochastic episodes share each problem. The 960 episodes are not 960 independent task draws. Exact expectation integrates declared outcomes; it does not estimate reliability outside the 240 generator instances. No independence-based confidence interval is reported.",
+    "artifact_freeze": "Training setup and audit protocol precede training. Frozen selected weights, report and config plus generator, predictor, trainer, evaluator and mechanics source hashes are recorded before final generation; unchanged sources, candidate and baseline artifacts are verified after the audit. One exclusive started marker prevents reruns."
+  },
+  "protocol_sha256": "2f762b19c2c076fb0291a3c3f3058823403fde7b38b4e16f585b61850cb3287f"
+}
